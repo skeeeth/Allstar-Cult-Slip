@@ -6,4 +6,7 @@ class_name TowerData
 enum trigger_conditions{AREA_TIME, UNIT_TIME, ENTRY, EXIT}
 @export var trigger_condition:trigger_conditions
 
+@export var trigger_time = 1.0
+@export var effect_strength:float = 10
+
 @export var area_size:float

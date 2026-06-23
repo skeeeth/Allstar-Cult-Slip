@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cid0wtr1vxp4v" path="res://Source/Level/UI/Hud.tscn" id="2_60l3g"]
 [ext_resource type="PackedScene" uid="uid://ofx71x0hbi23" path="res://Source/Interactable/Circle/ResourceCircle.tscn" id="3_5c1oy"]
 [ext_resource type="PackedScene" uid="uid://bxuwbl1bbb4a0" path="res://Source/Interactable/Tower Site/TowerSite.tscn" id="4_huh1a"]
+[ext_resource type="PackedScene" uid="uid://4ppu28orsq7" path="res://Source/Unit/Enemy/Enemy.tscn" id="5_n1joc"]
 
 [node name="Node2D" type="Node2D" unique_id=1300881241]
 
@@ -25,3 +26,6 @@ type = "Souls"
 
 [node name="TowerSite" parent="." unique_id=655530917 instance=ExtResource("4_huh1a")]
 position = Vector2(-124, 200)
+
+[node name="Enemy" parent="." unique_id=1182452479 instance=ExtResource("5_n1joc")]
+position = Vector2(-124, 197)
