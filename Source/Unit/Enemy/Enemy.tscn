@@ -26,3 +26,6 @@ offset_top = 30.0
 offset_right = 56.0
 offset_bottom = 57.0
 value = 100.0
+
+[node name="Navi" type="NavigationAgent2D" parent="." unique_id=1892920142]
+debug_enabled = true

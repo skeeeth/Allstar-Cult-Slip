@@ -6,14 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://bxuwbl1bbb4a0" path="res://Source/Interactable/Tower Site/TowerSite.tscn" id="4_huh1a"]
 [ext_resource type="PackedScene" uid="uid://4ppu28orsq7" path="res://Source/Unit/Enemy/Enemy.tscn" id="5_n1joc"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_pkxw5"]
+vertices = PackedVector2Array(-30.296875, -1225.5938, 2089.3984, 14.1171875, -122, -116, -235, -175, -378.75, 1499.5703, -186, -6, -217, 16, -2154.6797, -129.67969, -229, -12, -225, -35, -219, -63)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 1, 4, 5), PackedInt32Array(6, 5, 4), PackedInt32Array(6, 4, 7, 8), PackedInt32Array(7, 0, 3), PackedInt32Array(8, 7, 3, 9), PackedInt32Array(9, 3, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-30, -1237, -2172, -132, -380, 1512, 2109, 14)])
+
 [node name="Node2D" type="Node2D" unique_id=1300881241]
 
-[node name="Player" parent="." unique_id=1190391921 instance=ExtResource("1_60l3g")]
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=677173366]
+limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="Hud" parent="Camera2D" unique_id=1382983244 instance=ExtResource("2_60l3g")]
-follow_viewport_enabled = true
+
+[node name="Player" parent="." unique_id=1190391921 instance=ExtResource("1_60l3g")]
 
 [node name="ResourceCircle" parent="." unique_id=2118307154 instance=ExtResource("3_5c1oy")]
 position = Vector2(-200, -62)
@@ -28,4 +34,18 @@ type = "Souls"
 position = Vector2(-124, 200)
 
 [node name="Enemy" parent="." unique_id=1182452479 instance=ExtResource("5_n1joc")]
-position = Vector2(-124, 197)
+position = Vector2(-1115, -182)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=345938183]
+navigation_polygon = SubResource("NavigationPolygon_pkxw5")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D" unique_id=365934748]
+position = Vector2(-213, -28)
+radius = 5.0
+vertices = PackedVector2Array(-22, -147, -6, -35, -12, -7, -16, 16, -4, 44, 27, 22, 91, -88)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+avoidance_enabled = false
+
+[node name="Enemy2" parent="." unique_id=324222319 instance=ExtResource("5_n1joc")]
+position = Vector2(55, -98)
