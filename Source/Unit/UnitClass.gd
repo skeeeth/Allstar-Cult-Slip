@@ -2,7 +2,7 @@ extends Node2D
 class_name Unit
 
 
-signal died #up to owner or parent to decide what happens on death
+signal died(who) #up to owner or parent to decide what happens on death
 
 
 @export var max_health:float = 100
@@ -15,4 +15,4 @@ func take_damage(amount:float):
 		die()
 
 func die():
-	died.emit()
+	died.emit(self)

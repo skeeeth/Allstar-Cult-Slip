@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bba0prqueb088"]
+
+[ext_resource type="Script" uid="uid://prs7hbtfl8n8" path="res://Source/Interactable/Towers/Tower.gd" id="1_hv3xy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv3xy"]
+
+[node name="Tower" type="Node2D" unique_id=447039082]
+script = ExtResource("1_hv3xy")
+
+[node name="Effect Area" type="Area2D" parent="." unique_id=245153892]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Effect Area" unique_id=1976330790]
+shape = SubResource("CircleShape2D_hv3xy")
+
+[connection signal="area_entered" from="Effect Area" to="." method="_on_effect_area_area_entered"]
+[connection signal="area_exited" from="Effect Area" to="." method="_on_effect_area_area_exited"]

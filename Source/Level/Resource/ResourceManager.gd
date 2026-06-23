@@ -24,3 +24,4 @@ func try_spend(type:String, amount:int) -> bool:
 func spend(type:String, amount:int):
 	#only call if try_spend confirms the existance and amount of type
 	current[type] -= amount
+	key_update.emit(type,-amount)
