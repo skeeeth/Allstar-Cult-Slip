@@ -23,11 +23,12 @@ animations = [{
 
 [node name="Player" type="Node2D" unique_id=1190391921]
 script = ExtResource("1_v8eik")
-movespeed = null
 
-[node name="Hitbox" type="Area2D" parent="." unique_id=787256078]
+[node name="PlayerHitbox" type="Area2D" parent="." unique_id=787256078]
+unique_name_in_owner = true
+metadata/player_hitbox = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1399171204]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox" unique_id=1399171204]
 shape = SubResource("RectangleShape2D_pkxw5")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1800890184]

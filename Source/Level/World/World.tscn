@@ -1,9 +1,22 @@
 [gd_scene format=3 uid="uid://cwmkbm6iabqwd"]
 
 [ext_resource type="PackedScene" uid="uid://cy4yi78sjmjxq" path="res://Source/Unit/Player/Player.tscn" id="1_60l3g"]
+[ext_resource type="PackedScene" uid="uid://cid0wtr1vxp4v" path="res://Source/Level/UI/Hud.tscn" id="2_60l3g"]
+[ext_resource type="PackedScene" uid="uid://ofx71x0hbi23" path="res://Source/Interactable/Circle/ResourceCircle.tscn" id="3_5c1oy"]
 
 [node name="Node2D" type="Node2D" unique_id=1300881241]
 
 [node name="Player" parent="." unique_id=1190391921 instance=ExtResource("1_60l3g")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=677173366]
+
+[node name="Hud" parent="Camera2D" unique_id=1382983244 instance=ExtResource("2_60l3g")]
+follow_viewport_enabled = true
+
+[node name="ResourceCircle" parent="." unique_id=2118307154 instance=ExtResource("3_5c1oy")]
+position = Vector2(-200, -62)
+cadence = 1.0
+
+[node name="ResourceCircle2" parent="." unique_id=1354443513 instance=ExtResource("3_5c1oy")]
+position = Vector2(169, -13)
+type = "Souls"
