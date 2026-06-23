@@ -13,9 +13,8 @@ func _on_area_entered(area: Area2D) -> void:
 func _on_area_exited(area: Area2D) -> void:
 	player_inside = false
 
-
 func _input(event: InputEvent) -> void:
-	if event.is_action("Interact"):
+	if event.is_action_pressed("Interact"):
 		if player_inside:
 			interacted.emit()
-			print("Interacted!")
+			#print("Interacted!")

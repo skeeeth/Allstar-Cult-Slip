@@ -23,6 +23,7 @@ animations = [{
 
 [node name="Player" type="Node2D" unique_id=1190391921]
 script = ExtResource("1_v8eik")
+movespeed = null
 
 [node name="Hitbox" type="Area2D" parent="." unique_id=787256078]
 
