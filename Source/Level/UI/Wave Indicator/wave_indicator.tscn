@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bn6wbpb2i5dd"]
+
+[ext_resource type="Script" uid="uid://hw4lvbgd8rjg" path="res://Source/Level/UI/Wave Indicator/wave_indicator.gd" id="1_3k7yg"]
+[ext_resource type="Texture2D" uid="uid://dyls51hp6s63a" path="res://Assets/BEE WIPs/JELLADY.png" id="1_fi2gj"]
+
+[node name="Wave Indicator" type="HBoxContainer" unique_id=617986268 node_paths=PackedStringArray("icon", "label")]
+offset_right = 67.0
+offset_bottom = 40.0
+script = ExtResource("1_3k7yg")
+icon = NodePath("Icon")
+label = NodePath("Label")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1009294567]
+layout_mode = 2
+texture = ExtResource("1_fi2gj")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=2132304875]
+layout_mode = 2
+text = "x 0"
