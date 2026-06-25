@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ditooupt0qhfe"]
+
+[ext_resource type="Script" uid="uid://belpwn7kvm83m" path="res://Source/Level/World/Base/base.gd" id="1_1g6ak"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1g6ak"]
+
+[node name="Node2D" type="Node2D" unique_id=60688362]
+script = ExtResource("1_1g6ak")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=694330141]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=744277199]
+shape = SubResource("CircleShape2D_1g6ak")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

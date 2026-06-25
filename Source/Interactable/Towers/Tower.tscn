@@ -2,9 +2,6 @@
 
 [ext_resource type="Script" uid="uid://prs7hbtfl8n8" path="res://Source/Interactable/Towers/Tower.gd" id="1_hv3xy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv3xy"]
-size = Vector2(216, 225)
-
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_j3jl0"]
 noise_type = 2
 frequency = 0.1345
@@ -12,8 +9,16 @@ frequency = 0.1345
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hv3xy"]
 noise = SubResource("FastNoiseLite_j3jl0")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv3xy"]
+size = Vector2(216, 225)
+
 [node name="Tower" type="Node2D" unique_id=447039082]
 script = ExtResource("1_hv3xy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=81413410]
+modulate = Color(0.74, 0.74, 0.74, 1)
+scale = Vector2(0.425, 0.425)
+texture = SubResource("NoiseTexture2D_hv3xy")
 
 [node name="Effect Area" type="Area2D" parent="." unique_id=245153892]
 collision_layer = 0
@@ -22,11 +27,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Effect Area" unique_id=1976330790]
 position = Vector2(-1, -1.5)
 shape = SubResource("RectangleShape2D_hv3xy")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=81413410]
-modulate = Color(0.74, 0.74, 0.74, 1)
-scale = Vector2(0.425, 0.425)
-texture = SubResource("NoiseTexture2D_hv3xy")
+debug_color = Color(0.99059623, 0, 0.28211293, 0.41960785)
 
 [connection signal="area_entered" from="Effect Area" to="." method="_on_effect_area_area_entered"]
 [connection signal="area_exited" from="Effect Area" to="." method="_on_effect_area_area_exited"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://gqmr0ddmbdrc"]
+
+[ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="1_g2pnl"]
+[ext_resource type="Texture2D" uid="uid://r0d41gilvkvb" path="res://Assets/BEE WIPs/FISHMAN.png" id="2_0mdk3"]
+
+[resource]
+script = ExtResource("1_g2pnl")
+sprite = ExtResource("2_0mdk3")
+movespeed = 250.0
+max_health = 100.0
+metadata/_custom_type_script = "uid://c7wrjd2iicq8d"

@@ -1,17 +1,31 @@
 [gd_scene format=3 uid="uid://cwmkbm6iabqwd"]
 
 [ext_resource type="PackedScene" uid="uid://cy4yi78sjmjxq" path="res://Source/Unit/Player/Player.tscn" id="1_60l3g"]
+[ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="2_0q3rt"]
 [ext_resource type="PackedScene" uid="uid://cid0wtr1vxp4v" path="res://Source/Level/UI/Hud.tscn" id="2_60l3g"]
 [ext_resource type="PackedScene" uid="uid://ofx71x0hbi23" path="res://Source/Interactable/Circle/ResourceCircle.tscn" id="3_5c1oy"]
+[ext_resource type="Resource" uid="uid://cj0yyeyswjuh8" path="res://Source/Unit/Enemy/Types/crawler.tres" id="3_a066j"]
+[ext_resource type="Resource" uid="uid://gqmr0ddmbdrc" path="res://Source/Unit/Enemy/Types/fishman.tres" id="4_1obq6"]
 [ext_resource type="PackedScene" uid="uid://bxuwbl1bbb4a0" path="res://Source/Interactable/Tower Site/TowerSite.tscn" id="4_huh1a"]
-[ext_resource type="PackedScene" uid="uid://4ppu28orsq7" path="res://Source/Unit/Enemy/Enemy.tscn" id="5_n1joc"]
+[ext_resource type="Resource" uid="uid://cvo1jnm1f8mam" path="res://Source/Unit/Enemy/Types/jellady.tres" id="5_8er02"]
+[ext_resource type="Script" uid="uid://dvsly52jeeslf" path="res://Source/Level/World/EnemyInstancer.gd" id="6_6f6u3"]
+[ext_resource type="Script" uid="uid://c373uigs4r2l5" path="res://Source/Level/World/draw_rocks.gd" id="9_1obq6"]
+[ext_resource type="PackedScene" uid="uid://ditooupt0qhfe" path="res://Source/Level/World/Base/Base.tscn" id="11_1obq6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pkxw5"]
-vertices = PackedVector2Array(-30.296875, -1225.5938, 2089.3984, 14.1171875, -122, -116, -235, -175, -378.75, 1499.5703, -186, -6, -217, 16, -2154.6797, -129.67969, -229, -12, -225, -35, -219, -63)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 1, 4, 5), PackedInt32Array(6, 5, 4), PackedInt32Array(6, 4, 7, 8), PackedInt32Array(7, 0, 3), PackedInt32Array(8, 7, 3, 9), PackedInt32Array(9, 3, 10)])
+vertices = PackedVector2Array(-822, 733, -750, 578, 673, 387, 911, 415, -378.75, 1499.5703, -30.296875, -1225.5938, 2089.3984, 14.1171875, 131, -226, 18, -285, -2154.6797, -129.67969, 552, 187, -881, 343, 36, -94, 34, -173, 28, -145, 24, -122, 67, -116, 1039, 8, 970, 125, 745, 125, 1208, 329, 1284, 153, -940, 585)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 5, 8), PackedInt32Array(10, 2, 1, 11, 12), PackedInt32Array(9, 8, 13, 14), PackedInt32Array(9, 14, 15), PackedInt32Array(16, 7, 6, 17), PackedInt32Array(9, 15, 12, 11), PackedInt32Array(17, 18, 19, 16), PackedInt32Array(20, 21, 6), PackedInt32Array(20, 6, 4), PackedInt32Array(3, 20, 4), PackedInt32Array(0, 4, 9, 22), PackedInt32Array(11, 22, 9), PackedInt32Array(10, 12, 16, 19), PackedInt32Array(17, 6, 21)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-30, -1237, -2172, -132, -380, 1512, 2109, 14)])
 
 [node name="Node2D" type="Node2D" unique_id=1300881241]
+
+[node name="Node" type="Node" parent="." unique_id=1828661291 node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("6_6f6u3")
+enemy_pool = Array[ExtResource("2_0q3rt")]([ExtResource("3_a066j"), ExtResource("4_1obq6"), ExtResource("5_8er02")])
+spawn_points = [NodePath("../Spawn Clusters/North"), NodePath("../Spawn Clusters/SW"), NodePath("../Spawn Clusters/SE")]
+
+[node name="Timer" type="Timer" parent="Node" unique_id=1173809805]
+autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=677173366]
 limit_smoothed = true
@@ -21,31 +35,60 @@ position_smoothing_enabled = true
 
 [node name="Player" parent="." unique_id=1190391921 instance=ExtResource("1_60l3g")]
 
-[node name="ResourceCircle" parent="." unique_id=2118307154 instance=ExtResource("3_5c1oy")]
-position = Vector2(-200, -62)
-cadence = 1.0
-type = "Bananas"
-
-[node name="ResourceCircle2" parent="." unique_id=1354443513 instance=ExtResource("3_5c1oy")]
-position = Vector2(169, -13)
-type = "Souls"
-
 [node name="TowerSite" parent="." unique_id=655530917 instance=ExtResource("4_huh1a")]
 position = Vector2(-124, 200)
 
-[node name="Enemy" parent="." unique_id=1182452479 instance=ExtResource("5_n1joc")]
-position = Vector2(-1115, -182)
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=345938183]
+[node name="Nav" type="NavigationRegion2D" parent="." unique_id=345938183]
 navigation_polygon = SubResource("NavigationPolygon_pkxw5")
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D" unique_id=365934748]
-position = Vector2(-213, -28)
+[node name="Rocks" type="Node2D" parent="Nav" unique_id=1487390503]
+script = ExtResource("9_1obq6")
+
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="Nav/Rocks" unique_id=365934748]
+position = Vector2(40, -138)
 radius = 5.0
 vertices = PackedVector2Array(-22, -147, -6, -35, -12, -7, -16, 16, -4, 44, 27, 22, 91, -88)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 avoidance_enabled = false
 
-[node name="Enemy2" parent="." unique_id=324222319 instance=ExtResource("5_n1joc")]
-position = Vector2(55, -98)
+[node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="Nav/Rocks" unique_id=1136074411]
+vertices = PackedVector2Array(-881, 343, -940, 585, -822, 733, -750, 578)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="Nav/Rocks" unique_id=274816056]
+vertices = PackedVector2Array(552, 187, 673, 387, 911, 415, 1208, 329, 1284, 153, 1039, 8, 970, 125, 745, 125)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="Spawn Clusters" type="Node2D" parent="." unique_id=998088709]
+
+[node name="North" type="Node2D" parent="Spawn Clusters" unique_id=1583382416]
+position = Vector2(-39, -1073)
+
+[node name="SW" type="Node2D" parent="Spawn Clusters" unique_id=1439636613]
+position = Vector2(-967, 749)
+
+[node name="SE" type="Node2D" parent="Spawn Clusters" unique_id=1971017452]
+position = Vector2(1216, 425)
+
+[node name="Circles" type="Node2D" parent="." unique_id=546051504]
+
+[node name="ResourceCircle" parent="Circles" unique_id=2118307154 instance=ExtResource("3_5c1oy")]
+position = Vector2(-200, -60)
+cadence = 1.0
+type = "Bananas"
+
+[node name="ResourceCircle2" parent="Circles" unique_id=1354443513 instance=ExtResource("3_5c1oy")]
+position = Vector2(169, -11)
+type = "Souls"
+
+[node name="ResourceCircle3" parent="Circles" unique_id=1040504511 instance=ExtResource("3_5c1oy")]
+position = Vector2(790, -383)
+
+[node name="Base" parent="." unique_id=60688362 instance=ExtResource("11_1obq6")]
+
+[node name="Tower Site" type="Node2D" parent="." unique_id=1636829574]
+
+[connection signal="timeout" from="Node/Timer" to="Node" method="_on_timer_timeout"]

@@ -6,9 +6,11 @@ var progress:float = 0
 var store:int
 
 @onready var interact_hitbox: Interactable = $"Interaction Area"
+@onready var progress_bar: ProgressBar = $ProgressBar
 
 func _ready() -> void:
 	interact_hitbox.interacted.connect(on_interaction)
+	
 	
 
 func on_interaction():
@@ -21,3 +23,10 @@ func _process(delta: float) -> void:
 	if progress >= cadence:
 		progress -= cadence
 		store += 1
+	
+	progress_bar.value = delta
+
+func roll_resource():
+	progress_bar.max_value = cadence
+	
+	
