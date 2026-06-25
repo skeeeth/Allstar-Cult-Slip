@@ -1,20 +1,20 @@
 extends Node
 
 @onready var wave_timer: Timer = $Timer
-var scatter_range:float = 20
+var scatter_range:float = 300
 
 @export var enemy_pool:Array[EnemyData]
 @export var spawn_points:Array[Node2D]
 var next_point:Node2D
 var next_type:EnemyData
-var next_count:int = 4
+@export var next_count:int = 4
 
 func _ready() -> void:
 	determine_wave()
 	
 
 func _on_timer_timeout() -> void:
-	#wave_timer.wait_time = 30
+	wave_timer.wait_time = 5
 	wave_timer.start()
 	
 	spawn_wave(next_point,next_type,next_count)

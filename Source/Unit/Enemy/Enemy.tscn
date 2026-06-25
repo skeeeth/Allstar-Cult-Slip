@@ -23,6 +23,7 @@ collision_mask = 0
 shape = SubResource("CircleShape2D_qtjwj")
 
 [node name="HP_Bar" type="ProgressBar" parent="." unique_id=2059718330]
+z_index = 7
 custom_minimum_size = Vector2(100, 0)
 offset_left = -44.0
 offset_top = 30.0

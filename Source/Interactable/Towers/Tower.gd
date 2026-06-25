@@ -7,12 +7,18 @@ const self_scene = preload("uid://bba0prqueb088")
 var units_inside:Array[Unit]
 
 var targets:Array[Unit]
+var max_targets:int = 1
 
 var area_time:float = 0
+var target_time:Dictionary[Unit,float]
+@export var range_shape: CollisionShape2D
 
 static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	var new_tower:Tower = self_scene.instantiate()
 	new_tower.data = from_data
+	var circle = CircleShape2D.new()
+	circle.radius = from_data.area_size
+	new_tower.range_shape.shape = circle
 	return new_tower
 
 
@@ -29,29 +35,51 @@ func _on_effect_area_area_exited(area: Area2D) -> void:
 	
 func register_unit(u:Unit):
 	units_inside.append(u)
+	u.died.connect(unregister_unit)
 	match data.trigger_condition:
 		TowerData.trigger_conditions.ENTRY:
 			targets.append(u)
-			trigger()
+			trigger_single(u)
 			targets.erase(u)
 		TowerData.trigger_conditions.AREA_TIME:
 			targets.append(u)
 		TowerData.trigger_conditions.UNIT_TIME:
-			pass
+			set_target_last()
 	
 func unregister_unit(u:Unit):
 	units_inside.erase(u)
-	
+	targets.erase(u)
+	target_time.erase(u)
+	set_target_last()
+
 func _process(delta: float) -> void:
 	match data.trigger_condition:
 		TowerData.trigger_conditions.AREA_TIME:
 			area_time += delta
 			if area_time >= data.trigger_time:
-				trigger()
+				trigger_all()
 				area_time -= data.trigger_time
-				
+		TowerData.trigger_conditions.UNIT_TIME:
+			for u in targets:
+				target_time[u] += delta
+				if target_time[u] >= data.trigger_time:
+					target_time[u] -= data.trigger_time
+					trigger_single(u)
+					
 
 
-func trigger():
+func trigger_all():
 	for u in targets:
-		u.take_damage(data.effect_strength)
+		trigger_single(u)
+		
+
+func trigger_single(u:Unit):
+	u.take_damage(data.effect_strength)
+	
+func set_target_last():
+	if targets.size() < max_targets:
+		if data.trigger_condition == TowerData.trigger_conditions.UNIT_TIME:
+			var u = units_inside.back()
+			if u == null: return
+			targets.append(u)
+			target_time[u] = 0.0

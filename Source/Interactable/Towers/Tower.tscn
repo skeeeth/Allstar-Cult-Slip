@@ -12,8 +12,9 @@ noise = SubResource("FastNoiseLite_j3jl0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hv3xy"]
 size = Vector2(216, 225)
 
-[node name="Tower" type="Node2D" unique_id=447039082]
+[node name="Tower" type="Node2D" unique_id=447039082 node_paths=PackedStringArray("range_shape")]
 script = ExtResource("1_hv3xy")
+range_shape = NodePath("Effect Area/CollisionShape2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=81413410]
 modulate = Color(0.74, 0.74, 0.74, 1)

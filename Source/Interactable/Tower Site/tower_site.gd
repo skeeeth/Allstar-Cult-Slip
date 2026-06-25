@@ -29,3 +29,5 @@ func on_interact():
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("one"):
 		blueprint = tower_pool[0]
+	if event.is_action_pressed("two"):
+		blueprint = tower_pool[1]
