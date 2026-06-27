@@ -27,7 +27,8 @@ func determine_wave():
 	next_type = enemy_pool.pick_random()
 	next_count *= 1.2
 	var indicator:WaveIndicator = WaveIndicator._create()
-	camera_2d.add_child(indicator)
+	add_child(indicator)
+	indicator.camera = camera_2d
 	indicator.display(next_type.sprite,next_count)
 	indicator.home = next_point.position
 
