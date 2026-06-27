@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	#$"..".bake_navigation_polygon()
 	for obs in get_children():
 		if obs is NavigationObstacle2D:
 			var new_polygon = Polygon2D.new()

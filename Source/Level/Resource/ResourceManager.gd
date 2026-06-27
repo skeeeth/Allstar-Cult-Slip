@@ -5,16 +5,17 @@ signal key_update(key:String, change:int)
 
 var current:Dictionary[String, int]
 enum ResourceTypes{B,O,U}
+
 const ResourceNames:Dictionary[ResourceTypes,String] = {
 	ResourceManager.ResourceTypes.B: "Bananas",
 	ResourceManager.ResourceTypes.O: "Spores",
-	ResourceManager.ResourceTypes.U: "Souls",
+	ResourceManager.ResourceTypes.U: "Souls"
 }
 
 var ResourceCadence:Dictionary[ResourceTypes,float] = {
-	ResourceManager.ResourceTypes.B: 2.0,
+	ResourceManager.ResourceTypes.B: 1.25,
 	ResourceManager.ResourceTypes.O: 0.5,
-	ResourceManager.ResourceTypes.U: 5.0,
+	ResourceManager.ResourceTypes.U: 3.0,
 }
 
 

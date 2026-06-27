@@ -8,7 +8,7 @@ func _ready() -> void:
 	ResourceManager.key_update.connect(on_update)
 
 	for i in ResourceManager.ResourceTypes.values():
-		ResourceManager.add_resource(ResourceManager.ResourceNames[i],0)
+		ResourceManager.add_resource(ResourceManager.ResourceNames[i],99)
 
 func on_new_key(k,_v):
 	_new_label(k)

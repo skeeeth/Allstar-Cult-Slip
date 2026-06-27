@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://dkh5n8jlq88wc"]
+
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_51p4v"]
+
+[resource]
+script = ExtResource("1_51p4v")
+tower_name = "SUPER Spore"
+cost = Dictionary[String, int]({
+"Spores": 100
+})
+trigger_time = 0.05
+effect_strength = 100.0
+area_size = 666.0
+metadata/_custom_type_script = "uid://dlv0kunqio4rh"

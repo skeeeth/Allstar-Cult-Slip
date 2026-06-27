@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://dvsly52jeeslf" path="res://Source/Level/World/EnemyInstancer.gd" id="6_6f6u3"]
 [ext_resource type="Script" uid="uid://c373uigs4r2l5" path="res://Source/Level/World/draw_rocks.gd" id="9_1obq6"]
 [ext_resource type="PackedScene" uid="uid://ditooupt0qhfe" path="res://Source/Level/World/Base/Base.tscn" id="11_1obq6"]
+[ext_resource type="PackedScene" uid="uid://c2og13fi0nolf" path="res://Source/Interactable/Upgrade Offer/upgrade_offer.tscn" id="12_8er02"]
+[ext_resource type="Resource" uid="uid://bjhl4pu7f188b" path="res://Resources/Upgrades/super_spore_BP.tres" id="13_kwrcj"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pkxw5"]
 outlines = Array[PackedVector2Array]([PackedVector2Array(471, -1799, -2744, 167, -217, 2182, 3147, 364)])
@@ -38,7 +40,7 @@ position_smoothing_enabled = true
 movespeed = 600.0
 
 [node name="TowerSite" parent="." unique_id=655530917 instance=ExtResource("4_huh1a")]
-position = Vector2(-124, 200)
+position = Vector2(-3, 35)
 
 [node name="Nav" type="NavigationRegion2D" parent="." unique_id=345938183]
 navigation_polygon = SubResource("NavigationPolygon_pkxw5")
@@ -112,7 +114,7 @@ position = Vector2(526, 707)
 position = Vector2(16, -712)
 
 [node name="TowerSite2" parent="Tower Sites" unique_id=1988281892 instance=ExtResource("4_huh1a")]
-position = Vector2(-471, -428)
+position = Vector2(-356, -438)
 
 [node name="TowerSite3" parent="Tower Sites" unique_id=30625718 instance=ExtResource("4_huh1a")]
 position = Vector2(469, 346)
@@ -121,5 +123,9 @@ position = Vector2(469, 346)
 position = Vector2(-496, 434)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=743826247]
+
+[node name="Upgrade Offer" parent="." unique_id=167568939 instance=ExtResource("12_8er02")]
+position = Vector2(-216, -23)
+offer = ExtResource("13_kwrcj")
 
 [connection signal="timeout" from="Wave Managerr/Timer" to="Wave Managerr" method="_on_timer_timeout"]

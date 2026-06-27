@@ -14,11 +14,6 @@ var area_time:float = 0
 var target_time:Dictionary[Unit,float]
 @export var range_shape: CollisionShape2D
 
-@export var range_color:Color
-
-func _draw() -> void:
-	draw_circle(Vector2.ZERO,data.area_size,range_color)
-
 static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	var new_tower:Tower = self_scene.instantiate()
 	new_tower.data = from_data

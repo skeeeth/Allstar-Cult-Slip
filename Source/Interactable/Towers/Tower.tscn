@@ -16,7 +16,6 @@ size = Vector2(216, 225)
 script = ExtResource("1_hv3xy")
 sprite = NodePath("Sprite2D")
 range_shape = NodePath("Effect Area/CollisionShape2D")
-range_color = Color(0.21176471, 0.4392157, 1, 0.27058825)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=81413410]
 modulate = Color(0.74, 0.74, 0.74, 1)
