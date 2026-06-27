@@ -21,5 +21,8 @@ func take_damage(amount:float):
 	if current_health <= 0:
 		die()
 
+func slip():
+	pass
+
 func die():
 	died.emit(self)

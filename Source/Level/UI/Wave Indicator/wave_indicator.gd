@@ -46,6 +46,7 @@ func _process(delta: float) -> void:
 		var new_tween = create_tween()
 		new_tween.tween_callback(instance_unit).set_delay(interval)
 		new_tween.set_loops(quota)
+		new_tween.finished.connect(queue_free)
 
 func instance_unit():
 	var new_enemy:Enemy = Enemy.create(type);

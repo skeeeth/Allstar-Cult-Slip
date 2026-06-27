@@ -77,6 +77,12 @@ func trigger_all():
 		
 
 func trigger_single(u:Unit):
+	for e in data.effects.keys():
+		match e:
+			TowerData.effect_types.DAMAGE:
+				u.take_damage(data.effects[e])
+			TowerData.effect_types.SLIP:
+				u.slip(data.effects[e])
 	u.take_damage(data.effect_strength)
 	
 func set_target_last():
