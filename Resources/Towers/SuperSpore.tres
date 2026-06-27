@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://dkh5n8jlq88wc"]
 
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_51p4v"]
+[ext_resource type="Texture2D" uid="uid://cpdy45nuskuus" path="res://Assets/CUSTOM PLACEHOLDER/spore_cannon.png" id="2_hgmec"]
 
 [resource]
 script = ExtResource("1_51p4v")
 tower_name = "SUPER Spore"
+sprite = ExtResource("2_hgmec")
 cost = Dictionary[String, int]({
 "Spores": 100
 })

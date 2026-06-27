@@ -3,6 +3,7 @@ class_name TowerSite
 
 @onready var interaction_area: Interactable = $"Interaction Area"
 @onready var info_box: HBoxContainer = $"Tower Info"
+@onready var hover_sprite: Sprite2D = $HoverSprite
 
 var blueprint:TowerData 
 @export var starting_pool:Array[TowerData]
@@ -46,6 +47,9 @@ func on_interact():
 	#queue_free()
 
 func _input(event: InputEvent) -> void:
+	if !info_box.visible:
+		return
+	
 	if event.is_action_pressed("one"):
 		select_blueprint(0)
 	
@@ -62,6 +66,9 @@ func select_blueprint(index:int):
 	for d in displays:
 		d.clear_hover()
 	displays[index].set_hover()
+	hover_sprite.texture = blueprint.sprite
+	
+	queue_redraw()
 	
 func on_enter():
 	info_box.visible = true

@@ -24,3 +24,6 @@ offset_left = -289.0
 offset_top = -361.0
 offset_right = 67.0
 offset_bottom = -206.0
+
+[node name="HoverSprite" type="Sprite2D" parent="." unique_id=1076845381]
+modulate = Color(0.17254902, 0.56078434, 0.91764706, 0.2)
