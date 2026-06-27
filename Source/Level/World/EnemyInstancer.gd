@@ -25,7 +25,7 @@ func _on_timer_timeout() -> void:
 	wave_timer.wait_time = next_delay
 	wave_timer.start()
 	
-	spawn_wave(next_point,next_type,next_count)
+	#spawn_wave(next_point,next_type,next_count)
 	determine_wave()
 
 func determine_wave():
@@ -33,7 +33,7 @@ func determine_wave():
 	next_type = enemy_pool.pick_random()
 	count_base *= 1.2
 	next_count = floor(count_base * next_type.wave_factor)
-	var indicator:WaveIndicator = WaveIndicator._create(next_delay)
+	var indicator:WaveIndicator = WaveIndicator._create(next_delay,next_type,next_count)
 	add_child(indicator)
 	indicator.camera = camera_2d
 	indicator.display(next_type.sprite,next_count)
@@ -42,6 +42,6 @@ func determine_wave():
 func spawn_wave(around_point:Node2D,data:EnemyData,count:int):
 	for i in range(0,count):
 		var new_enemy = Enemy.create(data)
-		var jitter = randf_range(0,100) * Vector2.from_angle(randf()*TAU)
+		var jitter = randf_range(0,scatter_range) * Vector2.from_angle(randf()*TAU)
 		new_enemy.position = around_point.position + jitter
 		add_child(new_enemy)

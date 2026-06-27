@@ -9,8 +9,16 @@ var camera:Camera2D
 const self_scene:PackedScene = preload("uid://bn6wbpb2i5dd")
 @export var progress_bar: ProgressBar
 var time_alive = 0
-static func _create(set_delay:float = 1.0):
+var quota:int
+var interval:float = 0.1
+var type:EnemyData
+
+var jitter:float = 100
+
+static func _create(set_delay:float, type:EnemyData,count:int):
 	var new_display = self_scene.instantiate()
+	new_display.type = type
+	new_display.quota = count
 	new_display.progress_bar.max_value = set_delay
 	new_display.progress_bar.value = set_delay
 	return new_display
@@ -33,5 +41,15 @@ func _process(delta: float) -> void:
 	time_alive += delta
 	progress_bar.value = progress_bar.max_value - time_alive
 	#print(progress_bar.value)
-	if progress_bar.value <= 0:
-		queue_free()
+	if progress_bar.value <= 0 and visible:
+		visible = false
+		var new_tween = create_tween()
+		new_tween.tween_callback(instance_unit).set_delay(interval)
+		new_tween.set_loops(quota)
+
+func instance_unit():
+	var new_enemy:Enemy = Enemy.create(type);
+	var jitter_vector = Vector2.from_angle(randf() * TAU)
+	jitter_vector *= jitter * randf()
+	new_enemy.position = home + jitter_vector
+	add_sibling(new_enemy)

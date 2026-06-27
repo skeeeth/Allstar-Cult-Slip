@@ -13,8 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://ditooupt0qhfe" path="res://Source/Level/World/Base/Base.tscn" id="11_1obq6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pkxw5"]
-vertices = PackedVector2Array(215, -473, 470.1875, -1786.7813, 3129.0313, 362.34375, 214, -439, -750, 578, 911, 415, -215.92969, 2170.0469, -822, 733, 172, -493, 51, -450, -130, -433, -190, -558, -200, -648, -2726.6016, 168.07813, -940, 585, -229, -397, -299, -565, -881, 343, -309, -766, -343, -736, -361, -649, 1208, 329, 1284, 153, -99, -343, 155, -360, 1039, 8, 970, 125, 745, 125, 46, -339, 552, 187, 673, 387)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 2, 6, 7), PackedInt32Array(1, 8, 9, 10, 11, 12), PackedInt32Array(7, 6, 13, 14), PackedInt32Array(1, 0, 8), PackedInt32Array(11, 10, 15, 16), PackedInt32Array(17, 14, 13), PackedInt32Array(1, 12, 18), PackedInt32Array(13, 1, 18, 19), PackedInt32Array(17, 13, 19, 20), PackedInt32Array(17, 20, 16, 15), PackedInt32Array(21, 22, 2), PackedInt32Array(17, 15, 23, 4), PackedInt32Array(24, 3, 2, 25), PackedInt32Array(25, 26, 27, 24), PackedInt32Array(4, 23, 28), PackedInt32Array(29, 4, 28, 24, 27), PackedInt32Array(2, 22, 25), PackedInt32Array(4, 29, 30), PackedInt32Array(5, 21, 2), PackedInt32Array(4, 30, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(471, -1799, -2744, 167, -217, 2182, 3147, 364)])
 
 [node name="Node2D" type="Node2D" unique_id=1300881241]
@@ -23,8 +21,8 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(471, -1799, -2744, 167,
 script = ExtResource("6_6f6u3")
 enemy_pool = Array[ExtResource("2_0q3rt")]([ExtResource("3_a066j"), ExtResource("4_1obq6"), ExtResource("5_8er02")])
 spawn_points = [NodePath("../Spawn Clusters/North"), NodePath("../Spawn Clusters/SW"), NodePath("../Spawn Clusters/SE")]
-next_count = 1
-next_delay = 10.0
+next_count = 2
+next_delay = 5.0
 
 [node name="Timer" type="Timer" parent="Wave Managerr" unique_id=1173809805]
 one_shot = true
@@ -50,11 +48,6 @@ script = ExtResource("9_1obq6")
 
 [node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="Nav/Rocks" unique_id=1136074411]
 vertices = PackedVector2Array(-881, 343, -940, 585, -822, 733, -750, 578)
-affect_navigation_mesh = true
-carve_navigation_mesh = true
-
-[node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="Nav/Rocks" unique_id=274816056]
-vertices = PackedVector2Array(552, 187, 673, 387, 911, 415, 1208, 329, 1284, 153, 1039, 8, 970, 125, 745, 125)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
@@ -86,7 +79,7 @@ polygon = PackedVector2Array(-5428, -3731, -4933, 6192, 6443, 5573, 5678, -4253)
 position = Vector2(-39, -1073)
 
 [node name="SW" type="Node2D" parent="Spawn Clusters" unique_id=1439636613]
-position = Vector2(-1048, 1052)
+position = Vector2(-75, 884)
 
 [node name="SE" type="Node2D" parent="Spawn Clusters" unique_id=1971017452]
 position = Vector2(1216, 425)
