@@ -1,6 +1,9 @@
 extends Resource
 class_name TowerData
 
+@export var tower_name:String
+@export var sprite:Texture2D
+
 @export var cost:Dictionary[String,int]
 
 enum trigger_conditions{AREA_TIME, UNIT_TIME, ENTRY, EXIT}

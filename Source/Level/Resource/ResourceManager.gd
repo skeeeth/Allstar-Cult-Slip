@@ -17,6 +17,7 @@ var ResourceCadence:Dictionary[ResourceTypes,float] = {
 	ResourceManager.ResourceTypes.U: 5.0,
 }
 
+
 func add_resource(type:String, amount:int):
 	if current.has(type):
 		current[type] += amount

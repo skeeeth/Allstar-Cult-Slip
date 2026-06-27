@@ -35,6 +35,7 @@ position_smoothing_enabled = true
 [node name="Hud" parent="Camera2D" unique_id=1382983244 instance=ExtResource("2_60l3g")]
 
 [node name="Player" parent="." unique_id=1190391921 instance=ExtResource("1_60l3g")]
+movespeed = 600.0
 
 [node name="TowerSite" parent="." unique_id=655530917 instance=ExtResource("4_huh1a")]
 position = Vector2(-124, 200)

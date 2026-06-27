@@ -1,12 +1,25 @@
 extends Node2D
 
 @onready var interaction_area: Interactable = $"Interaction Area"
+@onready var info_box: HBoxContainer = $"Tower Info"
 
 var blueprint:TowerData 
 @export var tower_pool:Array[TowerData]
+var displays:Array[TowerDisplay]
 
 func _ready() -> void:
 	interaction_area.interacted.connect(on_interact)
+	interaction_area.entered.connect(on_enter)
+	interaction_area.exited.connect(on_exit)
+	
+	var i:int = 0
+	for data in tower_pool:
+		var new_display = TowerDisplay.create()
+		displays.append(new_display)
+		info_box.add_child(new_display)
+		new_display.index_number.text = str(i+1)
+		new_display.dress(data)
+		i += 1
 
 func on_interact():
 	if !blueprint: return
@@ -28,6 +41,21 @@ func on_interact():
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("one"):
-		blueprint = tower_pool[0]
+		select_blueprint(0)
+	
 	if event.is_action_pressed("two"):
-		blueprint = tower_pool[1]
+		select_blueprint(1)
+		
+func select_blueprint(index:int):
+	blueprint = tower_pool[index]
+	for d in displays:
+		d.clear_hover()
+	displays[index].set_hover()
+	
+func on_enter():
+	info_box.visible = true
+	if data.te
+	
+func on_exit():
+	info_box.visible = false
+	

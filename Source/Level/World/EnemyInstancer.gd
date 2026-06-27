@@ -1,5 +1,7 @@
 extends Node
 
+signal wave_spawned
+
 @onready var wave_timer: Timer = $Timer
 var scatter_range:float = 300
 

@@ -2,6 +2,8 @@ extends Area2D
 class_name Interactable
 
 signal interacted
+signal entered
+signal exited
 
 var player_inside:bool = false
 
@@ -9,10 +11,12 @@ var player_inside:bool = false
 func _on_area_entered(area: Area2D) -> void:
 	assert(area.has_meta("player_hitbox"))
 	player_inside = true
+	entered.emit()
 	
 func _on_area_exited(area: Area2D) -> void:
 	assert(area.has_meta("player_hitbox"))
 	player_inside = false
+	exited.emit()
 
 
 func _input(event: InputEvent) -> void:

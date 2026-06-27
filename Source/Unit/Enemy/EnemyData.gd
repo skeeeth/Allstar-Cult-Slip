@@ -6,3 +6,4 @@ class_name EnemyData
 @export var max_health:float 
 
 @export var size = 100
+@export var wave_factor:float = 1.0

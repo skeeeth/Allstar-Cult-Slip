@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_k20hp")
+tower_name = "Bannana Field"
 cost = Dictionary[String, int]({
 "Bananas": 4
 })

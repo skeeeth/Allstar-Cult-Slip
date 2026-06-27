@@ -5,6 +5,7 @@ var data:TowerData
 
 const self_scene = preload("uid://bba0prqueb088")
 var units_inside:Array[Unit]
+@export var sprite: Sprite2D
 
 var targets:Array[Unit]
 var max_targets:int = 1
@@ -19,6 +20,8 @@ static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	var circle = CircleShape2D.new()
 	circle.radius = from_data.area_size
 	new_tower.range_shape.shape = circle
+	new_tower.sprite.texture = from_data.sprite
+	
 	return new_tower
 
 
@@ -77,7 +80,7 @@ func trigger_single(u:Unit):
 	u.take_damage(data.effect_strength)
 	
 func set_target_last():
-	if targets.size() < max_targets:
+	if targets.size() < max_targets and units_inside.size() > 0:
 		if data.trigger_condition == TowerData.trigger_conditions.UNIT_TIME:
 			var u = units_inside.back()
 			if u == null: return
