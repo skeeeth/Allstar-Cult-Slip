@@ -3,18 +3,29 @@
 [ext_resource type="Script" uid="uid://hw4lvbgd8rjg" path="res://Source/Level/UI/Wave Indicator/wave_indicator.gd" id="1_3k7yg"]
 [ext_resource type="Texture2D" uid="uid://dyls51hp6s63a" path="res://Assets/BEE WIPs/JELLADY.png" id="1_fi2gj"]
 
-[node name="Wave Indicator" type="HBoxContainer" unique_id=617986268 node_paths=PackedStringArray("icon", "label")]
-offset_right = 67.0
-offset_bottom = 40.0
+[node name="Wave Indicator" type="VBoxContainer" unique_id=1002107212 node_paths=PackedStringArray("icon", "label", "progress_bar")]
+offset_right = 141.0
+offset_bottom = 159.0
 script = ExtResource("1_3k7yg")
-icon = NodePath("Icon")
-label = NodePath("Label")
+icon = NodePath("HBoxContainer/Icon")
+label = NodePath("HBoxContainer/Label")
+progress_bar = NodePath("ProgressBar")
 
-[node name="Icon" type="TextureRect" parent="." unique_id=1009294567]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=914484912]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer" unique_id=1009294567]
 layout_mode = 2
 texture = ExtResource("1_fi2gj")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="." unique_id=2132304875]
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=2132304875]
 layout_mode = 2
 text = "x 0"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1749056853]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 4
+show_percentage = false

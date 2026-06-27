@@ -8,4 +8,5 @@ script = ExtResource("1_gm2id")
 sprite = ExtResource("2_78fed")
 movespeed = 100.0
 max_health = 500.0
+wave_factor = 0.5
 metadata/_custom_type_script = "uid://c7wrjd2iicq8d"

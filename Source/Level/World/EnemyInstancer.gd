@@ -10,15 +10,19 @@ var scatter_range:float = 300
 var next_point:Node2D
 var next_type:EnemyData
 @export var next_count:int = 4
+var count_base:float = 4
+
 @onready var hud: CanvasLayer = $"../Camera2D/Hud"
 @onready var camera_2d: Camera2D = $"../Camera2D"
+@export var next_delay:float = 30
 
 func _ready() -> void:
+	wave_timer.wait_time = next_delay
 	determine_wave()
-	
+
 
 func _on_timer_timeout() -> void:
-	wave_timer.wait_time = 5
+	wave_timer.wait_time = next_delay
 	wave_timer.start()
 	
 	spawn_wave(next_point,next_type,next_count)
@@ -27,8 +31,9 @@ func _on_timer_timeout() -> void:
 func determine_wave():
 	next_point =  spawn_points.pick_random()
 	next_type = enemy_pool.pick_random()
-	next_count *= 1.2
-	var indicator:WaveIndicator = WaveIndicator._create()
+	count_base *= 1.2
+	next_count = floor(count_base * next_type.wave_factor)
+	var indicator:WaveIndicator = WaveIndicator._create(next_delay)
 	add_child(indicator)
 	indicator.camera = camera_2d
 	indicator.display(next_type.sprite,next_count)

@@ -32,6 +32,7 @@ offset_bottom = 57.0
 value = 100.0
 
 [node name="Navi" type="NavigationAgent2D" parent="." unique_id=1892920142]
+debug_use_custom = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1463366955]
 texture = ExtResource("2_lbiay")

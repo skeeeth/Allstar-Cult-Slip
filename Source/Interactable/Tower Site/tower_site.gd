@@ -54,7 +54,7 @@ func select_blueprint(index:int):
 	
 func on_enter():
 	info_box.visible = true
-	if data.te
+	#if data.te
 	
 func on_exit():
 	info_box.visible = false
