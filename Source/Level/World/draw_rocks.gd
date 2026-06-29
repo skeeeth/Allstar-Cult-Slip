@@ -1,7 +1,8 @@
 extends Node2D
 
 func _ready() -> void:
-	#$"..".bake_navigation_polygon()
+	$"..".bake_navigation_polygon()
+	$"..".bake_finished.connect(print.bind("bake done"))
 	for obs in get_children():
 		if obs is NavigationObstacle2D:
 			var new_polygon = Polygon2D.new()
