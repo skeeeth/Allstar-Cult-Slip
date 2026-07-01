@@ -58,6 +58,18 @@ func on_death(_self):
 	queue_free()
 	
 
+func slip(amount:float):
+	
+	var startup = 0.05
+	var slipping = self.create_tween()
+	slipping.set_ease(Tween.EASE_IN_OUT)
+	slipping.tween_property(sprite,"rotation",PI/2.0,startup).set_trans(Tween.TRANS_BOUNCE)
+	slipping.parallel().tween_property(self,"movespeed",0.0,startup*1.3)
+	
+	
+	slipping.tween_property(self,"movespeed",movespeed,startup).set_delay(amount+startup)
+	slipping.parallel().tween_property(sprite,"rotation",0,startup).set_delay(amount)
+
 
 #func _on_boid_area_area_entered(area: Area2D) -> void:
 	#var parent = area.get_parent()

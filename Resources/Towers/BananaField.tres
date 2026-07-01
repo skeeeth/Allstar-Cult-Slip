@@ -10,5 +10,10 @@ sprite = ExtResource("2_dyxgp")
 cost = Dictionary[String, int]({
 "Bananas": 4
 })
+trigger_condition = 2
+effects = Dictionary[int, float]({
+0: 10.0,
+2: 0.5
+})
 area_size = 200.0
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"

@@ -14,7 +14,7 @@ var count_base:float = 4
 
 @onready var hud: CanvasLayer = $"../Camera2D/Hud"
 @onready var camera_2d: Camera2D = $"../Camera2D"
-@export var next_delay:float = 30
+@export var next_delay:float = 4
 
 func _ready() -> void:
 	wave_timer.wait_time = next_delay

@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 	#print(progress_bar.value)
 	if progress_bar.value <= 0 and visible:
 		visible = false
-		var new_tween = create_tween()
+		var new_tween = self.create_tween()
 		new_tween.tween_callback(instance_unit).set_delay(interval)
 		new_tween.set_loops(quota)
 		new_tween.finished.connect(queue_free)

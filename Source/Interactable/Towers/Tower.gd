@@ -42,7 +42,10 @@ func register_unit(u:Unit):
 	match data.trigger_condition:
 		TowerData.trigger_conditions.ENTRY:
 			targets.append(u)
-			trigger_single(u)
+			u.create_tween().tween_callback(\
+					trigger_single.bind(u)).set_delay(
+							data.trigger_time * randf())
+			#trigger_single(u)
 			targets.erase(u)
 		TowerData.trigger_conditions.AREA_TIME:
 			targets.append(u)

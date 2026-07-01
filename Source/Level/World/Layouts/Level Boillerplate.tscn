@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bd2ql28wugssl"]
+
+[ext_resource type="PackedScene" uid="uid://ditooupt0qhfe" path="res://Source/Level/World/Base/Base.tscn" id="1_sci35"]
+[ext_resource type="PackedScene" uid="uid://cy4yi78sjmjxq" path="res://Source/Unit/Player/Player.tscn" id="2_3f5qe"]
+[ext_resource type="PackedScene" uid="uid://cid0wtr1vxp4v" path="res://Source/Level/UI/Hud.tscn" id="3_fh8u3"]
+[ext_resource type="Script" uid="uid://dvsly52jeeslf" path="res://Source/Level/World/EnemyInstancer.gd" id="4_ox7bk"]
+[ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="5_bdt5v"]
+[ext_resource type="Resource" uid="uid://gqmr0ddmbdrc" path="res://Source/Unit/Enemy/Types/fishman.tres" id="6_r7h8d"]
+[ext_resource type="Resource" uid="uid://cj0yyeyswjuh8" path="res://Source/Unit/Enemy/Types/crawler.tres" id="7_33axt"]
+[ext_resource type="Resource" uid="uid://cvo1jnm1f8mam" path="res://Source/Unit/Enemy/Types/jellady.tres" id="8_6nku2"]
+[ext_resource type="PackedScene" uid="uid://bxuwbl1bbb4a0" path="res://Source/Interactable/Tower Site/TowerSite.tscn" id="9_3f5qe"]
+[ext_resource type="PackedScene" uid="uid://ofx71x0hbi23" path="res://Source/Interactable/Circle/ResourceCircle.tscn" id="10_fh8u3"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_sci35"]
+vertices = PackedVector2Array(3227.5703, 1446.0625, -2234.711, 1469.9375, -1525.2969, -1005.5703, 2194.289, -1298.4375)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(2201, -1309, -1533, -1015, -2248, 1480, 3242, 1456)])
+
+[node name="Alt World" type="Node2D" unique_id=1815319325]
+
+[node name="Node2D" parent="." unique_id=60688362 instance=ExtResource("1_sci35")]
+
+[node name="Player" parent="." unique_id=1190391921 instance=ExtResource("2_3f5qe")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=639697338]
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Hud" parent="Camera2D" unique_id=1382983244 instance=ExtResource("3_fh8u3")]
+
+[node name="Spawn Points" type="Node2D" parent="." unique_id=1088585131]
+
+[node name="One" type="Node2D" parent="Spawn Points" unique_id=2080853920]
+
+[node name="Node" type="Node" parent="." unique_id=1194797147 node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("4_ox7bk")
+enemy_pool = Array[ExtResource("5_bdt5v")]([ExtResource("6_r7h8d"), ExtResource("7_33axt"), ExtResource("8_6nku2")])
+spawn_points = [NodePath("../Spawn Points/One")]
+
+[node name="Timer" type="Timer" parent="Node" unique_id=1598588193]
+one_shot = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=398621725]
+navigation_polygon = SubResource("NavigationPolygon_sci35")
+
+[node name="TowerSite2" parent="." unique_id=6569348 instance=ExtResource("9_3f5qe")]
+position = Vector2(0, 588)
+
+[node name="TowerSite" parent="." unique_id=655530917 instance=ExtResource("9_3f5qe")]
+position = Vector2(0, 278)
+
+[node name="ResourceCircle" parent="." unique_id=2118307154 instance=ExtResource("10_fh8u3")]
+position = Vector2(548, 270)
+
+[node name="ResourceCircle2" parent="." unique_id=406328258 instance=ExtResource("10_fh8u3")]
+position = Vector2(-437, 245)
