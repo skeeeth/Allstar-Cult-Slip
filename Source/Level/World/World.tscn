@@ -12,10 +12,13 @@
 [ext_resource type="Script" uid="uid://c373uigs4r2l5" path="res://Source/Level/World/draw_rocks.gd" id="9_1obq6"]
 [ext_resource type="PackedScene" uid="uid://ditooupt0qhfe" path="res://Source/Level/World/Base/Base.tscn" id="11_1obq6"]
 [ext_resource type="PackedScene" uid="uid://c2og13fi0nolf" path="res://Source/Interactable/Upgrade Offer/upgrade_offer.tscn" id="12_8er02"]
-[ext_resource type="Resource" uid="uid://bjhl4pu7f188b" path="res://Resources/Upgrades/super_spore_BP.tres" id="13_kwrcj"]
+[ext_resource type="Script" uid="uid://btarx67t2mdtf" path="res://Source/Interactable/Upgrade Offer/upgrade_data.gd" id="13_21ogx"]
+[ext_resource type="Resource" uid="uid://drbsp1wvqv443" path="res://Resources/Upgrades/fertilizer.tres" id="14_a8j1u"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_pkxw5"]
-outlines = Array[PackedVector2Array]([PackedVector2Array(471, -1799, -2744, 167, -217, 2182, 3147, 364)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_kwrcj"]
+vertices = PackedVector2Array(215, -473, 538.09375, -1623.8672, 2932.8984, 315.20313, 214, -439, -220.13281, 1970.25, -822, 733, -750, 578, -99, -343, 46, -339, 172, -493, 51, -450, -130, -433, -190, -558, -200, -648, -2615.7578, 225.89844, -940, 585, -229, -397, -299, -565, -881, 343, -309, -766, -343, -736, -361, -649, 155, -360)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(2, 4, 5, 6, 7, 8), PackedInt32Array(1, 9, 10, 11, 12, 13), PackedInt32Array(5, 4, 14, 15), PackedInt32Array(1, 0, 9), PackedInt32Array(12, 11, 16, 17), PackedInt32Array(18, 15, 14), PackedInt32Array(1, 13, 19), PackedInt32Array(14, 1, 19, 20), PackedInt32Array(18, 14, 20, 21), PackedInt32Array(18, 21, 17, 16), PackedInt32Array(18, 16, 7, 6), PackedInt32Array(2, 8, 22), PackedInt32Array(2, 22, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(539, -1636, -2634, 225, -221, 1982, 2951, 317)])
 
 [node name="Node2D" type="Node2D" unique_id=1300881241]
 
@@ -43,7 +46,8 @@ movespeed = 600.0
 position = Vector2(-3, 35)
 
 [node name="Nav" type="NavigationRegion2D" parent="." unique_id=345938183]
-navigation_polygon = SubResource("NavigationPolygon_pkxw5")
+z_index = -28
+navigation_polygon = SubResource("NavigationPolygon_kwrcj")
 
 [node name="Rocks" type="Node2D" parent="Nav" unique_id=1487390503]
 script = ExtResource("9_1obq6")
@@ -64,16 +68,6 @@ position = Vector2(-296, -659)
 vertices = PackedVector2Array(-65, 10, -3, 94, 106, 101, 96, 11, -13, -107, -47, -77)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
-
-[node name="Beach" type="Polygon2D" parent="Nav" unique_id=1259780545]
-z_index = -6
-color = Color(0.79, 0.78354836, 0.4029, 1)
-polygon = PackedVector2Array(471, -1790, -2725, 180, -245, 2150, 3140, 377)
-
-[node name="Ocean" type="Polygon2D" parent="Nav" unique_id=154079453]
-z_index = -14
-color = Color(0, 0, 1, 1)
-polygon = PackedVector2Array(-5428, -3731, -4933, 6192, 6443, 5573, 5678, -4253)
 
 [node name="Spawn Clusters" type="Node2D" parent="." unique_id=998088709]
 
@@ -122,10 +116,30 @@ position = Vector2(469, 346)
 [node name="TowerSite4" parent="Tower Sites" unique_id=1683002256 instance=ExtResource("4_huh1a")]
 position = Vector2(-496, 434)
 
-[node name="Node2D" type="Node2D" parent="." unique_id=743826247]
+[node name="Upgrade Circles" type="Node2D" parent="." unique_id=743826247]
 
-[node name="Upgrade Offer" parent="." unique_id=167568939 instance=ExtResource("12_8er02")]
+[node name="Upgrade Offer" parent="Upgrade Circles" unique_id=167568939 instance=ExtResource("12_8er02")]
 position = Vector2(-216, -23)
-offer = ExtResource("13_kwrcj")
+interval = 0.0
+
+[node name="Upgrade Offer2" parent="Upgrade Circles" unique_id=244389933 instance=ExtResource("12_8er02")]
+position = Vector2(341, -48)
+interval = 0.0
+starting_pool = Array[ExtResource("13_21ogx")]([ExtResource("14_a8j1u")])
+
+[node name="Map Dressing" type="Node2D" parent="." unique_id=1132725848]
+
+[node name="Beach" type="Polygon2D" parent="Map Dressing" unique_id=1259780545]
+z_index = -6
+color = Color(0.79, 0.78354836, 0.4029, 1)
+polygon = PackedVector2Array(471, -1790, -2725, 180, -245, 2150, 3140, 377)
+
+[node name="Ocean" type="Polygon2D" parent="Map Dressing" unique_id=154079453]
+z_index = -14
+position = Vector2(-215, -98)
+color = Color(0, 0, 1, 1)
+polygon = PackedVector2Array(-5428, -3731, -4933, 6192, 6443, 5573, 5678, -4253)
+
+[node name="Upgrade Locations" type="Node2D" parent="." unique_id=277016136]
 
 [connection signal="timeout" from="Wave Managerr/Timer" to="Wave Managerr" method="_on_timer_timeout"]

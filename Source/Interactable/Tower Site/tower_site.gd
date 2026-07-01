@@ -35,13 +35,15 @@ func on_interact():
 	if !blueprint: return
 	
 	for type in blueprint.cost:
+		var type_name = ResourceManager.ResourceNames[type]
 		#print(type)
-		if !ResourceManager.try_spend(type,blueprint.cost[type]):
+		if !ResourceManager.try_spend(type_name,blueprint.cost[type]):
 			#Resource Fail
 			return
 	
 	for type in blueprint.cost:
-		ResourceManager.spend(type,blueprint.cost[type])
+		var type_name = ResourceManager.ResourceNames[type]
+		ResourceManager.spend(type_name,blueprint.cost[type])
 	
 	#if no fail, then a success
 	build()

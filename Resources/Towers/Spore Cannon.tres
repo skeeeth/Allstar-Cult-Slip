@@ -8,8 +8,8 @@
 script = ExtResource("1_6b1dq")
 tower_name = "Spore Cannon"
 sprite = ExtResource("2_js56t")
-cost = Dictionary[String, int]({
-"Spores": 4
+cost = Dictionary[int, int]({
+1: 4
 })
 trigger_condition = 1
 trigger_time = 0.05

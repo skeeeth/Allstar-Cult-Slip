@@ -7,8 +7,9 @@
 script = ExtResource("1_51p4v")
 tower_name = "SUPER Spore"
 sprite = ExtResource("2_hgmec")
-cost = Dictionary[String, int]({
-"Spores": 50
+cost = Dictionary[int, int]({
+1: 50,
+2: 1
 })
 trigger_time = 0.05
 effect_strength = 100.0
