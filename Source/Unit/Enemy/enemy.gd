@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 
 func on_death(_self):
 	assert(_self == self)
+	Scoring.add_score(max_health, "Enemy Killed")
 	queue_free()
 	
 
