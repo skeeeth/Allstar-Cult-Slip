@@ -3,6 +3,8 @@ extends Node
 signal new_key(key:String, value:int)
 signal key_update(key:String, change:int)
 
+signal stat_change
+
 var current:Dictionary[String, int]
 enum ResourceTypes{B,O,U}
 
@@ -38,3 +40,13 @@ func spend(type:String, amount:int):
 	#only call if try_spend confirms the existance and amount of type
 	current[type] -= amount
 	key_update.emit(type,-amount)
+
+
+func get_current(key:ResourceManager.ResourceTypes):
+	return current[ResourceManager.ResourceNames[key]]
+
+
+func change_cadence(type:ResourceManager.ResourceTypes,amount:float):
+	ResourceCadence[type] += amount
+	
+	stat_change.emit()

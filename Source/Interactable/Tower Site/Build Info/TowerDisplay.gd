@@ -6,7 +6,8 @@ class_name TowerDisplay
 @onready var attack: Label = $"VBoxContainer/HBoxContainer/stat block/Attack"
 @onready var speed: Label = $"VBoxContainer/HBoxContainer/stat block/Speed"
 @onready var type: Label = $"VBoxContainer/HBoxContainer/stat block/Type"
-@onready var cost: Label = $VBoxContainer/HBoxContainer/VBoxContainer/Cost
+@export var cost: Cost_Block
+
 @onready var index_number: Label = $IndexNumber
 
 
@@ -27,21 +28,12 @@ func dress(data:TowerData):
 					data.trigger_conditions.UNIT_TIME else "AOE"
 	type.text = type_text
 	
-	update_cost_text(data)
+	cost.update_cost_text(data.cost)
 	
 
-func update_cost_text(data:TowerData):
-	#colored text here would be good but would bb code should have a
-	# fundamentally different approach
-	var cost_text:String = ""
-	for k in data.cost.keys():
-		cost_text += "%s: %s/%s\n" % [k, ResourceManager.current[k], data.cost[k]]
-	
-	cost.text = cost_text
 	
 func set_hover():
 	add_theme_stylebox_override("panel",hover_box)
 	
 func clear_hover():
-	
 	add_theme_stylebox_override("panel", unhover_box)

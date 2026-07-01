@@ -4,7 +4,7 @@ class_name TowerData
 @export var tower_name:String
 @export var sprite:Texture2D
 
-@export var cost:Dictionary[String,int]
+@export var cost:Dictionary[ResourceManager.ResourceTypes,int]
 
 enum trigger_conditions{AREA_TIME, UNIT_TIME, ENTRY, EXIT}
 @export var trigger_condition:trigger_conditions

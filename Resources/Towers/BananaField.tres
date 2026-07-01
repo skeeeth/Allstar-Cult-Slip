@@ -7,8 +7,5 @@
 script = ExtResource("1_k20hp")
 tower_name = "Bannana Field"
 sprite = ExtResource("2_dyxgp")
-cost = Dictionary[String, int]({
-"Bananas": 4
-})
 area_size = 200.0
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"

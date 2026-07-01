@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://drbsp1wvqv443"]
+
+[ext_resource type="Script" uid="uid://btarx67t2mdtf" path="res://Source/Interactable/Upgrade Offer/upgrade_data.gd" id="1_1nr5r"]
+[ext_resource type="Resource" uid="uid://dkh5n8jlq88wc" path="res://Resources/Towers/SuperSpore.tres" id="2_pp414"]
+
+[resource]
+script = ExtResource("1_1nr5r")
+name = "Fertilizer"
+type = 2
+tower_data = ExtResource("2_pp414")
+stat_increases = Dictionary[String, float]({
+"cadence_B": -1.0
+})
+metadata/_custom_type_script = "uid://btarx67t2mdtf"

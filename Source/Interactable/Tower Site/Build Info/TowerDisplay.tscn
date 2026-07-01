@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c811mes3j7bpk" path="res://Source/Interactable/Tower Site/Build Info/TowerDisplay.gd" id="1_phg03"]
 [ext_resource type="Texture2D" uid="uid://c5kii1yvg8xpe" path="res://icon.svg" id="2_uac31"]
+[ext_resource type="PackedScene" uid="uid://dysyp1s6hpiwg" path="res://Source/Level/UI/Cost Block/CostBlock.tscn" id="3_uac31"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phg03"]
 content_margin_left = 0.0
@@ -19,10 +20,11 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[node name="PanelContainer" type="PanelContainer" unique_id=1923559672]
+[node name="PanelContainer" type="PanelContainer" unique_id=1923559672 node_paths=PackedStringArray("cost")]
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_phg03")
+cost = NodePath("VBoxContainer/HBoxContainer/Cost Block")
 hover_box = SubResource("StyleBoxFlat_phg03")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=639481684]
@@ -58,20 +60,8 @@ text = "X Target(s)"
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer" unique_id=839121615]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1136554067]
+[node name="Cost Block" parent="VBoxContainer/HBoxContainer" unique_id=2101558873 instance=ExtResource("3_uac31")]
 layout_mode = 2
-text = "Cost:"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer" unique_id=1828741668]
-layout_mode = 2
-
-[node name="Cost" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1488502190]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Bananas: X
-Spores: X
-Souls: X"
-vertical_alignment = 1
 
 [node name="IndexNumber" type="Label" parent="." unique_id=1428570717]
 layout_mode = 2

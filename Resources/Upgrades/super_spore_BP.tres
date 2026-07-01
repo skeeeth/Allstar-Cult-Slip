@@ -5,5 +5,6 @@
 
 [resource]
 script = ExtResource("1_1rx8l")
+name = "SUPER SPORE"
 tower_data = ExtResource("2_uttk6")
 metadata/_custom_type_script = "uid://btarx67t2mdtf"
