@@ -24,7 +24,6 @@ static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	
 	return new_tower
 
-
 func _on_effect_area_area_entered(area: Area2D) -> void:
 	var parent = area.get_parent()
 	assert(parent is Unit)

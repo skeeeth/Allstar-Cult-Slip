@@ -16,3 +16,5 @@ enum effect_types{DAMAGE, SLOW, SLIP}
 @export var effect_strength:float = 10
 
 @export var area_size:float
+
+@export var upgrade:TowerData

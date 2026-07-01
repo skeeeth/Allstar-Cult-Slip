@@ -18,6 +18,7 @@ var count_base:float = 4
 
 func _ready() -> void:
 	wave_timer.wait_time = next_delay
+	wave_timer.timeout.connect(_on_timer_timeout)
 	determine_wave()
 
 
@@ -35,6 +36,7 @@ func determine_wave():
 	next_count = floor(count_base * next_type.wave_factor)
 	var indicator:WaveIndicator = WaveIndicator._create(next_delay,next_type,next_count)
 	add_child(indicator)
+	indicator.jitter = scatter_range
 	indicator.camera = camera_2d
 	indicator.display(next_type.sprite,next_count)
 	indicator.home = next_point.position

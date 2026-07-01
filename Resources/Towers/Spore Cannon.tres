@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_6b1dq"]
 [ext_resource type="Texture2D" uid="uid://cpdy45nuskuus" path="res://Assets/CUSTOM PLACEHOLDER/spore_cannon.png" id="2_js56t"]
+[ext_resource type="Resource" uid="uid://dkh5n8jlq88wc" path="res://Resources/Towers/SuperSpore.tres" id="3_g3s0g"]
 
 [resource]
 script = ExtResource("1_6b1dq")
@@ -13,4 +14,5 @@ cost = Dictionary[String, int]({
 trigger_condition = 1
 trigger_time = 0.05
 area_size = 500.0
+upgrade = ExtResource("3_g3s0g")
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"
