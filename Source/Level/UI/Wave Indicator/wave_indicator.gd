@@ -15,9 +15,9 @@ var type:EnemyData
 
 var jitter:float = 100
 
-static func _create(set_delay:float, type:EnemyData,count:int):
+static func _create(set_delay:float, _type:EnemyData,count:int):
 	var new_display = self_scene.instantiate()
-	new_display.type = type
+	new_display.type = _type
 	new_display.quota = count
 	new_display.progress_bar.max_value = set_delay
 	new_display.progress_bar.value = set_delay
@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 	#print(progress_bar.value)
 	if progress_bar.value <= 0 and visible:
 		visible = false
-		var new_tween = create_tween()
+		var new_tween = self.create_tween()
 		new_tween.tween_callback(instance_unit).set_delay(interval)
 		new_tween.set_loops(quota)
 		new_tween.finished.connect(queue_free)

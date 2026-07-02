@@ -3,9 +3,12 @@ class_name TowerSite
 
 @onready var interaction_area: Interactable = $"Interaction Area"
 @onready var info_box: HBoxContainer = $"Tower Info"
+#@onready var upgrade_display: HBoxContainer = $"Upgrade Display"
+
 @onready var hover_sprite: Sprite2D = $HoverSprite
 
-var blueprint:TowerData 
+var blueprint:TowerData
+var current_tower:Tower
 @export var starting_pool:Array[TowerData]
 static var tower_pool:Array[TowerData]
 static var sites:Array[TowerSite]
@@ -14,7 +17,7 @@ var displays:Array[TowerDisplay]
 @export var range_color:Color
 
 func _draw() -> void:
-	if blueprint:
+	if blueprint and hover_sprite.visible:
 		draw_circle(Vector2.ZERO,blueprint.area_size,range_color)
 	
 func _ready() -> void:
@@ -43,11 +46,21 @@ func on_interact():
 		ResourceManager.spend(type_name,blueprint.cost[type])
 	
 	#if no fail, then a success
-	var new_tower = Tower.create(blueprint)
-	add_child(new_tower)
-	interaction_area.monitoring = false
+	build()
 	#queue_free()
 
+func build():
+	if current_tower:
+		current_tower.queue_free()
+	
+	var new_tower = Tower.create(blueprint)
+	add_child(new_tower)
+	#interaction_area.monitoring = false
+	current_tower = new_tower
+	if blueprint.upgrade:
+		blueprint = blueprint.upgrade
+
+	
 func _input(event: InputEvent) -> void:
 	if !info_box.visible:
 		return
@@ -74,10 +87,14 @@ func select_blueprint(index:int):
 	
 func on_enter():
 	info_box.visible = true
+	hover_sprite.visible = true
+	queue_redraw()
 	#if data.te
 	
 func on_exit():
 	info_box.visible = false
+	hover_sprite.visible = false
+	queue_redraw()
 
 func create_display(data,index):
 	var new_display = TowerDisplay.create()

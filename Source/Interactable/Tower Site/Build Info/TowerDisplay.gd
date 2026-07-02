@@ -19,7 +19,7 @@ static  func create() -> TowerDisplay:
 	var new_display = self_scene.instantiate()
 	return new_display
 
-func dress(data:TowerData):
+func dress(data:TowerData, with_cost:bool = true):
 	
 	tower_name.text = data.tower_name
 	attack.text = "Damage: %s" % data.effect_strength

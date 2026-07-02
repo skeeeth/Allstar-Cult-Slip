@@ -24,7 +24,6 @@ static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	
 	return new_tower
 
-
 func _on_effect_area_area_entered(area: Area2D) -> void:
 	var parent = area.get_parent()
 	assert(parent is Unit)
@@ -42,7 +41,10 @@ func register_unit(u:Unit):
 	match data.trigger_condition:
 		TowerData.trigger_conditions.ENTRY:
 			targets.append(u)
-			trigger_single(u)
+			u.create_tween().tween_callback(\
+					trigger_single.bind(u)).set_delay(
+							data.trigger_time * randf())
+			#trigger_single(u)
 			targets.erase(u)
 		TowerData.trigger_conditions.AREA_TIME:
 			targets.append(u)

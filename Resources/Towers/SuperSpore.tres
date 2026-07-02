@@ -13,5 +13,5 @@ cost = Dictionary[int, int]({
 })
 trigger_time = 0.05
 effect_strength = 100.0
-area_size = 666.0
+area_size = 1666.0
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"
