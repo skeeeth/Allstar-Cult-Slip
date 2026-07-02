@@ -35,3 +35,6 @@ shape = SubResource("RectangleShape2D_pkxw5")
 sprite_frames = SubResource("SpriteFrames_pkxw5")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1482741900]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1918605825]
+current = true

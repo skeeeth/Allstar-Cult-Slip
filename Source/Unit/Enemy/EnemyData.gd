@@ -7,3 +7,5 @@ class_name EnemyData
 
 @export var size = 100
 @export var wave_factor:float = 1.0
+
+@export var entry_sound:AudioStream

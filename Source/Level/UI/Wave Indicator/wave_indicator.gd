@@ -8,6 +8,8 @@ var home:Vector2
 var camera:Camera2D
 const self_scene:PackedScene = preload("uid://bn6wbpb2i5dd")
 @export var progress_bar: ProgressBar
+@export var wave_sound_effect:AudioStream
+
 var time_alive = 0
 var quota:int
 var interval:float = 0.1
