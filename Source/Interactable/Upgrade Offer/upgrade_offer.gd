@@ -24,7 +24,7 @@ func on_interact():
 	apply_upgrade()
 
 func on_enter():
-	pass
+	info_block
 
 func on_exit():
 	pass
