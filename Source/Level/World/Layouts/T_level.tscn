@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cid0wtr1vxp4v" path="res://Source/Level/UI/Hud.tscn" id="3_fh8u3"]
 [ext_resource type="Script" uid="uid://dvsly52jeeslf" path="res://Source/Level/World/EnemyInstancer.gd" id="4_ox7bk"]
 [ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="5_bdt5v"]
-[ext_resource type="Resource" uid="uid://gqmr0ddmbdrc" path="res://Source/Unit/Enemy/Types/fishman.tres" id="6_r7h8d"]
-[ext_resource type="Resource" uid="uid://cj0yyeyswjuh8" path="res://Source/Unit/Enemy/Types/crawler.tres" id="7_33axt"]
-[ext_resource type="Resource" uid="uid://cvo1jnm1f8mam" path="res://Source/Unit/Enemy/Types/jellady.tres" id="8_6nku2"]
+[ext_resource type="Resource" uid="uid://gqmr0ddmbdrc" path="res://Resources/Enemy Types/fishman.tres" id="6_r7h8d"]
+[ext_resource type="Resource" uid="uid://cj0yyeyswjuh8" path="res://Resources/Enemy Types/crawler.tres" id="7_33axt"]
+[ext_resource type="Resource" uid="uid://cvo1jnm1f8mam" path="res://Resources/Enemy Types/jellady.tres" id="8_6nku2"]
 [ext_resource type="PackedScene" uid="uid://bxuwbl1bbb4a0" path="res://Source/Interactable/Tower Site/TowerSite.tscn" id="9_3f5qe"]
 [ext_resource type="PackedScene" uid="uid://ofx71x0hbi23" path="res://Source/Interactable/Circle/ResourceCircle.tscn" id="10_fh8u3"]
 

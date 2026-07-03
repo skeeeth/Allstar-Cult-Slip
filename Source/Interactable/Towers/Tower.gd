@@ -79,14 +79,28 @@ func trigger_all():
 		
 
 func trigger_single(u:Unit):
+	
+	##fire projectile if tower is projectile type
+	if data.projectile:
+		fire_projectile(u)
+		return 
+	
+	##just do the thing otherwise
+	apply_effects(u)
+	
+func apply_effects(target:Unit):
 	for e in data.effects.keys():
 		match e:
 			TowerData.effect_types.DAMAGE:
-				u.take_damage(data.effects[e])
+				target.take_damage(data.effects[e])
 			TowerData.effect_types.SLIP:
-				u.slip(data.effects[e])
-	u.take_damage(data.effect_strength)
-	
+				target.slip(data.effects[e])
+
+func fire_projectile(target:Unit):
+	var new_projectile = Projectile.create(data.projectile,self)
+	add_child(new_projectile)
+	new_projectile.target = target
+
 func set_target_last():
 	if targets.size() < max_targets and units_inside.size() > 0:
 		if data.trigger_condition == TowerData.trigger_conditions.UNIT_TIME:

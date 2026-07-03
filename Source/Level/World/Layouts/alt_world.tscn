@@ -1,8 +1,34 @@
 [gd_scene format=3 uid="uid://dia8knv63kqum"]
 
-[ext_resource type="PackedScene" uid="uid://bd2ql28wugssl" path="res://Source/Level/World/Layouts/Level Boillerplate.tscn" id="1_6u65b"]
+[ext_resource type="PackedScene" uid="uid://bd2ql28wugssl" path="res://Source/Level/World/Layouts/T_level.tscn" id="1_6u65b"]
+[ext_resource type="PackedScene" uid="uid://ofx71x0hbi23" path="res://Source/Interactable/Circle/ResourceCircle.tscn" id="2_nh767"]
+[ext_resource type="PackedScene" uid="uid://c2og13fi0nolf" path="res://Source/Interactable/Upgrade Offer/upgrade_offer.tscn" id="3_04pb6"]
 
 [node name="Alt World" unique_id=1815319325 instance=ExtResource("1_6u65b")]
 
 [node name="One" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="0" unique_id=2080853920]
 position = Vector2(13, 1155)
+
+[node name="L1" type="Node2D" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="1" unique_id=1624169314]
+position = Vector2(647, 1057)
+
+[node name="L2" type="Node2D" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="2" unique_id=1751302321]
+position = Vector2(1466, 895)
+
+[node name="Node" parent="." index="4" unique_id=1194797147 node_paths=PackedStringArray("spawn_points")]
+spawn_points = [NodePath("../Spawn Points/One"), NodePath("../Spawn Points/L1"), NodePath("../Spawn Points/L2")]
+
+[node name="NavigationRegion2D" parent="." index="5" unique_id=398621725]
+metadata/_edit_lock_ = true
+
+[node name="ResourceCircle3" parent="." index="10" unique_id=2118307154 instance=ExtResource("2_nh767")]
+position = Vector2(-1148, 56)
+
+[node name="ResourceCircle4" parent="." index="11" unique_id=1943158825 instance=ExtResource("2_nh767")]
+position = Vector2(2269, 91)
+
+[node name="Upgrade Offer" parent="." index="12" unique_id=167568939 instance=ExtResource("3_04pb6")]
+position = Vector2(-894, 561)
+
+[node name="Upgrade Offer2" parent="." index="13" unique_id=1793415706 instance=ExtResource("3_04pb6")]
+position = Vector2(1542, 505)

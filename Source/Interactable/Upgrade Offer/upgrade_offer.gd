@@ -24,10 +24,10 @@ func on_interact():
 	apply_upgrade()
 
 func on_enter():
-	info_block
+	info_block.visible = true
 
 func on_exit():
-	pass
+	info_block.visible = false
 
 func change_offer():
 	var new_blueprint:Upgrade = upgrade_pool.pick_random()

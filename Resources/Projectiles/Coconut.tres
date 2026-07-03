@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://cpw70255yipkg"]
+
+[ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_oadmr"]
+[ext_resource type="Texture2D" uid="uid://b4xjpav2ajulb" path="res://Assets/BEE WIPs/COCONUT.png" id="2_3bano"]
+
+[resource]
+script = ExtResource("1_oadmr")
+sprite = ExtResource("2_3bano")
+speed = 600.0
+metadata/_custom_type_script = "uid://bpp0od0nilhfy"

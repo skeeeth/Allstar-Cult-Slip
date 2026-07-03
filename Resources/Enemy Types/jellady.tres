@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cvo1jnm1f8mam"]
+
+[ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="1_qkcph"]
+[ext_resource type="Texture2D" uid="uid://dyls51hp6s63a" path="res://Assets/BEE WIPs/JELLADY.png" id="2_653ln"]
+
+[resource]
+script = ExtResource("1_qkcph")
+sprite = ExtResource("2_653ln")
+movespeed = 150.0
+max_health = 50.0
+metadata/_custom_type_script = "uid://c7wrjd2iicq8d"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://cj0yyeyswjuh8"]
+
+[ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="1_bcnlw"]
+[ext_resource type="Texture2D" uid="uid://phbfpde8oonc" path="res://Assets/BEE WIPs/crawler.jpg" id="2_a3ta1"]
+
+[resource]
+script = ExtResource("1_bcnlw")
+sprite = ExtResource("2_a3ta1")
+movespeed = 30.0
+max_health = 500.0
+wave_factor = 0.5
+metadata/_custom_type_script = "uid://c7wrjd2iicq8d"

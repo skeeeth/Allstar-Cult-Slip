@@ -17,4 +17,6 @@ enum effect_types{DAMAGE, SLOW, SLIP}
 
 @export var area_size:float
 
+@export var projectile:ProjectileData
+
 @export var upgrade:TowerData
