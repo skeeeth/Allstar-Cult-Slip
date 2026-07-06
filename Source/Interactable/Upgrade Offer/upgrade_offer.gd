@@ -13,7 +13,8 @@ static var upgrade_pool:Array[Upgrade]
 
 func _ready() -> void:
 	upgrade_pool = starting_pool
-	change_offer()
+#	change_offer()
+	info_block.set_info(offer)
 	interactable.interacted.connect(on_interact)
 	interactable.entered.connect(on_enter)
 	interactable.exited.connect(on_exit)
@@ -51,9 +52,13 @@ func apply_upgrade():
 #region Do the damn thing
 	match  offer.type:
 		Upgrade.effects.BLUEPRINT:
-			TowerSite.add_pool(offer.tower_data)
+			TowerSite.add_pool(offer.associated_towers[0])
 		Upgrade.effects.RESOURCE_BUFF:
 			ResourceCircle.get_upgrade(offer.stat_increases)
+		Upgrade.effects.PROJECTILE_BUFF:
+			for proj in offer.associated_proj:
+				proj.add_stats(offer.stat_increases)
+				
 #endregion
 
 

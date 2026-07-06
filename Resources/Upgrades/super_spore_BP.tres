@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://bjhl4pu7f188b"]
 
 [ext_resource type="Script" uid="uid://btarx67t2mdtf" path="res://Source/Interactable/Upgrade Offer/upgrade_data.gd" id="1_1rx8l"]
+[ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_37k8w"]
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_3j5x6"]
 [ext_resource type="Resource" uid="uid://dkh5n8jlq88wc" path="res://Resources/Towers/SuperSpore.tres" id="2_uttk6"]
 
 [resource]
 script = ExtResource("1_1rx8l")
 name = "SUPER SPORE"
-tower_data = ExtResource("2_uttk6")
+associated_towers = Array[ExtResource("2_3j5x6")]([ExtResource("2_uttk6")])
 metadata/_custom_type_script = "uid://btarx67t2mdtf"

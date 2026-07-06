@@ -19,10 +19,11 @@ static func create(d:ProjectileData,source:Tower)-> Projectile:
 	new_p.data = d
 	new_p.source_tower = source
 	new_p.sprite.texture = d.sprite
-	new_p.movespeed = d.speed
+	new_p.sprite.size = Vector2(d.size + d.size_mod ,d.size + d.size_mod)
+	new_p.movespeed = d.speed + d.speed_mod
 	if d.spash_size > 0:
 		var collision_shape = CircleShape2D.new()
-		collision_shape.radius = d.size
+		collision_shape.radius = d.size + d.size_mod
 		new_p.shape_node.shape = collision_shape
 	return new_p
 

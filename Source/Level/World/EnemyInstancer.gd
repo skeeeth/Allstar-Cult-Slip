@@ -20,6 +20,12 @@ func _ready() -> void:
 	wave_timer.wait_time = next_delay
 	wave_timer.timeout.connect(_on_timer_timeout)
 	determine_wave()
+	for p in spawn_points:
+		var line = Line2D.new()
+		line.width = 3
+		line.add_point(Vector2.ZERO)
+		line.add_point(-p.position)
+		p.add_child(line)
 
 
 func _on_timer_timeout() -> void:

@@ -12,3 +12,6 @@ func update_cost_text(data:Dictionary[ResourceManager.ResourceTypes,int]):
 		cost_text += "%s: %s/%s\n" % [k, ResourceManager.get_current(k), data[k]]
 	
 	cost.text = cost_text
+
+func check_afford() -> bool:
+	return true

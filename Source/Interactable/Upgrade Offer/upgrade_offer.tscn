@@ -21,5 +21,8 @@ starting_pool = Array[ExtResource("3_51exp")]([ExtResource("2_u85dk")])
 modulate = Color(0.5137255, 0, 0, 0.30980393)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("5_hrwrk")
+flip_h = true
+flip_v = true
 
 [node name="Info Block" parent="." unique_id=501015177 instance=ExtResource("6_51exp")]
+visible = false

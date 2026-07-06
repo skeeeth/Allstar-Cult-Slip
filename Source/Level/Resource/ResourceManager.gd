@@ -11,7 +11,7 @@ enum ResourceTypes{B,O,U}
 const ResourceNames:Dictionary[ResourceTypes,String] = {
 	ResourceManager.ResourceTypes.B: "Bananas",
 	ResourceManager.ResourceTypes.O: "Spores",
-	ResourceManager.ResourceTypes.U: "Souls"
+	ResourceManager.ResourceTypes.U: "Soul Fragments"
 }
 
 var ResourceCadence:Dictionary[ResourceTypes,float] = {

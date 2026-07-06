@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bd2ql28wugssl" path="res://Source/Level/World/Layouts/T_level.tscn" id="1_6u65b"]
 [ext_resource type="PackedScene" uid="uid://ofx71x0hbi23" path="res://Source/Interactable/Circle/ResourceCircle.tscn" id="2_nh767"]
 [ext_resource type="PackedScene" uid="uid://c2og13fi0nolf" path="res://Source/Interactable/Upgrade Offer/upgrade_offer.tscn" id="3_04pb6"]
+[ext_resource type="Resource" uid="uid://bx8sruyl7ngi1" path="res://Resources/Upgrades/BiggerCoconut.tres" id="4_ic43r"]
 
 [node name="Alt World" unique_id=1815319325 instance=ExtResource("1_6u65b")]
 
@@ -28,7 +29,9 @@ position = Vector2(-1148, 56)
 position = Vector2(2269, 91)
 
 [node name="Upgrade Offer" parent="." index="12" unique_id=167568939 instance=ExtResource("3_04pb6")]
-position = Vector2(-894, 561)
+position = Vector2(-297, -20)
+offer = ExtResource("4_ic43r")
 
 [node name="Upgrade Offer2" parent="." index="13" unique_id=1793415706 instance=ExtResource("3_04pb6")]
 position = Vector2(1542, 505)
+offer = ExtResource("4_ic43r")

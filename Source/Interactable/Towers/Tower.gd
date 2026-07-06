@@ -16,7 +16,7 @@ var target_time:Dictionary[Unit,float]
 
 static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	var new_tower:Tower = self_scene.instantiate()
-	new_tower.data = from_data
+	new_tower.data = load(from_data.resource_path)
 	var circle = CircleShape2D.new()
 	circle.radius = from_data.area_size
 	new_tower.range_shape.shape = circle
@@ -28,7 +28,6 @@ func _on_effect_area_area_entered(area: Area2D) -> void:
 	var parent = area.get_parent()
 	assert(parent is Unit)
 	register_unit(parent)
-	pass # Replace with function body.
 
 func _on_effect_area_area_exited(area: Area2D) -> void:
 	var parent = area.get_parent()

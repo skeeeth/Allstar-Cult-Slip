@@ -9,9 +9,10 @@ class_name Upgrade
 
 @export var unlocks:Array[Upgrade] #circular ref danger?
 
-enum effects{BLUEPRINT, TOWER_BUFF, RESOURCE_BUFF}
+enum effects{BLUEPRINT, TOWER_BUFF, RESOURCE_BUFF, PROJECTILE_BUFF}
 @export var type:effects
 
-@export var tower_data:TowerData
+@export var associated_towers:Array[TowerData]
+@export var associated_proj:Array[ProjectileData]
 
 @export var stat_increases:Dictionary[String, float]
