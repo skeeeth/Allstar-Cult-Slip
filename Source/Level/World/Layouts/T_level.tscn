@@ -38,7 +38,7 @@ enemy_pool = Array[ExtResource("5_bdt5v")]([ExtResource("6_r7h8d"), ExtResource(
 spawn_points = [NodePath("../Spawn Points/One")]
 
 [node name="Timer" type="Timer" parent="Node" unique_id=1598588193]
-autostart = true
+one_shot = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=398621725]
 navigation_polygon = SubResource("NavigationPolygon_sci35")

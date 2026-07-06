@@ -16,8 +16,15 @@ position = Vector2(647, 1057)
 [node name="L2" type="Node2D" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="2" unique_id=1751302321]
 position = Vector2(1466, 895)
 
-[node name="Node" parent="." index="4" unique_id=1194797147 node_paths=PackedStringArray("spawn_points")]
+[node name="Node" parent="." index="4" unique_id=1194797147 node_paths=PackedStringArray("spawn_points", "moonlight")]
 spawn_points = [NodePath("../Spawn Points/One"), NodePath("../Spawn Points/L1"), NodePath("../Spawn Points/L2")]
+moonlight = NodePath("Moonlight")
+
+[node name="Moonlight" type="DirectionalLight2D" parent="Node" index="1" unique_id=1050351992]
+light_mask = 0
+color = Color(0.9353103, 0.9271151, 0.726587, 1)
+energy = 0.0
+blend_mode = 1
 
 [node name="NavigationRegion2D" parent="." index="5" unique_id=398621725]
 metadata/_edit_lock_ = true
