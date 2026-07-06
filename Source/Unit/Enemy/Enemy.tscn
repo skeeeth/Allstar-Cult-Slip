@@ -2,10 +2,16 @@
 
 [ext_resource type="Script" uid="uid://6onurcyv5j2a" path="res://Source/Unit/Enemy/enemy.gd" id="1_wm6wr"]
 [ext_resource type="Texture2D" uid="uid://r0d41gilvkvb" path="res://Assets/BEE WIPs/FISHMAN.png" id="2_lbiay"]
+[ext_resource type="AudioStream" uid="uid://dl6r2pc6gi68q" path="res://Assets/Sounds/Damage/damagetick_enemy.wav" id="3_g6o72"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qtjwj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lbiay"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mopxf"]
+random_volume_offset_db = 0.1
+streams_count = 1
+stream_0/stream = ExtResource("3_g6o72")
 
 [node name="Enemy" type="Node2D" unique_id=1182452479 node_paths=PackedStringArray("sprite", "hp_bar")]
 script = ExtResource("1_wm6wr")
@@ -49,6 +55,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boid Area" unique_id=1382246641]
 shape = SubResource("CircleShape2D_lbiay")
 disabled = true
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="." unique_id=1792350016]
+stream = SubResource("AudioStreamRandomizer_mopxf")
+volume_db = -3.0
+attenuation = 2.8284235
 
 [connection signal="area_entered" from="Boid Area" to="." method="_on_boid_area_area_entered"]
 [connection signal="area_exited" from="Boid Area" to="." method="_on_boid_area_area_exited"]

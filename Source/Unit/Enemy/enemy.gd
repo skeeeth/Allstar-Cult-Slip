@@ -3,6 +3,8 @@ class_name Enemy
 
 var data:EnemyData
 @onready var navi: NavigationAgent2D = $Navi
+@onready var hit_sound: AudioStreamPlayer2D = $Hit
+
 @export var sprite:Sprite2D
 var movespeed:float = 100
 
@@ -72,6 +74,10 @@ func slip(amount:float):
 	slipping.parallel().tween_property(sprite,"rotation",0,startup).set_delay(amount)
 
 
+func take_damage(amount:float):
+	hit_sound.play()
+	super(amount)
+	
 #func _on_boid_area_area_entered(area: Area2D) -> void:
 	#var parent = area.get_parent()
 	#assert(parent is Enemy)
