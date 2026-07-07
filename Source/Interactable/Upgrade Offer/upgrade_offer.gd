@@ -58,7 +58,9 @@ func apply_upgrade():
 		Upgrade.effects.PROJECTILE_BUFF:
 			for proj in offer.associated_proj:
 				proj.add_stats(offer.stat_increases)
-				
+		Upgrade.effects.TOWER_BUFF:
+			for t in offer.associated_towers:
+				t.get_upgrade(offer.stat_increases)
 #endregion
 
 

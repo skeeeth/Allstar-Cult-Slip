@@ -89,12 +89,20 @@ func trigger_single(u:Unit):
 	apply_effects(u)
 	
 func apply_effects(target:Unit):
-	for e in data.effects.keys():
+	var read_effects:Dictionary = data.effects.duplicate_deep()
+	
+	for bonus in data.effect_mod:
+		if read_effects.has(bonus):
+			read_effects[bonus] += data.effect_mod[bonus]
+		else:
+			read_effects[bonus] = data.effect_mod[bonus]
+	
+	for e in read_effects:
 		match e:
 			TowerData.effect_types.DAMAGE:
-				target.take_damage(data.effects[e])
+				target.take_damage(read_effects[e])
 			TowerData.effect_types.SLIP:
-				target.slip(data.effects[e])
+				target.slip(read_effects[e])
 
 func fire_projectile(target:Unit):
 	var new_projectile = Projectile.create(data.projectile,self)

@@ -53,7 +53,7 @@ func build():
 	if current_tower:
 		current_tower.queue_free()
 	
-	var new_tower = Tower.create(blueprint)
+	var new_tower = Tower.create(load(blueprint.resource_path))
 	add_child(new_tower)
 	#interaction_area.monitoring = false
 	current_tower = new_tower
