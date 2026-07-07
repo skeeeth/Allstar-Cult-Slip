@@ -1,8 +1,8 @@
 extends Node
 
-
 signal game_reseting
 signal score_changed
+signal game_loss
 
 var breakdown:Dictionary[String,float]
 
@@ -10,6 +10,7 @@ func save_data():
 	pass
 
 func add_score(amount:float, category:String):
+	score_changed.emit()
 	if breakdown.has(category):
 		breakdown[category] += amount
 	else:
@@ -27,7 +28,7 @@ func reset_game():
 	pass
 
 func end_game():
-	reset_game()
+	game_loss.emit()
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_r"):

@@ -7,8 +7,11 @@
 
 [node name="Alt World" unique_id=1815319325 instance=ExtResource("1_6u65b")]
 
+[node name="Base" parent="." index="0" unique_id=60688362]
+loss_enabled = true
+
 [node name="One" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="0" unique_id=2080853920]
-position = Vector2(13, 1155)
+position = Vector2(-10, 217)
 
 [node name="L1" type="Node2D" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="1" unique_id=1624169314]
 position = Vector2(647, 1057)

@@ -15,17 +15,17 @@ var count_base:float = 4
 
 @onready var hud: CanvasLayer = $"../Camera2D/Hud"
 @onready var camera_2d: Camera2D = $"../Camera2D"
-@export var next_delay:float = 4
+var next_delay:float = 0
 @export var night_length:float = 5
 @export var day_length:float = 5
 var is_day:bool = true
 var day_night_timer:Timer
 @export var night_waves:int = 3
 var waves_left:int = night_waves
-const warning_time:float = 8
+const warning_time:float = 1
 
 func _ready() -> void:
-	wave_timer.wait_time = next_delay
+	#wave_timer.wait_time = next_delay
 	wave_timer.timeout.connect(_on_timer_timeout)
 	#determine_wave()
 	
@@ -47,17 +47,16 @@ func _on_timer_timeout() -> void:
 	wave_timer.start()
 	
 	#spawn_wave(next_point,next_type,next_count)
+	if waves_left <= 0:
+		return
+	
+	waves_left -= 1
 	
 	determine_wave()
 
 func determine_wave():
 	next_point =  spawn_points.pick_random()
 	next_type = enemy_pool.pick_random()
-	
-	if waves_left <= 0:
-		return
-	
-	waves_left -= 1
 	
 	var indicator:WaveIndicator = WaveIndicator._create(warning_time,next_type,next_count)
 	add_child(indicator)
@@ -105,3 +104,8 @@ func start_day():
 	
 	var fade = create_tween()
 	fade.tween_property(moonlight,"energy",0.0,1)
+	
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("debug_e"):
+		determine_wave()

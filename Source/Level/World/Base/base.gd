@@ -13,6 +13,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	current_hp -= 10.0
 	if current_hp <= 0 and loss_enabled:
 		end_game()
+		loss_enabled = false
 	hp_label.text = "Base HP: %s/%s" % [current_hp, 100.0]
 
 

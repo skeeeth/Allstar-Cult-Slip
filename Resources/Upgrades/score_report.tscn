@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cjufiy4va5eni"]
+
+[ext_resource type="Script" uid="uid://dscckij835ijc" path="res://Resources/Upgrades/score_report.gd" id="1_7hrj1"]
+
+[node name="VBoxContainer" type="PanelContainer" unique_id=995752930 node_paths=PackedStringArray("breakdown")]
+visible = false
+offset_right = 227.0
+offset_bottom = 244.0
+script = ExtResource("1_7hrj1")
+breakdown = NodePath("VBoxContainer/Breakdown")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1516942928]
+layout_mode = 2
+
+[node name="Breakdown" type="Label" parent="VBoxContainer" unique_id=412794650]
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer" unique_id=220079064]
+layout_mode = 2
+placeholder_text = "name"

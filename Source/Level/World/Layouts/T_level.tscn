@@ -18,7 +18,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(2201, -1309, -1533, -10
 
 [node name="Alt World" type="Node2D" unique_id=1815319325]
 
-[node name="Node2D" parent="." unique_id=60688362 instance=ExtResource("1_sci35")]
+[node name="Base" parent="." unique_id=60688362 instance=ExtResource("1_sci35")]
 
 [node name="Player" parent="." unique_id=1190391921 instance=ExtResource("2_3f5qe")]
 

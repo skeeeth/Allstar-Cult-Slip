@@ -9,6 +9,7 @@ var store:int
 @onready var interact_hitbox: Interactable = $"Interaction Area"
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var count_text: Label = $"Count Text"
+@onready var collect_sound: AudioStreamPlayer2D = $Harvest
 
 func _ready() -> void:
 	interact_hitbox.interacted.connect(on_interaction)
@@ -18,9 +19,12 @@ func _ready() -> void:
 func on_interaction():
 	if store >= 1:
 		ResourceManager.add_resource(ResourceManager.ResourceNames[type],store)
+		Scoring.add_score(store * 50, "Resources Gathered")
 		store = 0
 		progress = 0
 		roll_resource()
+
+		collect_sound.play()
 
 func _process(delta: float) -> void:
 	progress += delta
