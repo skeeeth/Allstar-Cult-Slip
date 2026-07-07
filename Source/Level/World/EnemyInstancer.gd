@@ -22,7 +22,7 @@ var is_day:bool = true
 var day_night_timer:Timer
 @export var night_waves:int = 3
 var waves_left:int = night_waves
-const warning_time:float = 1
+const warning_time:float = 8
 
 func _ready() -> void:
 	#wave_timer.wait_time = next_delay
@@ -34,12 +34,12 @@ func _ready() -> void:
 	day_night_timer.start(day_length)
 	day_night_timer.timeout.connect(change_time)
 	
-	for p in spawn_points:
-		var line = Line2D.new()
-		line.width = 3
-		line.add_point(Vector2.ZERO)
-		line.add_point(-p.position)
-		p.add_child(line)
+	#for p in spawn_points:
+		#var line = Line2D.new()
+		#line.width = 3
+		#line.add_point(Vector2.ZERO)
+		#line.add_point(-p.position)
+		#p.add_child(line)
 
 
 func _on_timer_timeout() -> void:

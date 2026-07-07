@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://q28bs4ba3fb4"]
+
+[ext_resource type="Resource" uid="uid://dipuykqlsccxr" path="res://Resources/Projectiles/Coconut.tres" id="1_ofiim"]
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_83t6s"]
+[ext_resource type="Texture2D" uid="uid://b4xjpav2ajulb" path="res://Assets/BEE WIPs/COCONUT.png" id="3_7qd2v"]
+[ext_resource type="Resource" uid="uid://uif1uaj2itte" path="res://Resources/Towers/Coconut ThrowerII.tres" id="4_ofiim"]
+
+[resource]
+script = ExtResource("2_83t6s")
+tower_name = "Coconut Thrower"
+sprite = ExtResource("3_7qd2v")
+cost = Dictionary[int, int]({
+1: 4
+})
+trigger_condition = 1
+effects = Dictionary[int, float]({
+0: 10.0
+})
+area_size = 500.0
+projectile = ExtResource("1_ofiim")
+upgrade = ExtResource("4_ofiim")
+metadata/_custom_type_script = "uid://dlv0kunqio4rh"

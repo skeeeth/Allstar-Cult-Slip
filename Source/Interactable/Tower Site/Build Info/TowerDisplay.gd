@@ -9,7 +9,7 @@ class_name TowerDisplay
 @export var cost: Cost_Block
 
 @onready var index_number: Label = $IndexNumber
-
+var tower_data:TowerData
 
 @export var hover_box:StyleBox
 #@export var default_box:StyleBox
@@ -22,7 +22,11 @@ static  func create() -> TowerDisplay:
 func dress(data:TowerData, with_cost:bool = true):
 	
 	tower_name.text = data.tower_name
-	attack.text = "Damage: %s" % data.effect_strength
+	tower_data = data
+	var effect_text:String
+	for e in data.effects.keys():
+		effect_text = "%s: %s" % [e,data.effects[e]]
+	attack.text = effect_text
 	speed.text = "Speed: %s" % data.trigger_time
 	var type_text = "Target" if data.trigger_condition ==\
 					data.trigger_conditions.UNIT_TIME else "AOE"

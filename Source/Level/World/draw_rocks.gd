@@ -9,6 +9,6 @@ func _ready() -> void:
 			#new_polygon.polygon = obs.vertices
 			var points:Array[Vector2]
 			for v in obs.vertices:
-				points.append(v*0.75)
+				points.append(v*1.0)
 			new_polygon.polygon = points
 			obs.add_child(new_polygon)

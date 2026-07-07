@@ -7,8 +7,8 @@
 script = ExtResource("1_k20hp")
 tower_name = "Bannana Field"
 sprite = ExtResource("2_dyxgp")
-cost = Dictionary[String, int]({
-"Bananas": 4
+cost = Dictionary[int, int]({
+0: 4
 })
 trigger_condition = 2
 effects = Dictionary[int, float]({

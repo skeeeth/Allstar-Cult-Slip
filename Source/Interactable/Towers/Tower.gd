@@ -21,6 +21,7 @@ static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	circle.radius = from_data.area_size
 	new_tower.range_shape.shape = circle
 	new_tower.sprite.texture = from_data.sprite
+	new_tower.sprite.scale = Vector2(128,128) / from_data.sprite.get_size()
 	
 	return new_tower
 

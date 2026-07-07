@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bd2ql28wugssl" path="res://Source/Level/World/Layouts/T_level.tscn" id="1_6u65b"]
 [ext_resource type="PackedScene" uid="uid://bxuwbl1bbb4a0" path="res://Source/Interactable/Tower Site/TowerSite.tscn" id="2_jklct"]
 [ext_resource type="PackedScene" uid="uid://ofx71x0hbi23" path="res://Source/Interactable/Circle/ResourceCircle.tscn" id="2_nh767"]
+[ext_resource type="Script" uid="uid://c373uigs4r2l5" path="res://Source/Level/World/draw_rocks.gd" id="2_voyjm"]
 [ext_resource type="PackedScene" uid="uid://c2og13fi0nolf" path="res://Source/Interactable/Upgrade Offer/upgrade_offer.tscn" id="3_04pb6"]
 [ext_resource type="Resource" uid="uid://bx8sruyl7ngi1" path="res://Resources/Upgrades/BiggerCoconut.tres" id="4_ic43r"]
 
@@ -23,6 +24,9 @@ position = Vector2(2012, 1122)
 [node name="Node" parent="." index="4" unique_id=1194797147 node_paths=PackedStringArray("spawn_points", "moonlight")]
 spawn_points = [NodePath("../Spawn Points/One"), NodePath("../Spawn Points/L1"), NodePath("../Spawn Points/L2")]
 moonlight = NodePath("Moonlight")
+next_count = 3
+night_length = 30.0
+day_length = 20.0
 
 [node name="Moonlight" type="DirectionalLight2D" parent="Node" index="1" unique_id=1050351992]
 light_mask = 0
@@ -31,6 +35,7 @@ energy = 0.0
 blend_mode = 1
 
 [node name="Rocks" type="Node2D" parent="NavigationRegion2D" parent_id_path=PackedInt32Array(398621725) index="0" unique_id=10354817]
+script = ExtResource("2_voyjm")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="0" unique_id=295937854]
 vertices = PackedVector2Array(1751, 1461, 1822, 1476, 1564, 223, 291, 51, 311, 106, 1483, 273)
@@ -118,14 +123,11 @@ position = Vector2(-1487, 611)
 [node name="ResourceCircle4" parent="Circles" index="1" unique_id=1943158825 instance=ExtResource("2_nh767")]
 position = Vector2(1722, -442)
 
-[node name="ResourceCircle" parent="Circles" index="2" unique_id=1863533673 instance=ExtResource("2_nh767")]
-position = Vector2(421, 502)
-
-[node name="ResourceCircle2" parent="Circles" index="3" unique_id=1137785612 instance=ExtResource("2_nh767")]
+[node name="ResourceCircle2" parent="Circles" index="2" unique_id=1137785612 instance=ExtResource("2_nh767")]
 position = Vector2(330, -327)
 
-[node name="ResourceCircle5" parent="Circles" index="4" unique_id=878551498 instance=ExtResource("2_nh767")]
-position = Vector2(539, 347)
+[node name="ResourceCircle" parent="." index="10" unique_id=2118307154]
+position = Vector2(419, 716)
 
 [node name="ResourceCircle2" parent="." index="11" unique_id=406328258]
 position = Vector2(-247, 97)

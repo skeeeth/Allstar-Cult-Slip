@@ -57,9 +57,15 @@ func build():
 	add_child(new_tower)
 	#interaction_area.monitoring = false
 	current_tower = new_tower
+	for d in displays:
+		d.queue_free()
+	displays.clear()
+	
 	if blueprint.upgrade:
 		blueprint = blueprint.upgrade
-
+		create_display(blueprint,0)
+	else:
+		blueprint = null
 	
 func _input(event: InputEvent) -> void:
 	if !info_box.visible:
@@ -75,14 +81,14 @@ func _input(event: InputEvent) -> void:
 		select_blueprint(2)
 	
 func select_blueprint(index:int):
-	if index >= tower_pool.size():
+	if index >= displays.size():
 		return
-	blueprint = tower_pool[index]
+	blueprint = displays[index].tower_data
 	for d in displays:
 		d.clear_hover()
 	displays[index].set_hover()
 	hover_sprite.texture = blueprint.sprite
-	
+	hover_sprite.scale = Vector2(128,128) /  blueprint.sprite.get_size()
 	queue_redraw()
 	
 func on_enter():

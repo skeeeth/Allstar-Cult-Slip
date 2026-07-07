@@ -9,7 +9,10 @@ func update_cost_text(data:Dictionary[ResourceManager.ResourceTypes,int]):
 	# fundamentally different approach
 	var cost_text:String = ""
 	for k in data:
-		cost_text += "%s: %s/%s\n" % [k, ResourceManager.get_current(k), data[k]]
+		cost_text += "%s: %s/%s\n" % \
+			[ResourceManager.ResourceNames[k],
+			ResourceManager.get_current(k),
+			data[k]]
 	
 	cost.text = cost_text
 

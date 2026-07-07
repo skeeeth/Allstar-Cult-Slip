@@ -27,8 +27,10 @@ static func create(from_data:EnemyData) -> Enemy:
 	return new_unit
 
 func _ready() -> void:
-	hp_bar.value = current_health
 	hp_bar.max_value = max_health
+	current_health = max_health
+	hp_bar.value = current_health
+
 	navi.target_position = Vector2.ZERO
 	died.connect(on_death)
 	

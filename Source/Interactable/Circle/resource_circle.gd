@@ -10,6 +10,7 @@ var store:int
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var count_text: Label = $"Count Text"
 @onready var collect_sound: AudioStreamPlayer2D = $Harvest
+var max_store:int = 99
 
 func _ready() -> void:
 	interact_hitbox.interacted.connect(on_interaction)
@@ -28,12 +29,29 @@ func on_interaction():
 		collect_sound.play()
 
 func _process(delta: float) -> void:
-	progress += delta
+	if store == max_store:
+		return
+	var mult = 1
 	if progress >= cadence:
 		progress -= cadence
 		store += 1
 		_set_text()
+		
+		#set dynamic cadence
+		var _bc = ResourceManager.ResourceCadence[type] #base cadence
+		match type:
+			ResourceManager.ResourceTypes.B:
+				mult = (1.0 / ((0.4 * store) + 1))
+				#print(mult)
+			ResourceManager.ResourceTypes.O:
+				mult = pow(1.15,store/3.5)
+				#print(mult)
+			ResourceManager.ResourceTypes.U:
+				mult = 1
+				
+		progress_bar.max_value = cadence
 	
+	progress += delta * mult
 	progress_bar.value = progress
 
 func roll_resource():
@@ -45,7 +63,8 @@ func roll_resource():
 	_set_text()
 
 func _set_text():
-	count_text.text = "%s: %s" % [ResourceManager.ResourceNames[type],store]
+	count_text.text = "%s: %s/%s" % \
+		[ResourceManager.ResourceNames[type], store, max_store]
 	
 	
 func stat_change():

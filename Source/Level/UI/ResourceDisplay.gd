@@ -6,9 +6,9 @@ var labels:Dictionary[String,Label]
 func _ready() -> void:
 	ResourceManager.new_key.connect(on_new_key)
 	ResourceManager.key_update.connect(on_update)
-
 	for i in ResourceManager.ResourceTypes.values():
-		ResourceManager.add_resource(ResourceManager.ResourceNames[i],99)
+		ResourceManager.add_resource(ResourceManager.ResourceNames[i],0)
+
 
 func on_new_key(k,_v):
 	_new_label(k)
@@ -37,3 +37,10 @@ func _new_label(type:String):
 
 func _set_label_text(label:Label,type:String):
 	label.text = "%s: %s" % [type, ResourceManager.current[type]]
+	
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("debug_b"):
+		for i in ResourceManager.ResourceTypes.values():
+			ResourceManager.add_resource(ResourceManager.ResourceNames[i],99)
+		
