@@ -19,7 +19,8 @@ func _ready() -> void:
 func on_interaction():
 	if store >= 1:
 		ResourceManager.add_resource(ResourceManager.ResourceNames[type],store)
-		Scoring.add_score(store * 50, "Resources Gathered")
+		Scoring.add_score(store * ResourceManager.ResourceCadence[type] * 10,
+				"%s Gathered" % ResourceManager.ResourceNames[type])
 		store = 0
 		progress = 0
 		roll_resource()

@@ -8,7 +8,6 @@ func _ready() -> void:
 	Scoring.game_loss.connect(display)
 		
 
-
 func display():
 	visible = true
 	for entry in Scoring.breakdown:

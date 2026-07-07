@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cid0wtr1vxp4v"]
 
 [ext_resource type="Script" uid="uid://dgeu5s6k4238n" path="res://Source/Level/UI/ResourceDisplay.gd" id="1_245ms"]
-[ext_resource type="PackedScene" uid="uid://cjufiy4va5eni" path="res://Resources/Upgrades/score_report.tscn" id="2_tfsyi"]
+[ext_resource type="PackedScene" uid="uid://cjufiy4va5eni" path="res://Source/Level/UI/Scoring/score_report.tscn" id="2_tfsyi"]
 
 [node name="Hud" type="CanvasLayer" unique_id=1382983244]
 
