@@ -141,7 +141,34 @@ animations = [{
 "name": &"Down Right",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_653ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfaoh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60vxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02sk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_baapq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fv47w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgn7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjknp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvwcy")
+}],
 "loop": 1,
 "name": &"Up Left",
 "speed": 5.0

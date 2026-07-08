@@ -60,7 +60,7 @@ func apply_upgrade():
 		upgrade_pool.append(u)
 		
 	change_offer()
-		
+			
 #region Do the damn thing
 	match  offer.type:
 		Upgrade.effects.BLUEPRINT:

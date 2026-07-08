@@ -29,7 +29,7 @@ static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	new_tower.sprite.scale = Vector2(x_fit,x_fit)
 	new_tower.animated_sprite.sprite_frames = from_data.frames
 	new_tower.animated_sprite.scale = new_tower.sprite.scale
-	new_tower.animated_sprite.play("default")
+	new_tower.sprite_wander(new_tower.animated_sprite)
 	for i in range(1,from_data.draw_count):
 		var new_sprite = new_tower.animated_sprite.duplicate()
 		new_tower.add_child(new_sprite)
@@ -37,6 +37,7 @@ static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 				lerp(0.2,0.4,randf())  * from_data.draw_size
 		var animations = new_sprite.sprite_frames.get_animation_names()
 		new_sprite.play(animations[randi_range(0,animations.size()-1)])
+		new_tower.sprite_wander(new_sprite)
 	return new_tower
 
 
@@ -132,3 +133,18 @@ func set_target_last():
 			if u == null: return
 			targets.append(u)
 			target_time[u] = 0.0
+			
+
+func sprite_wander(spr:AnimatedSprite2D):
+	var direction = sign(randf() - 0.5)
+	var animation:String = "default" if direction == 1 else "left"
+	
+	var move_tween = spr.create_tween()
+	move_tween.tween_callback(spr.play.bind(animation))
+	move_tween.tween_property(spr,"position",
+			Vector2(randf_range(0,64)*direction,randf_range(-16,16)), 0.5)
+	move_tween.tween_callback(spr.pause)
+	move_tween.tween_interval((randf_range(0.3,5)))
+
+	
+	move_tween.finished.connect(sprite_wander.bind(spr))
