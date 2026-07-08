@@ -3,14 +3,14 @@
 [ext_resource type="Resource" uid="uid://7hybf50fjlpe" path="res://Resources/Projectiles/Coconut.tres" id="1_eos27"]
 [ext_resource type="AudioStream" uid="uid://pdsolx8s13nb" path="res://Assets/Sounds/bulid/enemyspawn_coconut.wav" id="1_hj4a7"]
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_ktax1"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_eos27"]
-load_path = "res://.godot/imported/COCONUT.png-4207f064d69e9b3479c4f23f225c5dbb.ctex"
+[ext_resource type="Texture2D" uid="uid://cd66yi5w33sfn" path="res://Assets/Coconut Icon.tres" id="4_eos27"]
 
 [resource]
 script = ExtResource("1_ktax1")
 tower_name = "Coconut Thrower II"
-sprite = SubResource("CompressedTexture2D_eos27")
+sprite = ExtResource("4_eos27")
+draw_size = 64.0
+draw_count = 8
 build_sound = ExtResource("1_hj4a7")
 cost = Dictionary[int, int]({
 1: 50,

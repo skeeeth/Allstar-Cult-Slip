@@ -99,7 +99,7 @@ func select_blueprint(index:int):
 		d.clear_hover()
 	displays[index].set_hover()
 	hover_sprite.texture = blueprint.sprite
-	hover_sprite.scale = Vector2(128,128) /  blueprint.sprite.get_size()
+	hover_sprite.scale = Vector2(blueprint.draw_size,blueprint.draw_size) /  blueprint.sprite.get_size()
 	queue_redraw()
 	
 func on_enter():

@@ -18,15 +18,18 @@ size = Vector2(216, 225)
 offsets = PackedFloat32Array(0, 0.7556391, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.60784316, 1, 1, 1, 0)
 
-[node name="Tower" type="Node2D" unique_id=447039082 node_paths=PackedStringArray("sprite", "range_shape")]
+[node name="Tower" type="Node2D" unique_id=447039082 node_paths=PackedStringArray("sprite", "animated_sprite", "range_shape")]
 script = ExtResource("1_hv3xy")
 sprite = NodePath("Sprite2D")
+animated_sprite = NodePath("AnimatedSprite2D")
 range_shape = NodePath("Effect Area/CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1740974572]
 scale = Vector2(0.425, 0.425)
+speed_scale = 2.2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=81413410]
+visible = false
 modulate = Color(0.74, 0.74, 0.74, 1)
 scale = Vector2(0.425, 0.425)
 texture = SubResource("NoiseTexture2D_hv3xy")

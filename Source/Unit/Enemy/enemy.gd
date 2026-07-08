@@ -10,6 +10,7 @@ var movespeed:float = 100
 
 @export var boid_strength:float
 var neighbors:Array[Enemy]
+@export var drop_shadow:Sprite2D
 
 const _self_scene = preload("uid://4ppu28orsq7")
 
@@ -23,8 +24,9 @@ static func create(from_data:EnemyData) -> Enemy:
 	var texture = from_data.sprite.get_frame_texture("Up Left",0)
 	var source_ratio = texture.get_size().aspect()
 	var sprite_scale =from_data.size / texture.get_size().x
-	new_unit.sprite.scale.x = sprite_scale
-	new_unit.sprite.scale.y = sprite_scale * source_ratio
+	new_unit.sprite.scale.x = sprite_scale# * source_ratio
+	new_unit.sprite.scale.y = sprite_scale 
+	
 	return new_unit
 
 func _ready() -> void:
@@ -56,6 +58,7 @@ func _physics_process(delta: float) -> void:
 	var diff = target_position - global_position
 	global_position += diff.normalized() * movespeed * delta
 	#navi.velocity = diff.normalized() * movespeed * delta
+	try_play_animation(anim_name_from_vector(diff.normalized()))
 	
 
 func on_death(_self):

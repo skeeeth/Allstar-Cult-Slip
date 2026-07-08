@@ -6,8 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pkxw5"]
 size = Vector2(16, 16)
 
-[node name="Player" type="Node2D" unique_id=1190391921]
+[node name="Player" type="Node2D" unique_id=1190391921 node_paths=PackedStringArray("animated_sprite")]
 script = ExtResource("1_v8eik")
+animated_sprite = NodePath("Animated sprite")
 
 [node name="PlayerHitbox" type="Area2D" parent="." unique_id=787256078]
 unique_name_in_owner = true
@@ -19,7 +20,7 @@ shape = SubResource("RectangleShape2D_pkxw5")
 [node name="Animated sprite" type="AnimatedSprite2D" parent="." unique_id=1800890184]
 scale = Vector2(0.1, 0.1)
 sprite_frames = ExtResource("2_0q8bw")
-animation = &"Up Right Idle"
+animation = &"Down Left Idle"
 speed_scale = 2.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1482741900]

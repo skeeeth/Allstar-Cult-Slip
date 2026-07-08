@@ -5,39 +5,39 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_653ln"]
 atlas = ExtResource("2_qkcph")
-region = Rect2(0, 0, 931, 1676)
+region = Rect2(0, 277, 931, 1317)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sfaoh"]
 atlas = ExtResource("2_qkcph")
-region = Rect2(931, 0, 931, 1676)
+region = Rect2(931, 277, 931, 1317)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60vxq"]
 atlas = ExtResource("2_qkcph")
-region = Rect2(1862, 0, 931, 1676)
+region = Rect2(1862, 277, 931, 1317)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02sk1"]
 atlas = ExtResource("2_qkcph")
-region = Rect2(2793, 0, 931, 1676)
+region = Rect2(2793, 277, 931, 1317)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_baapq"]
 atlas = ExtResource("2_qkcph")
-region = Rect2(3724, 0, 931, 1676)
+region = Rect2(3724, 277, 931, 1317)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fv47w"]
 atlas = ExtResource("2_qkcph")
-region = Rect2(4655, 0, 931, 1676)
+region = Rect2(4655, 277, 931, 1317)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tgn7q"]
 atlas = ExtResource("2_qkcph")
-region = Rect2(5586, 0, 931, 1676)
+region = Rect2(5586, 277, 931, 1317)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hjknp"]
 atlas = ExtResource("2_qkcph")
-region = Rect2(6517, 0, 931, 1676)
+region = Rect2(6517, 277, 931, 1317)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yvwcy"]
 atlas = ExtResource("2_qkcph")
-region = Rect2(7448, 0, 931, 1676)
+region = Rect2(7448, 277, 931, 1317)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qkcph"]
 atlas = ExtResource("2_qkcph")
@@ -141,34 +141,7 @@ animations = [{
 "name": &"Down Right",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_653ln")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sfaoh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_60vxq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_02sk1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_baapq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fv47w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tgn7q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hjknp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yvwcy")
-}],
+"frames": [],
 "loop": 1,
 "name": &"Up Left",
 "speed": 5.0
@@ -210,5 +183,5 @@ animations = [{
 script = ExtResource("1_qkcph")
 sprite = SubResource("SpriteFrames_lbiay")
 movespeed = 150.0
-max_health = 50.0
+max_health = 75.0
 metadata/_custom_type_script = "uid://c7wrjd2iicq8d"

@@ -33,10 +33,12 @@ func on_interact():
 	apply_upgrade()
 
 func on_enter():
-	info_block.visible = true
+	pass
+	#info_block.visible = true
 
 func on_exit():
-	info_block.visible = false
+	pass
+	#info_block.visible = false
 
 func change_offer():
 	var new_blueprint:Upgrade = upgrade_pool.pick_random()
@@ -56,6 +58,8 @@ func apply_upgrade():
 	#add unlocks to pool
 	for u in offer.unlocks:
 		upgrade_pool.append(u)
+		
+	change_offer()
 		
 #region Do the damn thing
 	match  offer.type:

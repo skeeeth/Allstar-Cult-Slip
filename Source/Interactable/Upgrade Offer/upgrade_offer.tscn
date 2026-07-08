@@ -26,7 +26,6 @@ flip_h = true
 flip_v = true
 
 [node name="Info Block" parent="." unique_id=501015177 instance=ExtResource("6_51exp")]
-visible = false
 
 [node name="Upgrade Sound" type="AudioStreamPlayer2D" parent="." unique_id=688347157]
 stream = ExtResource("7_r631o")

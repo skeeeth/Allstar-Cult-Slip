@@ -3,6 +3,9 @@ class_name TowerData
 
 @export var tower_name:String
 @export var sprite:Texture2D
+@export var frames:SpriteFrames
+@export var draw_size:float = 128
+@export var draw_count:int = 1
 @export var build_sound:AudioStream
 
 @export var cost:Dictionary[ResourceManager.ResourceTypes,int]

@@ -4,7 +4,7 @@ class_name Player
 @export var movespeed:float = 400
 @onready var camera_2d: Camera2D = $"../Camera2D"
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
-@onready var animated_sprite: AnimatedSprite2D = $"Animated sprite"
+#@onready var animated_sprite: AnimatedSprite2D = $"Animated sprite"
 
 var last_move_dir:Vector2
 
@@ -38,8 +38,3 @@ func _process(delta: float) -> void:
 	
 	try_play_animation(animation_name)
 	
-func try_play_animation(animation:String):
-	if animated_sprite.animation == animation:
-		return
-	else:
-		animated_sprite.play(animation)

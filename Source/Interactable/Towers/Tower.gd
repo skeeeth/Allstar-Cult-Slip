@@ -6,6 +6,7 @@ var data:TowerData
 const self_scene = preload("uid://bba0prqueb088")
 var units_inside:Array[Unit]
 @export var sprite: Sprite2D
+@export var animated_sprite:AnimatedSprite2D
 
 var targets:Array[Unit]
 var max_targets:int = 1
@@ -18,13 +19,26 @@ var target_time:Dictionary[Unit,float]
 static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	var new_tower:Tower = self_scene.instantiate()
 	new_tower.data = load(from_data.resource_path)
+	
 	var circle = CircleShape2D.new()
 	circle.radius = from_data.area_size
 	new_tower.range_shape.shape = circle
+	
 	new_tower.sprite.texture = from_data.sprite
-	new_tower.sprite.scale = Vector2(128,128) / from_data.sprite.get_size()
-		
+	var x_fit = from_data.draw_size / from_data.sprite.get_size().x
+	new_tower.sprite.scale = Vector2(x_fit,x_fit)
+	new_tower.animated_sprite.sprite_frames = from_data.frames
+	new_tower.animated_sprite.scale = new_tower.sprite.scale
+	new_tower.animated_sprite.play("default")
+	for i in range(1,from_data.draw_count):
+		var new_sprite = new_tower.animated_sprite.duplicate()
+		new_tower.add_child(new_sprite)
+		new_sprite.position += Vector2.from_angle(randf() * TAU) * \
+				lerp(0.2,0.4,randf())  * from_data.draw_size
+		var animations = new_sprite.sprite_frames.get_animation_names()
+		new_sprite.play(animations[randi_range(0,animations.size()-1)])
 	return new_tower
+
 
 func _on_effect_area_area_entered(area: Area2D) -> void:
 	var parent = area.get_parent()

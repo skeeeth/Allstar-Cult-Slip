@@ -8,6 +8,8 @@ signal died(who) #up to owner or parent to decide what happens on death
 @export var max_health:float = 100
 @export var hp_bar:ProgressBar
 
+@export var animated_sprite:AnimatedSprite2D
+
 var current_health:float = max_health
 
 
@@ -37,3 +39,9 @@ func anim_name_from_vector(dir:Vector2,include_idle:bool = false) -> String:
 		animation_name += " Idle"# if dir.length() == 0 else ""
 	
 	return animation_name
+	
+func try_play_animation(animation:String):
+	if animated_sprite.animation == animation:
+		return
+	else:
+		animated_sprite.play(animation)

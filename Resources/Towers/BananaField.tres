@@ -4,10 +4,26 @@
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_k20hp"]
 [ext_resource type="Texture2D" uid="uid://wk1bewpuaeg2" path="res://Assets/CUSTOM PLACEHOLDER/naner_field.png" id="2_dyxgp"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bpxv"]
+atlas = ExtResource("2_dyxgp")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pkxw5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bpxv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [resource]
 script = ExtResource("1_k20hp")
 tower_name = "Bannana Field"
 sprite = ExtResource("2_dyxgp")
+frames = SubResource("SpriteFrames_pkxw5")
 build_sound = ExtResource("1_3bpxv")
 cost = Dictionary[int, int]({
 0: 4

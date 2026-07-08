@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://6onurcyv5j2a" path="res://Source/Unit/Enemy/enemy.gd" id="1_wm6wr"]
 [ext_resource type="AudioStream" uid="uid://dl6r2pc6gi68q" path="res://Assets/Sounds/Damage/damagetick_enemy.wav" id="3_g6o72"]
+[ext_resource type="Texture2D" uid="uid://cc878l78iwvie" path="res://Assets/CUSTOM PLACEHOLDER/Circle_White_128.png" id="3_mopxf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qtjwj"]
 
@@ -12,11 +13,13 @@ random_volume_offset_db = 0.1
 streams_count = 1
 stream_0/stream = ExtResource("3_g6o72")
 
-[node name="Enemy" type="Node2D" unique_id=1182452479 node_paths=PackedStringArray("sprite", "hp_bar")]
+[node name="Enemy" type="Node2D" unique_id=1182452479 node_paths=PackedStringArray("sprite", "drop_shadow", "hp_bar", "animated_sprite")]
 script = ExtResource("1_wm6wr")
 sprite = NodePath("Sprite2D")
 boid_strength = 0.5
+drop_shadow = NodePath("Drop Shadow")
 hp_bar = NodePath("HP_Bar")
+animated_sprite = NodePath("Sprite2D")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=155334630]
 visible = false
@@ -43,6 +46,7 @@ value = 100.0
 debug_enabled = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1346279345]
+speed_scale = 2.2
 
 [node name="Boid Area" type="Area2D" parent="." unique_id=2015899795]
 visible = false
@@ -58,6 +62,13 @@ stream = SubResource("AudioStreamRandomizer_mopxf")
 volume_db = -3.0
 attenuation = 2.8284235
 max_polyphony = 5
+
+[node name="Drop Shadow" type="Sprite2D" parent="." unique_id=1498379110]
+modulate = Color(0.22, 0.22, 0.22, 0.84313726)
+z_index = -1
+position = Vector2(0, 26)
+scale = Vector2(0.5, 0.238)
+texture = ExtResource("3_mopxf")
 
 [connection signal="area_entered" from="Boid Area" to="." method="_on_boid_area_area_entered"]
 [connection signal="area_exited" from="Boid Area" to="." method="_on_boid_area_area_exited"]
