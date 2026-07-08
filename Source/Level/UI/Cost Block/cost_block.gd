@@ -16,5 +16,5 @@ func update_cost_text(data:Dictionary[ResourceManager.ResourceTypes,int]):
 	
 	cost.text = cost_text
 
-func check_afford() -> bool:
-	return true
+#func check_afford() -> bool:
+	#return true

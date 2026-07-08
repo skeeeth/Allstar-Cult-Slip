@@ -57,6 +57,7 @@ disabled = true
 stream = SubResource("AudioStreamRandomizer_mopxf")
 volume_db = -3.0
 attenuation = 2.8284235
+max_polyphony = 5
 
 [connection signal="area_entered" from="Boid Area" to="." method="_on_boid_area_area_entered"]
 [connection signal="area_exited" from="Boid Area" to="." method="_on_boid_area_area_exited"]

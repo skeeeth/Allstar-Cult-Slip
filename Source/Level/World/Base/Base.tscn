@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ditooupt0qhfe"]
 
 [ext_resource type="Script" uid="uid://belpwn7kvm83m" path="res://Source/Level/World/Base/base.gd" id="1_1g6ak"]
+[ext_resource type="AudioStream" uid="uid://drwohbjruqup7" path="res://Assets/Sounds/Damage/damagetick_base.wav" id="2_0pewo"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1g6ak"]
 
@@ -24,5 +25,11 @@ offset_top = 35.0
 offset_right = 30.0
 offset_bottom = 58.0
 text = "Base HP: 100/100"
+
+[node name="Damage" type="AudioStreamPlayer" parent="." unique_id=1211804818]
+stream = ExtResource("2_0pewo")
+volume_db = -24.0
+max_polyphony = 6
+bus = &"Reverb"
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

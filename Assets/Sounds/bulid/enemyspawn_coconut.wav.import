@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://pdsolx8s13nb"
-path="res://.godot/imported/enemyspawn_coconut.wav-8142b6b99a8c58d104690299a5a6b8b7.sample"
+path="res://.godot/imported/enemyspawn_coconut.wav-3d04c5b004bf142aed0c107f61b6806f.sample"
 
 [deps]
 
-source_file="res://Assets/Sounds/Wave/enemyspawn_coconut.wav"
-dest_files=["res://.godot/imported/enemyspawn_coconut.wav-8142b6b99a8c58d104690299a5a6b8b7.sample"]
+source_file="res://Assets/Sounds/bulid/enemyspawn_coconut.wav"
+dest_files=["res://.godot/imported/enemyspawn_coconut.wav-3d04c5b004bf142aed0c107f61b6806f.sample"]
 
 [params]
 

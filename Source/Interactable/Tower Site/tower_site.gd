@@ -4,6 +4,8 @@ class_name TowerSite
 @onready var interaction_area: Interactable = $"Interaction Area"
 @onready var info_box: HBoxContainer = $"Tower Info"
 #@onready var upgrade_display: HBoxContainer = $"Upgrade Display"
+@onready var build_sound: AudioStreamPlayer2D = $"Build Sound"
+@onready var build_puff: CPUParticles2D = $"Build Puff"
 
 @onready var hover_sprite: Sprite2D = $HoverSprite
 
@@ -34,6 +36,7 @@ func _ready() -> void:
 func on_interact():
 	if !blueprint: return
 	
+	
 	for type in blueprint.cost:
 		var type_name = ResourceManager.ResourceNames[type]
 		#print(type)
@@ -52,6 +55,11 @@ func on_interact():
 func build():
 	if current_tower:
 		current_tower.queue_free()
+	
+	build_sound.stream = blueprint.build_sound
+	
+	build_sound.play()
+	build_puff.emitting = true
 	
 	var new_tower = Tower.create(load(blueprint.resource_path))
 	add_child(new_tower)
@@ -79,6 +87,9 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("three"):
 		select_blueprint(2)
+	
+	if event.is_action_pressed("four"):
+		select_blueprint(3)
 	
 func select_blueprint(index:int):
 	if index >= displays.size():

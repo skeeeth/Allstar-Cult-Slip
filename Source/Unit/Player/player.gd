@@ -38,8 +38,6 @@ func _process(delta: float) -> void:
 	
 	try_play_animation(animation_name)
 	
-
-	
 func try_play_animation(animation:String):
 	if animated_sprite.animation == animation:
 		return

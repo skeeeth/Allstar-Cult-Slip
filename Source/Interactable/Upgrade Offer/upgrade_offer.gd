@@ -10,6 +10,7 @@ class_name UpgradeOffer
 
 @export var starting_pool:Array[Upgrade]
 static var upgrade_pool:Array[Upgrade]
+@onready var upgrade_sound: AudioStreamPlayer2D = $"Upgrade Sound"
 
 func _ready() -> void:
 	upgrade_pool = starting_pool
@@ -21,6 +22,13 @@ func _ready() -> void:
 
 func on_interact():
 	#check costs
+
+	for type in offer.cost:
+		var type_name = ResourceManager.ResourceNames[type]
+		#print(type)
+		if !ResourceManager.try_spend(type_name,offer.cost[type]):
+			#Resource Fail
+			return
 	
 	apply_upgrade()
 
@@ -40,7 +48,7 @@ func apply_upgrade():
 	#remove all instances of offer from pool
 	#cannot use simple array.erase(offer) because an upgrade may have been unlocked multiple times
 	upgrade_pool.filter(func(u): return u == offer)
-	
+	upgrade_sound.play()
 	#apply costs
 	for k in offer.cost:
 		ResourceManager.spend(ResourceManager.ResourceNames[k],offer.cost[k])

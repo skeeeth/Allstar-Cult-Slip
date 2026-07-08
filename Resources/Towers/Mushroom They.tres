@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_ufx4l")
-tower_name = "Mushroom"
+tower_name = "Mushroom Person"
 trigger_condition = 1
 effects = Dictionary[int, float]({
 0: 20.0

@@ -13,6 +13,7 @@ var max_targets:int = 1
 var area_time:float = 0
 var target_time:Dictionary[Unit,float]
 @export var range_shape: CollisionShape2D
+@onready var shockwave: CPUParticles2D = $Shockwave
 
 static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	var new_tower:Tower = self_scene.instantiate()
@@ -22,7 +23,7 @@ static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	new_tower.range_shape.shape = circle
 	new_tower.sprite.texture = from_data.sprite
 	new_tower.sprite.scale = Vector2(128,128) / from_data.sprite.get_size()
-	
+		
 	return new_tower
 
 func _on_effect_area_area_entered(area: Area2D) -> void:
@@ -62,6 +63,7 @@ func _process(delta: float) -> void:
 		TowerData.trigger_conditions.AREA_TIME:
 			area_time += delta
 			if area_time >= data.trigger_time:
+				shockwave.emitting = true ## BAD COUPLED CODE, ONLY FOR TREE
 				trigger_all()
 				area_time -= data.trigger_time
 		TowerData.trigger_conditions.UNIT_TIME:
