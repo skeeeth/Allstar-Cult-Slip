@@ -1,12 +1,11 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://gqmr0ddmbdrc"]
 
 [ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="1_0jxqd"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_chuny"]
+[ext_resource type="SpriteFrames" uid="uid://bmkpp2rsfns78" path="res://Resources/Player Sprite Frames.tres" id="2_0jxqd"]
 
 [resource]
 script = ExtResource("1_0jxqd")
-sprite = SubResource("SpriteFrames_chuny")
+sprite = ExtResource("2_0jxqd")
 movespeed = 75.0
 max_health = 100.0
 metadata/_custom_type_script = "uid://c7wrjd2iicq8d"

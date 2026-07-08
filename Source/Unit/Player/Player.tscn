@@ -1,25 +1,10 @@
 [gd_scene format=3 uid="uid://cy4yi78sjmjxq"]
 
 [ext_resource type="Script" uid="uid://88q1mej6onih" path="res://Source/Unit/Player/player.gd" id="1_v8eik"]
-[ext_resource type="Texture2D" uid="uid://c5kii1yvg8xpe" path="res://icon.svg" id="2_0q8bw"]
+[ext_resource type="SpriteFrames" uid="uid://bmkpp2rsfns78" path="res://Resources/Player Sprite Frames.tres" id="2_0q8bw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pkxw5"]
 size = Vector2(16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_beerk"]
-atlas = ExtResource("2_0q8bw")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pkxw5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_beerk")
-}],
-"loop": 1,
-"name": &"Up Left",
-"speed": 5.0
-}]
 
 [node name="Player" type="Node2D" unique_id=1190391921]
 script = ExtResource("1_v8eik")
@@ -32,8 +17,10 @@ metadata/player_hitbox = true
 shape = SubResource("RectangleShape2D_pkxw5")
 
 [node name="Animated sprite" type="AnimatedSprite2D" parent="." unique_id=1800890184]
-sprite_frames = SubResource("SpriteFrames_pkxw5")
-animation = &"Up Left"
+scale = Vector2(0.1, 0.1)
+sprite_frames = ExtResource("2_0q8bw")
+animation = &"Up Right Idle"
+speed_scale = 2.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1482741900]
 

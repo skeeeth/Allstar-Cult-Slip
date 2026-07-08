@@ -20,8 +20,9 @@ static func create(from_data:EnemyData) -> Enemy:
 	new_unit.movespeed = from_data.movespeed
 	new_unit.sprite.sprite_frames = from_data.sprite
 	
-	var source_ratio = new_unit.sprite.texture.get_size().aspect()
-	var sprite_scale =from_data.size / new_unit.sprite.texture.get_size().x
+	var texture = from_data.sprite.get_frame_texture("Up Left",0)
+	var source_ratio = texture.get_size().aspect()
+	var sprite_scale =from_data.size / texture.get_size().x
 	new_unit.sprite.scale.x = sprite_scale
 	new_unit.sprite.scale.y = sprite_scale * source_ratio
 	return new_unit

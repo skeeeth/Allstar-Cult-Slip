@@ -6,6 +6,7 @@ class_name Player
 @onready var nav: NavigationAgent2D = $NavigationAgent2D
 @onready var animated_sprite: AnimatedSprite2D = $"Animated sprite"
 
+var last_move_dir:Vector2
 
 func _process(delta: float) -> void:
 	
@@ -27,10 +28,17 @@ func _process(delta: float) -> void:
 		#else:
 			#animated_sprite.play("Down Right")
 	var animation_name:String
-	animation_name = "Down " if sign(dir.y) else "Up "
-	animation_name += "Right" if sign(dir.x) else "Left"
-	print(animation_name)
-	#try_play_animation(animation_name)
+	if dir.length() > 0:
+		animation_name = anim_name_from_vector(last_move_dir,false)
+	else:
+		animation_name = anim_name_from_vector(last_move_dir,true)
+	
+	last_move_dir.x = dir.x if dir.x != 0 else last_move_dir.x
+	last_move_dir.y = dir.y if dir.y != 0 else last_move_dir.y
+	
+	try_play_animation(animation_name)
+	
+
 	
 func try_play_animation(animation:String):
 	if animated_sprite.animation == animation:

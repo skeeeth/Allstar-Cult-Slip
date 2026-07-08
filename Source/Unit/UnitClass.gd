@@ -26,3 +26,14 @@ func slip(_amount:float):
 
 func die():
 	died.emit(self)
+
+
+func anim_name_from_vector(dir:Vector2,include_idle:bool = false) -> String:
+	var animation_name:String
+	animation_name = "Down " if sign(dir.y) == 1 else "Up "
+	animation_name += "Right" if sign(dir.x) == 1 else "Left"
+	
+	if include_idle:
+		animation_name += " Idle"# if dir.length() == 0 else ""
+	
+	return animation_name
