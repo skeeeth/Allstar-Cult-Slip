@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ResourceManager="*uid://melksjoyp6gk"
 Scoring="*uid://bwkcciuh71w5w"
+TriggerServer="*uid://fxneuweh4gy4"
 
 [display]
 

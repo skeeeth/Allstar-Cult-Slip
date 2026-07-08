@@ -61,6 +61,8 @@ func apply_upgrade():
 		Upgrade.effects.TOWER_BUFF:
 			for t in offer.associated_towers:
 				t.get_upgrade(offer.stat_increases)
+		Upgrade.effects.CUSTOM_TRIGGER:
+			TriggerServer.add_trigger(offer.trigger_script)
 #endregion
 
 

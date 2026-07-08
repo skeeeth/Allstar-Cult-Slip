@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://4ppu28orsq7"]
 
 [ext_resource type="Script" uid="uid://6onurcyv5j2a" path="res://Source/Unit/Enemy/enemy.gd" id="1_wm6wr"]
-[ext_resource type="Texture2D" uid="uid://r0d41gilvkvb" path="res://Assets/BEE WIPs/FISHMAN.png" id="2_lbiay"]
 [ext_resource type="AudioStream" uid="uid://dl6r2pc6gi68q" path="res://Assets/Sounds/Damage/damagetick_enemy.wav" id="3_g6o72"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qtjwj"]
@@ -43,9 +42,7 @@ value = 100.0
 [node name="Navi" type="NavigationAgent2D" parent="." unique_id=1892920142]
 debug_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1463366955]
-texture = ExtResource("2_lbiay")
-region_rect = Rect2(0, 0, 100, 100)
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1346279345]
 
 [node name="Boid Area" type="Area2D" parent="." unique_id=2015899795]
 visible = false

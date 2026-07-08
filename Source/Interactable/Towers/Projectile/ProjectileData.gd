@@ -35,4 +35,7 @@ func add_stats(stats:Dictionary):
 	speed_mod += try_add.call("Speed")
 	size_mod += try_add.call("Size")
 	var result = ResourceSaver.save(self,resource_path)
+	for t in TowerSite.tower_pool:
+		if t.projectile == self:
+			t.get_upgrade(stats)
 	print(result)

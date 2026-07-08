@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://bdr36582c1w7m"]
+
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_mwkbs"]
+[ext_resource type="Texture2D" uid="uid://cmpg3kfjd8ipo" path="res://Assets/BEE WIPs/TREE_MAN.png" id="2_xd5es"]
+
+[resource]
+script = ExtResource("1_mwkbs")
+sprite = ExtResource("2_xd5es")
+effects = Dictionary[int, float]({
+0: 40.0,
+2: 1.0
+})
+trigger_time = 4.0
+area_size = 300.0
+metadata/_custom_type_script = "uid://dlv0kunqio4rh"

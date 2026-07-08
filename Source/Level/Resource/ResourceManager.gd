@@ -8,6 +8,8 @@ signal stat_change
 var current:Dictionary[String, int]
 enum ResourceTypes{B,O,U}
 
+var global_triggers:Array
+
 const ResourceNames:Dictionary[ResourceTypes,String] = {
 	ResourceManager.ResourceTypes.B: "Bananas",
 	ResourceManager.ResourceTypes.O: "Spores",
@@ -50,3 +52,6 @@ func change_cadence(type:ResourceManager.ResourceTypes,amount:float):
 	ResourceCadence[type] += amount
 	
 	stat_change.emit()
+
+func reset():
+	pass

@@ -62,7 +62,7 @@ func determine_wave():
 	add_child(indicator)
 	indicator.jitter = scatter_range
 	indicator.camera = camera_2d
-	indicator.display(next_type.sprite,next_count)
+	indicator.display(next_type.sprite.get_frame_texture("Down Left",0),next_count)
 	indicator.home = next_point.position
 
 

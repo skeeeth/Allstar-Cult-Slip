@@ -5,7 +5,7 @@ var data:EnemyData
 @onready var navi: NavigationAgent2D = $Navi
 @onready var hit_sound: AudioStreamPlayer2D = $Hit
 
-@export var sprite:Sprite2D
+@export var sprite:AnimatedSprite2D
 var movespeed:float = 100
 
 @export var boid_strength:float
@@ -18,7 +18,7 @@ static func create(from_data:EnemyData) -> Enemy:
 	new_unit.data = from_data
 	new_unit.max_health = from_data.max_health
 	new_unit.movespeed = from_data.movespeed
-	new_unit.sprite.texture = from_data.sprite
+	new_unit.sprite.sprite_frames = from_data.sprite
 	
 	var source_ratio = new_unit.sprite.texture.get_size().aspect()
 	var sprite_scale =from_data.size / new_unit.sprite.texture.get_size().x

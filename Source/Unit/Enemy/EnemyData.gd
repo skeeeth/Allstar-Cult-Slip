@@ -1,7 +1,7 @@
 extends Resource
 class_name EnemyData
 
-@export var sprite:Texture2D
+@export var sprite:SpriteFrames
 @export var movespeed:float
 @export var max_health:float 
 

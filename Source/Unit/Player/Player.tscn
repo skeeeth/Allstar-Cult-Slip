@@ -17,7 +17,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_beerk")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"Up Left",
 "speed": 5.0
 }]
 
@@ -31,8 +31,9 @@ metadata/player_hitbox = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox" unique_id=1399171204]
 shape = SubResource("RectangleShape2D_pkxw5")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1800890184]
+[node name="Animated sprite" type="AnimatedSprite2D" parent="." unique_id=1800890184]
 sprite_frames = SubResource("SpriteFrames_pkxw5")
+animation = &"Up Left"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1482741900]
 

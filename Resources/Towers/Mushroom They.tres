@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://tnivrmge666j"]
+
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_ufx4l"]
+
+[resource]
+script = ExtResource("1_ufx4l")
+tower_name = "Mushroom"
+trigger_condition = 1
+effects = Dictionary[int, float]({
+0: 20.0
+})
+area_size = 300.0
+metadata/_custom_type_script = "uid://dlv0kunqio4rh"
