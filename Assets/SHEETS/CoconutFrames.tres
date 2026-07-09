@@ -1,0 +1,72 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bsng52v1h5aiw"]
+
+[ext_resource type="Texture2D" uid="uid://bysy8vst3s0s6" path="res://Assets/SHEETS/CoconutSprites.png" id="1_380b3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qd2v"]
+atlas = ExtResource("1_380b3")
+region = Rect2(361, 0, 404, 496)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h21yv"]
+atlas = ExtResource("1_380b3")
+region = Rect2(765, 0, 404, 496)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pkeh"]
+atlas = ExtResource("1_380b3")
+region = Rect2(1169, 0, 404, 496)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8okxo"]
+atlas = ExtResource("1_380b3")
+region = Rect2(1573, 0, 404, 496)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljilk"]
+atlas = ExtResource("1_380b3")
+region = Rect2(361, 496, 404, 496)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vubhg"]
+atlas = ExtResource("1_380b3")
+region = Rect2(765, 496, 404, 496)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2jw4"]
+atlas = ExtResource("1_380b3")
+region = Rect2(1169, 496, 404, 496)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0evw5"]
+atlas = ExtResource("1_380b3")
+region = Rect2(1573, 496, 404, 496)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qd2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h21yv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pkeh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8okxo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljilk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vubhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2jw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0evw5")
+}],
+"loop": 1,
+"name": &"left",
+"speed": 5.0
+}]

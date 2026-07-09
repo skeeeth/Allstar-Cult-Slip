@@ -126,10 +126,13 @@ sprite = SubResource("AtlasTexture_06aws")
 frames = SubResource("SpriteFrames_06aws")
 draw_size = 200.0
 build_sound = ExtResource("1_xxpkh")
+cost = Dictionary[int, int]({
+0: 20
+})
 effects = Dictionary[int, float]({
 0: 40.0,
 2: 1.0
 })
 trigger_time = 4.0
-area_size = 200.0
+area_size = 300.0
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"

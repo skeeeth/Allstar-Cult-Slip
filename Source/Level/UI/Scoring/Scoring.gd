@@ -24,6 +24,7 @@ func get_total_score() -> float:
 
 func reset_game():
 	game_reseting.emit()
+	ResourceManager.current.clear()
 	get_tree().reload_current_scene()
 	pass
 
@@ -32,5 +33,4 @@ func end_game():
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug_r"):
-		ResourceManager.current.clear()
-		end_game()
+		reset_game()

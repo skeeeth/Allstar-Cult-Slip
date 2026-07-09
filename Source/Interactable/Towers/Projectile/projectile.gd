@@ -42,6 +42,7 @@ func _process(delta: float) -> void:
 		else:
 			if target:
 				source_tower.apply_effects(target)
+				target = null
 		
 	global_position += diff.normalized() * movespeed * delta
 

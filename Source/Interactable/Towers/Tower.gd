@@ -29,15 +29,16 @@ static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	new_tower.sprite.scale = Vector2(x_fit,x_fit)
 	new_tower.animated_sprite.sprite_frames = from_data.frames
 	new_tower.animated_sprite.scale = new_tower.sprite.scale
-	new_tower.sprite_wander(new_tower.animated_sprite)
-	for i in range(1,from_data.draw_count):
-		var new_sprite = new_tower.animated_sprite.duplicate()
-		new_tower.add_child(new_sprite)
-		new_sprite.position += Vector2.from_angle(randf() * TAU) * \
-				lerp(0.2,0.4,randf())  * from_data.draw_size
-		var animations = new_sprite.sprite_frames.get_animation_names()
-		new_sprite.play(animations[randi_range(0,animations.size()-1)])
-		new_tower.sprite_wander(new_sprite)
+	if from_data.wanders:
+		new_tower.sprite_wander(new_tower.animated_sprite)
+		for i in range(1,from_data.draw_count):
+			var new_sprite = new_tower.animated_sprite.duplicate()
+			new_tower.add_child(new_sprite)
+			new_sprite.position += Vector2.from_angle(randf() * TAU) * \
+					lerp(0.2,0.4,randf())  * from_data.draw_size
+			var animations = new_sprite.sprite_frames.get_animation_names()
+			new_sprite.play(animations[randi_range(0,animations.size()-1)])
+			new_tower.sprite_wander(new_sprite)
 	return new_tower
 
 

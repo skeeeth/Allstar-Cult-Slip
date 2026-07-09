@@ -8,6 +8,13 @@ class_name Player
 
 var last_move_dir:Vector2
 
+
+func _ready() -> void:
+	var stop = func no_moving():
+		movespeed = 0
+		
+	Scoring.game_loss.connect(stop)
+
 func _process(delta: float) -> void:
 	
 	var dir = Input.get_vector("left", "right", "up","down")

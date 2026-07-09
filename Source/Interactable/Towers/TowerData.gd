@@ -7,6 +7,7 @@ class_name TowerData
 @export var draw_size:float = 128
 @export var draw_count:int = 1
 @export var build_sound:AudioStream
+@export var wanders:bool = true
 
 @export var cost:Dictionary[ResourceManager.ResourceTypes,int]
 
@@ -52,7 +53,7 @@ func get_upgrade(stats:Dictionary):
 			effect_mod[effect] = amount
 	
 	add_effect.call(effect_types.DAMAGE,try_add.call("Damage"))
-	add_effect.call(effect_types.DAMAGE,try_add.call("Slip"))
+	add_effect.call(effect_types.SLIP,try_add.call("Slip"))
 	
 	range_mod = try_add.call("Range")
 	speed_mod = try_add.call("Speed")

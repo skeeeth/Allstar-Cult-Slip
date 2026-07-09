@@ -1,87 +1,18 @@
-[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://q28bs4ba3fb4"]
+[gd_resource type="Resource" script_class="TowerData" format=3]
 
-[ext_resource type="AudioStream" uid="uid://pdsolx8s13nb" path="res://Assets/Sounds/bulid/enemyspawn_coconut.wav" id="1_83t6s"]
-[ext_resource type="Resource" uid="uid://7hybf50fjlpe" path="res://Resources/Projectiles/Coconut.tres" id="1_ofiim"]
-[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_83t6s"]
-[ext_resource type="Texture2D" uid="uid://bysy8vst3s0s6" path="res://Assets/SHEETS/CoconutSprites.png" id="4_83t6s"]
-[ext_resource type="Resource" uid="uid://uif1uaj2itte" path="res://Resources/Towers/Coconut ThrowerII.tres" id="4_ofiim"]
-[ext_resource type="Texture2D" uid="uid://cd66yi5w33sfn" path="res://Assets/Coconut Icon.tres" id="5_7qd2v"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7qd2v"]
-atlas = ExtResource("4_83t6s")
-region = Rect2(361, 0, 404, 496)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h21yv"]
-atlas = ExtResource("4_83t6s")
-region = Rect2(765, 0, 404, 496)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0pkeh"]
-atlas = ExtResource("4_83t6s")
-region = Rect2(1169, 0, 404, 496)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8okxo"]
-atlas = ExtResource("4_83t6s")
-region = Rect2(1573, 0, 404, 496)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ljilk"]
-atlas = ExtResource("4_83t6s")
-region = Rect2(361, 496, 404, 496)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vubhg"]
-atlas = ExtResource("4_83t6s")
-region = Rect2(765, 496, 404, 496)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h2jw4"]
-atlas = ExtResource("4_83t6s")
-region = Rect2(1169, 496, 404, 496)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0evw5"]
-atlas = ExtResource("4_83t6s")
-region = Rect2(1573, 496, 404, 496)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_83t6s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7qd2v")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h21yv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0pkeh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8okxo")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ljilk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vubhg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h2jw4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0evw5")
-}],
-"loop": 1,
-"name": &"left",
-"speed": 5.0
-}]
+[ext_resource type="AudioStream" path="res://Assets/Sounds/bulid/enemyspawn_coconut.wav" id="1_83t6s"]
+[ext_resource type="Resource" path="res://Resources/Projectiles/Coconut.tres" id="1_ofiim"]
+[ext_resource type="SpriteFrames" path="res://Assets/SHEETS/CoconutFrames.tres" id="2_7qd2v"]
+[ext_resource type="Script" path="res://Source/Interactable/Towers/TowerData.gd" id="2_83t6s"]
+[ext_resource type="Resource" path="res://Resources/Towers/Coconut ThrowerII.tres" id="4_ofiim"]
+[ext_resource type="Texture2D" path="res://Assets/Coconut Icon.tres" id="5_7qd2v"]
 
 [resource]
 script = ExtResource("2_83t6s")
 tower_name = "Coconut Thrower"
 sprite = ExtResource("5_7qd2v")
-frames = SubResource("SpriteFrames_83t6s")
-draw_size = 64.0
+frames = ExtResource("2_7qd2v")
+draw_size = 24.0
 draw_count = 6
 build_sound = ExtResource("1_83t6s")
 cost = Dictionary[int, int]({

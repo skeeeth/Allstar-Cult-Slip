@@ -2,11 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_hgqc6"]
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_qsmfi"]
-[ext_resource type="Resource" uid="uid://7hybf50fjlpe" path="res://Resources/Projectiles/Coconut.tres" id="2_tnxhv"]
+[ext_resource type="Resource" uid="uid://bfksys1vb6cfd" path="res://Resources/Projectiles/Coconut.tres" id="2_tnxhv"]
 [ext_resource type="Script" uid="uid://btarx67t2mdtf" path="res://Source/Interactable/Upgrade Offer/upgrade_data.gd" id="3_tnxhv"]
 
 [resource]
 script = ExtResource("3_tnxhv")
+name = "Concussive Shells"
+description = "Coconuts cause enemies to breifly slip"
+cost = Dictionary[int, int]({
+2: 50
+})
 type = 3
 associated_proj = Array[ExtResource("1_hgqc6")]([ExtResource("2_tnxhv")])
 stat_increases = Dictionary[String, float]({

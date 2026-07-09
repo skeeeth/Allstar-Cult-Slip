@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://o50an7jrm6w7"]
+
+[ext_resource type="Script" uid="uid://ckks41ae0vr38" path="res://Source/Level/UI/Scoring/breakdown_entry.gd" id="1_2o1o3"]
+
+[node name="Control" type="HBoxContainer" unique_id=925099627 node_paths=PackedStringArray("left", "right")]
+offset_right = 60.0
+offset_bottom = 23.0
+script = ExtResource("1_2o1o3")
+left = NodePath("Id")
+right = NodePath("Value")
+
+[node name="Id" type="Label" parent="." unique_id=596888465]
+layout_mode = 2
+text = "id:"
+
+[node name="Value" type="Label" parent="." unique_id=362661043]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "total"
+horizontal_alignment = 2

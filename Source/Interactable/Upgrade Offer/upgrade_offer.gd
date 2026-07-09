@@ -14,7 +14,7 @@ static var upgrade_pool:Array[Upgrade]
 
 func _ready() -> void:
 	upgrade_pool = starting_pool
-#	change_offer()
+	change_offer()
 	info_block.set_info(offer)
 	interactable.interacted.connect(on_interact)
 	interactable.entered.connect(on_enter)
@@ -58,8 +58,6 @@ func apply_upgrade():
 	#add unlocks to pool
 	for u in offer.unlocks:
 		upgrade_pool.append(u)
-		
-	change_offer()
 			
 #region Do the damn thing
 	match  offer.type:
@@ -76,7 +74,8 @@ func apply_upgrade():
 		Upgrade.effects.CUSTOM_TRIGGER:
 			TriggerServer.add_trigger(offer.trigger_script)
 #endregion
-
+	
+	change_offer()
 
 
 func _input(event: InputEvent) -> void:

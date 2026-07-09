@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dysyp1s6hpiwg"]
 
+[ext_resource type="Theme" uid="uid://c8fudp8ycih5q" path="res://Assets/SSS_theme.tres" id="1_sob7y"]
 [ext_resource type="Script" uid="uid://b880s5kkw8xm4" path="res://Source/Level/UI/Cost Block/cost_block.gd" id="1_tsj76"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrwrk"]
@@ -7,6 +8,7 @@
 [node name="HBoxContainer" type="PanelContainer" unique_id=1637814634]
 offset_right = 133.0
 offset_bottom = 75.0
+theme = ExtResource("1_sob7y")
 theme_override_styles/panel = SubResource("StyleBoxFlat_hrwrk")
 script = ExtResource("1_tsj76")
 

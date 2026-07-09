@@ -1,20 +1,51 @@
 [gd_scene format=3 uid="uid://cjufiy4va5eni"]
 
 [ext_resource type="Script" uid="uid://dscckij835ijc" path="res://Source/Level/UI/Scoring/score_report.gd" id="1_qakob"]
+[ext_resource type="Theme" uid="uid://c8fudp8ycih5q" path="res://Assets/SSS_theme.tres" id="1_si1ga"]
 
-[node name="VBoxContainer" type="PanelContainer" unique_id=995752930 node_paths=PackedStringArray("breakdown")]
-visible = false
-offset_right = 227.0
-offset_bottom = 244.0
+[sub_resource type="LabelSettings" id="LabelSettings_si1ga"]
+font_size = 64
+
+[node name="VBoxContainer" type="PanelContainer" unique_id=995752930 node_paths=PackedStringArray("breakdown_slots", "running_total")]
+offset_right = 1001.0
+offset_bottom = 778.0
+theme = ExtResource("1_si1ga")
 script = ExtResource("1_qakob")
-breakdown = NodePath("VBoxContainer/Breakdown")
+breakdown_slots = NodePath("VBoxContainer/Breakdown Slots")
+running_total = NodePath("VBoxContainer/HBoxContainer/Running Total")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1516942928]
 layout_mode = 2
 
-[node name="Breakdown" type="Label" parent="VBoxContainer" unique_id=412794650]
+[node name="Game Over" type="Label" parent="VBoxContainer" unique_id=2017802527]
+layout_mode = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_si1ga")
+horizontal_alignment = 1
+
+[node name="Breakdown Slots" type="VBoxContainer" parent="VBoxContainer" unique_id=1355951661]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=901796070]
 layout_mode = 2
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer" unique_id=220079064]
+[node name="Total Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=480943341]
 layout_mode = 2
-placeholder_text = "name"
+text = "Total:"
+label_settings = SubResource("LabelSettings_si1ga")
+
+[node name="Running Total" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1132421440]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "000"
+label_settings = SubResource("LabelSettings_si1ga")
+horizontal_alignment = 2
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer" unique_id=1978107058]
+layout_mode = 2
+placeholder_text = "Enter Name"
+max_length = 16
+editable = false
+
+[connection signal="text_submitted" from="VBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]

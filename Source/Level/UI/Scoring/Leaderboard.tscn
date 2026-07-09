@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://crxpojrg5esd7"]
+
+[ext_resource type="Theme" uid="uid://c8fudp8ycih5q" path="res://Assets/SSS_theme.tres" id="1_k004f"]
+[ext_resource type="Script" uid="uid://7uspyqj2dedc" path="res://Source/Level/UI/Scoring/leaderboard.gd" id="1_se0qo"]
+
+[node name="Control" type="PanelContainer" unique_id=1758952034]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.0
+offset_top = -172.5
+offset_right = 306.0
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_k004f")
+script = ExtResource("1_se0qo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2078738017]
+layout_mode = 2
+
+[node name="Entries" type="Label" parent="VBoxContainer" unique_id=1902042985]
+layout_mode = 2
+text = "SAMPLE
+SAMPLE
+SAMPLE
+SAMPLE
+SAMPLE
+SAMPLE
+"
+horizontal_alignment = 2
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=931460675]
+layout_mode = 2
+text = "Restart"

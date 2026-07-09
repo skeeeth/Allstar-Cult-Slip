@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://c57kdddxeiw7f"]
 
 [ext_resource type="PackedScene" uid="uid://dysyp1s6hpiwg" path="res://Source/Level/UI/Cost Block/CostBlock.tscn" id="1_00scd"]
+[ext_resource type="Theme" uid="uid://c8fudp8ycih5q" path="res://Assets/SSS_theme.tres" id="1_7nkq5"]
 [ext_resource type="Script" uid="uid://doilfccx5iltu" path="res://Source/Interactable/Upgrade Offer/upgrade_info.gd" id="1_8c17f"]
 
 [node name="Info Block" type="PanelContainer" unique_id=501015177 node_paths=PackedStringArray("cost_block", "title_line", "description")]
 offset_right = 184.0
 offset_bottom = 129.0
+theme = ExtResource("1_7nkq5")
 script = ExtResource("1_8c17f")
 cost_block = NodePath("VBoxContainer/HBoxContainer/Cost Block")
 title_line = NodePath("VBoxContainer/Title")

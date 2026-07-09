@@ -26,10 +26,13 @@ polygon = PackedVector2Array(-87, -105, -87, 93, 100, 93, 95, -113)
 
 [node name="Tower Info" type="HBoxContainer" parent="." unique_id=1573302505]
 visible = false
-offset_left = -289.0
-offset_top = -361.0
-offset_right = 67.0
-offset_bottom = -206.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -178.0
+offset_right = 178.0
+offset_bottom = 155.0
+grow_horizontal = 2
 
 [node name="HoverSprite" type="Sprite2D" parent="." unique_id=1076845381]
 modulate = Color(0.17254902, 0.56078434, 0.91764706, 0.2)

@@ -1,24 +1,28 @@
 [gd_scene format=3 uid="uid://cid0wtr1vxp4v"]
 
 [ext_resource type="Script" uid="uid://dgeu5s6k4238n" path="res://Source/Level/UI/ResourceDisplay.gd" id="1_245ms"]
+[ext_resource type="Theme" uid="uid://c8fudp8ycih5q" path="res://Assets/SSS_theme.tres" id="1_qy2od"]
 [ext_resource type="PackedScene" uid="uid://cjufiy4va5eni" path="res://Source/Level/UI/Scoring/score_report.tscn" id="2_tfsyi"]
+[ext_resource type="PackedScene" uid="uid://crxpojrg5esd7" path="res://Source/Level/UI/Scoring/Leaderboard.tscn" id="4_162ev"]
 
 [node name="Hud" type="CanvasLayer" unique_id=1382983244]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1352686622]
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("1_qy2od")
 script = ExtResource("1_245ms")
 
-[node name="VBoxContainer2" parent="." unique_id=1952244836 instance=ExtResource("2_tfsyi")]
-anchors_preset = 8
+[node name="Scpre Entry" parent="." unique_id=1952244836 node_paths=PackedStringArray("leaderboard") instance=ExtResource("2_tfsyi")]
+visible = false
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -550.5
+offset_right = 550.5
+offset_bottom = 909.0
 grow_horizontal = 2
-grow_vertical = 2
+leaderboard = NodePath("../Leaderboard")
+
+[node name="Leaderboard" parent="." unique_id=1758952034 instance=ExtResource("4_162ev")]
+visible = false

@@ -7,6 +7,7 @@ class_name TowerDisplay
 @onready var speed: Label = $"VBoxContainer/HBoxContainer/stat block/Speed"
 @onready var type: Label = $"VBoxContainer/HBoxContainer/stat block/Type"
 @export var cost: Cost_Block
+@onready var icon: TextureRect = $VBoxContainer/HBoxContainer/Icon
 
 @onready var index_number: Label = $IndexNumber
 var tower_data:TowerData
@@ -23,6 +24,7 @@ func dress(data:TowerData, with_cost:bool = true):
 	
 	tower_name.text = data.tower_name
 	tower_data = data
+	icon.texture = data.sprite
 	var effect_text:String = ""
 	for e in data.effects:
 		effect_text += "%s: %s\n" % [data.effect_types.find_key(e).capitalize(),
