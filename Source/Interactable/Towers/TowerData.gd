@@ -7,7 +7,9 @@ class_name TowerData
 @export var draw_size:float = 128
 @export var draw_count:int = 1
 @export var build_sound:AudioStream
+@export var attack_sound:AudioStream
 @export var wanders:bool = true
+
 
 @export var cost:Dictionary[ResourceManager.ResourceTypes,int]
 

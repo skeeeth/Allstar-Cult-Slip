@@ -13,7 +13,8 @@ script = ExtResource("1_8jeps")
 
 [node name="Harvest" type="AudioStreamPlayer2D" parent="." unique_id=1938166464]
 stream = ExtResource("3_lor0c")
-volume_db = -20.0
+volume_db = -15.0
+max_polyphony = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=908612667]
 modulate = Color(0.88, 0.88, 0.88, 0.15686275)

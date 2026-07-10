@@ -24,9 +24,11 @@ func on_interaction():
 				"%s Gathered" % ResourceManager.ResourceNames[type])
 		store = 0
 		progress = 0
+		
+		collect_sound.play()
 		roll_resource()
 
-		collect_sound.play()
+
 
 func _process(delta: float) -> void:
 	if store == max_store:
@@ -59,7 +61,12 @@ func roll_resource():
 	var t = ResourceManager.ResourceTypes.values().pick_random()
 	type = t
 	cadence = ResourceManager.ResourceCadence[t]
-
+	
+	#collect_sound.stream = ResourceManager.HarvestSounds[t]
+	if !collect_sound.finished.is_connected(collect_sound.set_deferred):
+		collect_sound.finished.connect(collect_sound.set_deferred.bind(
+				"stream",ResourceManager.HarvestSounds[t]),4)
+	
 	progress_bar.max_value = cadence
 	_set_text()
 

@@ -24,6 +24,8 @@ var day_night_timer:Timer
 var waves_left:int = night_waves
 const warning_time:float = 8
 
+@export var horn_sound:AudioStreamPlayer
+
 func _ready() -> void:
 	#wave_timer.wait_time = next_delay
 	wave_timer.timeout.connect(_on_timer_timeout)
@@ -89,6 +91,7 @@ func start_night():
 	var fade = create_tween()
 	fade.tween_property(moonlight,"energy",0.6,1)
 	wave_timer.start(next_delay)
+	horn_sound.play()
 	
 func start_day():
 	#be daytime

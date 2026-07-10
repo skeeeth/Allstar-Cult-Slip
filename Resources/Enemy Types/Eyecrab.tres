@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://bbjwhi72c2fum"]
 
+[ext_resource type="AudioStream" uid="uid://ckeabnaf1sgol" path="res://Assets/Sounds/Wave/enemyspawn_insect.wav" id="1_0w2je"]
 [ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="1_6mmtj"]
 [ext_resource type="Texture2D" uid="uid://cuxj2a87y3j26" path="res://Assets/SHEETS/Eyecrabsprites.png" id="2_vlfyy"]
 
@@ -173,4 +174,5 @@ movespeed = 100.0
 max_health = 200.0
 size = 128
 wave_factor = 0.5
+entry_sound = ExtResource("1_0w2je")
 metadata/_custom_type_script = "uid://c7wrjd2iicq8d"

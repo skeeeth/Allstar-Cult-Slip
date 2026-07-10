@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://tpwhhityw7ig" path="res://Assets/CUSTOM PLACEHOLDER/Pentagram.png" id="5_hrwrk"]
 [ext_resource type="Resource" uid="uid://b5ya4eqqloio1" path="res://Resources/Upgrades/Concussive Shells.tres" id="5_tyndc"]
 [ext_resource type="PackedScene" uid="uid://c57kdddxeiw7f" path="res://Source/Interactable/Upgrade Offer/upgrade_info.tscn" id="6_51exp"]
-[ext_resource type="AudioStream" uid="uid://cp60wc0xi154y" path="res://Assets/Sounds/bulid/enemyspawn_tree.wav" id="7_r631o"]
+[ext_resource type="AudioStream" uid="uid://daa0g3hol5ivl" path="res://Assets/Sounds/upgrade.wav" id="9_bsxxh"]
 
 [node name="Upgrade Offer" type="Node2D" unique_id=167568939 node_paths=PackedStringArray("interactable", "info_block")]
 script = ExtResource("1_0kqjk")
@@ -36,6 +36,5 @@ offset_right = 92.0
 grow_horizontal = 2
 
 [node name="Upgrade Sound" type="AudioStreamPlayer2D" parent="." unique_id=688347157]
-stream = ExtResource("7_r631o")
+stream = ExtResource("9_bsxxh")
 volume_db = -10.0
-bus = &"Reverb"

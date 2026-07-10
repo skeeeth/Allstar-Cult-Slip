@@ -8,21 +8,25 @@ var home:Vector2
 var camera:Camera2D
 const self_scene:PackedScene = preload("uid://bn6wbpb2i5dd")
 @export var progress_bar: ProgressBar
-@export var wave_sound_effect:AudioStream
+#@export var wave_sound_effect:AudioStream
+@export var unit_spawn_sound:AudioStreamPlayer2D
+
 
 var time_alive = 0
 var quota:int
-var interval:float = 0.1
+var interval:float = 0.25
 var type:EnemyData
 
 var jitter:float = 100
 
-static func _create(set_delay:float, _type:EnemyData,count:int):
-	var new_display = self_scene.instantiate()
+static func _create(set_delay:float, _type:EnemyData, count:int, _interval:float):
+	var new_display:WaveIndicator = self_scene.instantiate()
 	new_display.type = _type
 	new_display.quota = count
 	new_display.progress_bar.max_value = set_delay
 	new_display.progress_bar.value = set_delay
+	new_display.interval = _interval
+	new_display.unit_spawn_sound.stream = _type.entry_sound
 	return new_display
 
 func display(sprite:Texture2D,count:int):
@@ -51,8 +55,11 @@ func _process(delta: float) -> void:
 		new_tween.finished.connect(queue_free)
 
 func instance_unit():
+	print("Hello World")
+	unit_spawn_sound.play()
 	var new_enemy:Enemy = Enemy.create(type);
 	var jitter_vector = Vector2.from_angle(randf() * TAU)
+	
 	jitter_vector *= jitter * randf()
 	new_enemy.position = home + jitter_vector
 	add_sibling(new_enemy)

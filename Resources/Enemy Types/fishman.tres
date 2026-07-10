@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://gqmr0ddmbdrc"]
 
 [ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="1_0jxqd"]
+[ext_resource type="AudioStream" uid="uid://dtehsbngid20m" path="res://Assets/Sounds/Wave/enemyspawn_fish.wav" id="1_l3t0y"]
 [ext_resource type="Texture2D" uid="uid://21klxm0cntav" path="res://Assets/SHEETS/Reversemermaidsprites.png" id="2_0jxqd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l3t0y"]
@@ -172,4 +173,5 @@ sprite = SubResource("SpriteFrames_vlfyy")
 movespeed = 75.0
 max_health = 100.0
 size = 60
+entry_sound = ExtResource("1_l3t0y")
 metadata/_custom_type_script = "uid://c7wrjd2iicq8d"

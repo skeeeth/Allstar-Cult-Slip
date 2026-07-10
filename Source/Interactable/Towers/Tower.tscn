@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://prs7hbtfl8n8" path="res://Source/Interactable/Towers/Tower.gd" id="1_hv3xy"]
 [ext_resource type="Texture2D" uid="uid://cc878l78iwvie" path="res://Assets/CUSTOM PLACEHOLDER/Circle_White_128.png" id="2_j3jl0"]
-[ext_resource type="AudioStream" uid="uid://cp60wc0xi154y" path="res://Assets/Sounds/bulid/enemyspawn_tree.wav" id="3_06aws"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_j3jl0"]
 noise_type = 2
@@ -18,10 +17,11 @@ size = Vector2(216, 225)
 offsets = PackedFloat32Array(0, 0.7556391, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.60784316, 1, 1, 1, 0)
 
-[node name="Tower" type="Node2D" unique_id=447039082 node_paths=PackedStringArray("sprite", "animated_sprite", "range_shape")]
+[node name="Tower" type="Node2D" unique_id=447039082 node_paths=PackedStringArray("sprite", "animated_sprite", "trigger_sound", "range_shape")]
 script = ExtResource("1_hv3xy")
 sprite = NodePath("Sprite2D")
 animated_sprite = NodePath("AnimatedSprite2D")
+trigger_sound = NodePath("Trigger Sound")
 range_shape = NodePath("Effect Area/CollisionShape2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1740974572]
@@ -64,9 +64,7 @@ color = Color(0.8, 0.8, 0.8, 0.9098039)
 color_ramp = SubResource("Gradient_j3jl0")
 
 [node name="Trigger Sound" type="AudioStreamPlayer2D" parent="." unique_id=213388662]
-stream = ExtResource("3_06aws")
 volume_db = -15.0
-bus = &"Reverb"
 
 [connection signal="area_entered" from="Effect Area" to="." method="_on_effect_area_area_entered"]
 [connection signal="area_exited" from="Effect Area" to="." method="_on_effect_area_area_exited"]

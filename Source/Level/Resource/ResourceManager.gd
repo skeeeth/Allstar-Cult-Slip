@@ -22,6 +22,11 @@ var ResourceCadence:Dictionary[ResourceTypes,float] = {
 	ResourceManager.ResourceTypes.U: 2.0,
 }
 
+const HarvestSounds:Dictionary[ResourceTypes,AudioStream] = {
+	ResourceTypes.B: preload("uid://bt5cra2tpcfvs"),
+	ResourceTypes.O: preload("uid://c2nfvva7ck170"), 
+	ResourceTypes.U: preload("uid://dv5v55voqbw6b")
+}
 
 func add_resource(type:String, amount:int):
 	if current.has(type):

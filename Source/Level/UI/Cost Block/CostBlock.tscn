@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://b880s5kkw8xm4" path="res://Source/Level/UI/Cost Block/cost_block.gd" id="1_tsj76"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrwrk"]
+bg_color = Color(0.13, 0.056333333, 0, 1)
 
 [node name="HBoxContainer" type="PanelContainer" unique_id=1637814634]
 offset_right = 133.0

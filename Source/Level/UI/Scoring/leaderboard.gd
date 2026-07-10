@@ -46,3 +46,9 @@ func add_score(entry_name:String, score:float):
 func load_scores():
 	#IDK MAN DO I REALLY GIVE A SHIT
 	pass
+
+
+func _on_button_pressed() -> void:
+	Scoring.reset_game()
+	
+	pass # Replace with function body.

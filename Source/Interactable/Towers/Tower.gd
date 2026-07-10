@@ -7,6 +7,7 @@ const self_scene = preload("uid://bba0prqueb088")
 var units_inside:Array[Unit]
 @export var sprite: Sprite2D
 @export var animated_sprite:AnimatedSprite2D
+@export var trigger_sound:AudioStreamPlayer2D
 
 var targets:Array[Unit]
 var max_targets:int = 1
@@ -23,6 +24,10 @@ static func create(from_data:TowerData) -> Tower: #Make sure to add to scene!
 	var circle = CircleShape2D.new()
 	circle.radius = from_data.area_size
 	new_tower.range_shape.shape = circle
+	
+	if from_data.attack_sound:
+		new_tower.trigger_sound.stream = from_data.attack_sound
+	
 	
 	new_tower.sprite.texture = from_data.sprite
 	var x_fit = from_data.draw_size / from_data.sprite.get_size().x
@@ -80,6 +85,8 @@ func _process(delta: float) -> void:
 			area_time += delta
 			if area_time >= data.trigger_time:
 				shockwave.emitting = true ## BAD COUPLED CODE, ONLY FOR TREE
+				if trigger_sound.stream:
+					trigger_sound.play()
 				trigger_all()
 				area_time -= data.trigger_time
 		TowerData.trigger_conditions.UNIT_TIME:
@@ -92,6 +99,8 @@ func _process(delta: float) -> void:
 
 
 func trigger_all():
+
+	
 	for u in targets:
 		trigger_single(u)
 		

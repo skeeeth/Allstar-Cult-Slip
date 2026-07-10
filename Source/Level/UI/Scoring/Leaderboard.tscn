@@ -35,3 +35,5 @@ horizontal_alignment = 2
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=931460675]
 layout_mode = 2
 text = "Restart"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
