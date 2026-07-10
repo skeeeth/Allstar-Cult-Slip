@@ -1,17 +1,28 @@
 [gd_scene format=3 uid="uid://chb2l2bjixpa2"]
 
 [ext_resource type="Script" uid="uid://dn71f311npc4m" path="res://Source/Interactable/interactable.gd" id="1_u5ql3"]
+[ext_resource type="Texture2D" uid="uid://dce1j8028nuvm" path="res://Assets/SHEETS/keyboard-&-mouse_sheet_double.png" id="2_6johy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_77n3y"]
 radius = 64.0
 
-[node name="Interaction Area" type="Area2D" unique_id=268138595]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kywoc"]
+atlas = ExtResource("2_6johy")
+region = Rect2(256, 384, 128, 128)
+
+[node name="Interaction Area" type="Area2D" unique_id=268138595 node_paths=PackedStringArray("button_prompt")]
 collision_layer = 0
 script = ExtResource("1_u5ql3")
+button_prompt = NodePath("Button Prompt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1659368235]
 shape = SubResource("CircleShape2D_77n3y")
 debug_color = Color(1, 1, 1, 0.22352941)
+
+[node name="Button Prompt" type="Sprite2D" parent="." unique_id=486205807]
+visible = false
+position = Vector2(0, 72)
+texture = SubResource("AtlasTexture_kywoc")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

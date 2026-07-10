@@ -28,6 +28,10 @@ const HarvestSounds:Dictionary[ResourceTypes,AudioStream] = {
 	ResourceTypes.U: preload("uid://dv5v55voqbw6b")
 }
 
+func _ready() -> void:
+	for i in ResourceManager.ResourceTypes.values():
+		ResourceManager.add_resource(ResourceManager.ResourceNames[i],0)
+
 func add_resource(type:String, amount:int):
 	if current.has(type):
 		current[type] += amount

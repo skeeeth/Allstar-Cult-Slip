@@ -2,6 +2,67 @@
 
 [ext_resource type="Theme" uid="uid://c8fudp8ycih5q" path="res://Assets/SSS_theme.tres" id="1_espid"]
 [ext_resource type="Script" uid="uid://emai35mpemu1" path="res://Source/Level/Title/title.gd" id="1_uoy8k"]
+[ext_resource type="PackedScene" uid="uid://bxuwbl1bbb4a0" path="res://Source/Interactable/Tower Site/TowerSite.tscn" id="3_8wsh6"]
+[ext_resource type="Texture2D" uid="uid://dylocmhyg30qy" path="res://Assets/SHEETS/PlayerSpriteSheet.png" id="4_hdrwl"]
+[ext_resource type="Texture2D" uid="uid://dce1j8028nuvm" path="res://Assets/SHEETS/keyboard-&-mouse_sheet_double.png" id="5_hdrwl"]
+[ext_resource type="PackedScene" uid="uid://ofx71x0hbi23" path="res://Source/Interactable/Circle/ResourceCircle.tscn" id="6_t17wv"]
+[ext_resource type="Texture2D" uid="uid://be4dj37ikk27o" path="res://Assets/Mapver1.png" id="6_uqpvc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0q8bw"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_uoy8k"]
+font_size = 48
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdiur"]
+atlas = ExtResource("5_hdrwl")
+region = Rect2(384, 1664, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wnrw"]
+atlas = ExtResource("4_hdrwl")
+region = Rect2(0, 128, 768, 896)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pkxw5"]
+font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkxw5"]
+atlas = ExtResource("6_uqpvc")
+region = Rect2(2245.091, 76.363686, 92.727295, 97.27276)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fwvw"]
+atlas = ExtResource("6_uqpvc")
+region = Rect2(32.207428, 1164.1526, 70.62363, 74.38013)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oysb"]
+atlas = ExtResource("6_uqpvc")
+region = Rect2(1435.635, 920.2094, 88.28943, 96.3858)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdrwl"]
+atlas = ExtResource("5_hdrwl")
+region = Rect2(384, 1920, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t17wv"]
+atlas = ExtResource("5_hdrwl")
+region = Rect2(640, 1920, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfvhw"]
+atlas = ExtResource("5_hdrwl")
+region = Rect2(896, 1920, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqpvc"]
+atlas = ExtResource("5_hdrwl")
+region = Rect2(1152, 1920, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0ouv"]
+atlas = ExtResource("5_hdrwl")
+region = Rect2(256, 384, 128, 128)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uqpvc"]
+font_size = 48
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtdn1"]
+atlas = ExtResource("6_uqpvc")
+region = Rect2(589.0001, 395, 449.00024, 301.00012)
 
 [node name="Node2D" type="Node2D" unique_id=983644745]
 script = ExtResource("1_uoy8k")
@@ -21,10 +82,187 @@ text = "Start Game"
 layout_mode = 2
 text = "Help"
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1526643637]
-process_mode = 2
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Tutorial Panel" type="PanelContainer" parent="." unique_id=1526643637]
+offset_left = 53.0
+offset_top = 176.0
+offset_right = 1363.0
+offset_bottom = 1010.0
+theme = ExtResource("1_espid")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial Panel" unique_id=799660256]
+layout_mode = 2
+
+[node name="Title Plate" type="Label" parent="Tutorial Panel/VBoxContainer" unique_id=1367811996]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Tutorial"
+label_settings = SubResource("LabelSettings_0q8bw")
+horizontal_alignment = 1
+
+[node name="Player Movement slide" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=28247604]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Player Movement slide" unique_id=1524996468]
+layout_mode = 2
+size_flags_vertical = 0
+text = "WASD to move"
+label_settings = SubResource("LabelSettings_uoy8k")
+horizontal_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Player Movement slide" unique_id=1595564108]
+position = Vector2(648, 511)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_hdiur")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Player Movement slide" unique_id=1460908447]
+position = Vector2(633.00006, 213)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("AtlasTexture_6wnrw")
+
+[node name="Resource Circle Slide" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=613666744]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=1409618418]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Each time a resource is collected, the location randomly choses a new resource (can be the same).  Each resource has different generation behavior, so choose your collection timing carefully."
+label_settings = SubResource("LabelSettings_uoy8k")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Spore Circle2" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=1003327155 instance=ExtResource("6_t17wv")]
+position = Vector2(195, 333)
+
+[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle2" unique_id=133844979]
+offset_left = -180.0
+offset_top = 74.0
+offset_right = 186.0
+offset_bottom = 215.0
+text = "Bananas generate faster the LESS bananas are already in store"
+label_settings = SubResource("LabelSettings_pkxw5")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D3" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle2" unique_id=1101821467]
+texture = SubResource("AtlasTexture_pkxw5")
+
+[node name="Spore Circle" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=2118307154 instance=ExtResource("6_t17wv")]
+position = Vector2(651, 339)
+type = 1
+
+[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle" unique_id=1908560811]
+offset_left = -180.0
+offset_top = 74.0
+offset_right = 186.0
+offset_bottom = 215.0
+text = "Spores generate faster the MORE spores are already in store"
+label_settings = SubResource("LabelSettings_pkxw5")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle" unique_id=841043295]
+texture = SubResource("AtlasTexture_3fwvw")
+
+[node name="Spore Circle3" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=1303897538 instance=ExtResource("6_t17wv")]
+position = Vector2(1086, 335)
+type = 2
+
+[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle3" unique_id=883207588]
+offset_left = -180.0
+offset_top = 74.0
+offset_right = 186.0
+offset_bottom = 215.0
+text = "Souls always generate at the same speed"
+label_settings = SubResource("LabelSettings_pkxw5")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle3" unique_id=2051386409]
+texture = SubResource("AtlasTexture_6oysb")
+
+[node name="Tower Site Slide" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=1979932853]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Tower Site Slide" unique_id=1974287379]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Step onto a tower site for a list of available towers
+Use keys 1, 2, 3, 4 to select one then use Space to build, provided you have the required materials"
+label_settings = SubResource("LabelSettings_uoy8k")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial Panel/VBoxContainer/Tower Site Slide" unique_id=2004476426]
+custom_minimum_size = Vector2(1105.155, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 0.215)
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial Panel/VBoxContainer/Tower Site Slide/HBoxContainer" unique_id=669656211]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_hdrwl")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Tutorial Panel/VBoxContainer/Tower Site Slide/HBoxContainer" unique_id=1906719769]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_t17wv")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Tutorial Panel/VBoxContainer/Tower Site Slide/HBoxContainer" unique_id=1815829905]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_tfvhw")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Tutorial Panel/VBoxContainer/Tower Site Slide/HBoxContainer" unique_id=1606743161]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_uqpvc")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="TowerSite" parent="Tutorial Panel/VBoxContainer/Tower Site Slide" unique_id=709428637 instance=ExtResource("3_8wsh6")]
+position = Vector2(672, 662)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Tower Site Slide" unique_id=572358763]
+position = Vector2(676, 730)
+texture = SubResource("AtlasTexture_u0ouv")
+
+[node name="Upgrade Slide" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=900117148]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Upgrade Slide" unique_id=1072264421]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Your Patron will periodically offer upgrades for a price"
+label_settings = SubResource("LabelSettings_uqpvc")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Upgrade Slide" unique_id=654058327]
+position = Vector2(651, 603)
+texture = SubResource("AtlasTexture_u0ouv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Upgrade Slide" unique_id=559655362]
+position = Vector2(653, 380)
+texture = SubResource("AtlasTexture_jtdn1")
 
 [connection signal="pressed" from="Buttons/Start Game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="Buttons/Help" to="." method="_on_help_pressed"]
+
+[editable path="Tutorial Panel/VBoxContainer/Tower Site Slide/TowerSite"]

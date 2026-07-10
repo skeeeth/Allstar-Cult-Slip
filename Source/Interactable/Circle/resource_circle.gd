@@ -4,18 +4,26 @@ class_name ResourceCircle
 @export var cadence:float = 10
 var progress:float = 0
 @export var type:ResourceManager.ResourceTypes
+@export var random_spawn:bool = true
 var store:int
 
 @onready var interact_hitbox: Interactable = $"Interaction Area"
 @onready var progress_bar: ProgressBar = $ProgressBar
 @onready var count_text: Label = $"Count Text"
 @onready var collect_sound: AudioStreamPlayer2D = $Harvest
+#@onready var button_prompt: Sprite2D = $"Button Prompt"
+
 var max_store:int = 99
 
 func _ready() -> void:
 	interact_hitbox.interacted.connect(on_interaction)
 	ResourceManager.stat_change.connect(stat_change)
-	roll_resource()
+	
+	#interact_hitbox.area_entered.connect(button_prompt.show)
+	#interact_hitbox.area_entered.connect(button_prompt.hide)
+	
+	if random_spawn:
+		roll_resource()
 
 func on_interaction():
 	if store >= 1:

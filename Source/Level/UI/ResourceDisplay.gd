@@ -6,6 +6,7 @@ var labels:Dictionary[String,Label]
 func _ready() -> void:
 	ResourceManager.new_key.connect(on_new_key)
 	ResourceManager.key_update.connect(on_update)
+	ResourceManager.current.clear()
 	for i in ResourceManager.ResourceTypes.values():
 		ResourceManager.add_resource(ResourceManager.ResourceNames[i],0)
 

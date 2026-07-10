@@ -19,7 +19,7 @@ var type:EnemyData
 
 var jitter:float = 100
 
-static func _create(set_delay:float, _type:EnemyData, count:int, _interval:float):
+static func _create(set_delay:float, _type:EnemyData, count:int, _interval:float = 0.25):
 	var new_display:WaveIndicator = self_scene.instantiate()
 	new_display.type = _type
 	new_display.quota = count

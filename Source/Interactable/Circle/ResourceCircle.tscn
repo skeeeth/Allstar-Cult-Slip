@@ -17,6 +17,7 @@ volume_db = -15.0
 max_polyphony = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=908612667]
+visible = false
 modulate = Color(0.88, 0.88, 0.88, 0.15686275)
 position = Vector2(12.000013, 5.999998)
 scale = Vector2(0.3893805, 0.32918397)
