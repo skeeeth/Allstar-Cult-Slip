@@ -31,25 +31,26 @@ func on_interaction():
 func _process(delta: float) -> void:
 	if store == max_store:
 		return
-	var mult = 1
+
 	if progress >= cadence:
 		progress -= cadence
 		store += 1
 		_set_text()
 		
-		#set dynamic cadence
-		var _bc = ResourceManager.ResourceCadence[type] #base cadence
-		match type:
-			ResourceManager.ResourceTypes.B:
-				mult = (1.0 / ((0.4 * store) + 1))
-				#print(mult)
-			ResourceManager.ResourceTypes.O:
-				mult = pow(1.15,store/3.5)
-				#print(mult)
-			ResourceManager.ResourceTypes.U:
-				mult = 1
+	var mult = 1
+	#set dynamic cadence
+	var _bc = ResourceManager.ResourceCadence[type] #base cadence
+	match type:
+		ResourceManager.ResourceTypes.B:
+			mult = (1.0 / ((0.2 * store) + 1))
+			#print(mult)
+		ResourceManager.ResourceTypes.O:
+			mult = pow(1.10,store/5.5)
+			#print(mult)
+		ResourceManager.ResourceTypes.U:
+			mult = 1
 				
-		progress_bar.max_value = cadence
+	progress_bar.max_value = cadence
 	
 	progress += delta * mult
 	progress_bar.value = progress

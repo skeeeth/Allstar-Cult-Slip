@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://0dp8j1q5mjdd"]
+
+[ext_resource type="SpriteFrames" uid="uid://bsng52v1h5aiw" path="res://Assets/SHEETS/CoconutFrames.tres" id="1_7ciog"]
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_ub1kt"]
+[ext_resource type="Texture2D" uid="uid://hvuqaabv38xt" path="res://Assets/SHEETS/Entsprites.png" id="3_ofbuc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06lji"]
+atlas = ExtResource("3_ofbuc")
+region = Rect2(32, 80, 968, 992)
+
+[resource]
+script = ExtResource("1_ub1kt")
+tower_name = "Coconut Tree"
+sprite = SubResource("AtlasTexture_06lji")
+frames = ExtResource("1_7ciog")
+metadata/_custom_type_script = "uid://dlv0kunqio4rh"

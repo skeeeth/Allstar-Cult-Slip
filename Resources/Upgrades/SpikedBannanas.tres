@@ -2,13 +2,16 @@
 
 [ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_lscop"]
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_fj2xn"]
-[ext_resource type="Resource" uid="uid://cwdovgn6qws6s" path="res://Resources/Towers/BananaField.tres" id="3_7pq8c"]
+[ext_resource type="Resource" uid="uid://dc6dnq08oeh52" path="res://Resources/Towers/BananaField.tres" id="3_7pq8c"]
 [ext_resource type="Script" uid="uid://btarx67t2mdtf" path="res://Source/Interactable/Upgrade Offer/upgrade_data.gd" id="4_4lbus"]
 
 [resource]
 script = ExtResource("4_4lbus")
 name = "Spiked Banana Fields"
 description = "Banana Fields do more damage"
+cost = Dictionary[int, int]({
+2: 50
+})
 type = 1
 associated_towers = Array[ExtResource("2_fj2xn")]([ExtResource("3_7pq8c")])
 stat_increases = Dictionary[String, float]({

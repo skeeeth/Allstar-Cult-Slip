@@ -1,8 +1,8 @@
-[gd_resource type="Resource" script_class="TowerData" format=3]
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://dc6dnq08oeh52"]
 
-[ext_resource type="AudioStream" path="res://Assets/Sounds/bulid/build_cannon.wav" id="1_3bpxv"]
-[ext_resource type="Script" path="res://Source/Interactable/Towers/TowerData.gd" id="1_k20hp"]
-[ext_resource type="Texture2D" path="res://Assets/CUSTOM PLACEHOLDER/naner_field.png" id="2_dyxgp"]
+[ext_resource type="AudioStream" uid="uid://ymo481jslny0" path="res://Assets/Sounds/bulid/build_cannon.wav" id="1_3bpxv"]
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_k20hp"]
+[ext_resource type="Texture2D" uid="uid://wk1bewpuaeg2" path="res://Assets/CUSTOM PLACEHOLDER/naner_field.png" id="2_dyxgp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3bpxv"]
 atlas = ExtResource("2_dyxgp")

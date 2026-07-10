@@ -15,6 +15,7 @@ bg_color = Color(1, 0.32747653, 0.3874087, 1)
 
 [resource]
 default_font = ExtResource("1_v6uqe")
+Button/font_sizes/font_size = 96
 LineEdit/font_sizes/font_size = 64
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_f2xjc")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_g6o72")

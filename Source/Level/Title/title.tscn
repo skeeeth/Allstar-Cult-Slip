@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b8lsoa8kforby"]
+
+[ext_resource type="Theme" uid="uid://c8fudp8ycih5q" path="res://Assets/SSS_theme.tres" id="1_espid"]
+[ext_resource type="Script" uid="uid://emai35mpemu1" path="res://Source/Level/Title/title.gd" id="1_uoy8k"]
+
+[node name="Node2D" type="Node2D" unique_id=983644745]
+script = ExtResource("1_uoy8k")
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1008645609]
+offset_left = 1382.0
+offset_top = 514.0
+offset_right = 1841.0
+offset_bottom = 770.0
+theme = ExtResource("1_espid")
+
+[node name="Start Game" type="Button" parent="Buttons" unique_id=653407840]
+layout_mode = 2
+text = "Start Game"
+
+[node name="Help" type="Button" parent="Buttons" unique_id=151024707]
+layout_mode = 2
+text = "Help"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1526643637]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Buttons/Start Game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Buttons/Help" to="." method="_on_help_pressed"]
