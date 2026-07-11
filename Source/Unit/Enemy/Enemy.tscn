@@ -43,7 +43,6 @@ offset_bottom = 57.0
 value = 100.0
 
 [node name="Navi" type="NavigationAgent2D" parent="." unique_id=1892920142]
-debug_enabled = true
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=1346279345]
 speed_scale = 2.2

@@ -15,7 +15,7 @@
 script = ExtResource("1_0kqjk")
 interactable = NodePath("Interaction Area")
 info_block = NodePath("Info Block")
-interval = 5.0
+interval = 30.0
 offer = ExtResource("4_r631o")
 starting_pool = Array[ExtResource("3_51exp")]([ExtResource("4_r631o"), ExtResource("4_bsxxh"), ExtResource("5_tyndc"), ExtResource("6_tyndc")])
 progress_bar = NodePath("Info Block/VBoxContainer/ProgressBar")

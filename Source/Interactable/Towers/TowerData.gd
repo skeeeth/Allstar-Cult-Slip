@@ -42,6 +42,10 @@ func _reset_state() -> void:
 
 
 func get_upgrade(stats:Dictionary):
+	#also apply to upgrades
+	if upgrade:
+		upgrade.get_upgrade(stats)
+	
 	var try_add = func add_stat(key:String)-> float:
 		if stats.has(key):
 			return stats[key]

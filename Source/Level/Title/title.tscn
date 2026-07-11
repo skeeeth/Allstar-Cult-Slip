@@ -73,7 +73,7 @@ font_size = 96
 
 [node name="Node2D" type="Node2D" unique_id=983644745 node_paths=PackedStringArray("panel_sequence")]
 script = ExtResource("1_uoy8k")
-panel_sequence = [NodePath("Tutorial Panel/VBoxContainer/Game Overview"), NodePath("Tutorial Panel/VBoxContainer/Player Movement slide"), NodePath("Tutorial Panel/VBoxContainer/Shrine Slide"), NodePath("Tutorial Panel/VBoxContainer/Resource Behavior Slide"), NodePath("Tutorial Panel/VBoxContainer/Tower Site Slide"), NodePath("Tutorial Panel/VBoxContainer/Upgrade Slide")]
+panel_sequence = [NodePath("Tutorial Panel/VBoxContainer/Game Overview"), NodePath("Tutorial Panel/VBoxContainer/Player Movement slide"), NodePath("Tutorial Panel/VBoxContainer/Tower Site Slide"), NodePath("Tutorial Panel/VBoxContainer/Shrine Slide"), NodePath("Tutorial Panel/VBoxContainer/Resource Behavior Slide"), NodePath("Tutorial Panel/VBoxContainer/Upgrade Slide")]
 
 [node name="Buttons" type="VBoxContainer" parent="." unique_id=1008645609]
 offset_left = 1382.0
@@ -92,6 +92,7 @@ text = "Help"
 
 [node name="Tutorial Panel" type="PanelContainer" parent="." unique_id=1526643637]
 visible = false
+z_index = 2
 offset_left = 53.0
 offset_top = 176.0
 offset_right = 1363.0
@@ -181,6 +182,8 @@ autowrap_mode = 3
 
 [node name="Spore Circle2" parent="Tutorial Panel/VBoxContainer/Shrine Slide" unique_id=103370958 instance=ExtResource("6_t17wv")]
 position = Vector2(195, 333)
+type = 0
+random_spawn = false
 
 [node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Shrine Slide/Spore Circle2" unique_id=706861251]
 visible = false
@@ -198,6 +201,8 @@ texture = SubResource("AtlasTexture_pkxw5")
 
 [node name="Spore Circle" parent="Tutorial Panel/VBoxContainer/Shrine Slide" unique_id=844100527 instance=ExtResource("6_t17wv")]
 position = Vector2(651, 339)
+type = 1
+random_spawn = false
 
 [node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Shrine Slide/Spore Circle" unique_id=1796420141]
 visible = false
@@ -247,6 +252,8 @@ autowrap_mode = 3
 
 [node name="Spore Circle2" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide" unique_id=1003327155 instance=ExtResource("6_t17wv")]
 position = Vector2(195, 333)
+type = 0
+random_spawn = false
 
 [node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide/Spore Circle2" unique_id=133844979]
 offset_left = -180.0
@@ -263,6 +270,8 @@ texture = SubResource("AtlasTexture_pkxw5")
 
 [node name="Spore Circle" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide" unique_id=2118307154 instance=ExtResource("6_t17wv")]
 position = Vector2(651, 339)
+type = 1
+random_spawn = false
 
 [node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide/Spore Circle" unique_id=1908560811]
 offset_left = -180.0
@@ -442,6 +451,7 @@ texture = SubResource("AtlasTexture_jtdn1")
 position = Vector2(669.5, 511.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1663478365]
+z_index = -999
 position = Vector2(702.00006, 589.00006)
 scale = Vector2(0.54, 0.54)
 texture = ExtResource("6_uqpvc")

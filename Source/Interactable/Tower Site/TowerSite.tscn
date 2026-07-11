@@ -24,7 +24,7 @@ scale = Vector2(2.095, 2.095)
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=264960647]
 scale = Vector2(0.25, 0.25)
-color = Color(0.5, 0.25349998, 0.065, 0.54901963)
+color = Color(0.5, 0.25349998, 0.065, 0.42745098)
 polygon = PackedVector2Array(-64, -64, -64, 64, 64, 64, 64, -64)
 
 [node name="Tower Info" type="HBoxContainer" parent="." unique_id=1573302505]

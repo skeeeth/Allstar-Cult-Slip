@@ -30,6 +30,7 @@ func display():
 
 
 func _on_line_edit_text_submitted(new_text: String) -> void:
-	leaderboard.add_score(new_text,Scoring.get_total_score())
+	#leaderboard.add_score(new_text,Scoring.get_total_score())
+	Scoring.add_entry(new_text,Scoring.get_total_score())
 	leaderboard.display_scores()
 	hide()

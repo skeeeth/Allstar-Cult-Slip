@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://b25yk4db1hosn"]
+[gd_resource type="Resource" script_class="ProjectileData" format=3]
 
-[ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_oadmr"]
-[ext_resource type="Texture2D" uid="uid://cd66yi5w33sfn" path="res://Assets/Coconut Icon.tres" id="2_3bano"]
+[ext_resource type="Script" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_oadmr"]
+[ext_resource type="Texture2D" path="res://Assets/Coconut Icon.tres" id="2_3bano"]
 
 [resource]
 script = ExtResource("1_oadmr")

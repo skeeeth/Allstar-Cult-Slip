@@ -131,4 +131,4 @@ lmb={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.08235294, 0.30588236, 0.28235295, 1)
+environment/defaults/default_clear_color=Color(0.078431375, 0.2901961, 0.27450982, 1)
