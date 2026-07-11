@@ -64,8 +64,9 @@ font_size = 48
 atlas = ExtResource("6_uqpvc")
 region = Rect2(589.0001, 395, 449.00024, 301.00012)
 
-[node name="Node2D" type="Node2D" unique_id=983644745]
+[node name="Node2D" type="Node2D" unique_id=983644745 node_paths=PackedStringArray("panel_sequence")]
 script = ExtResource("1_uoy8k")
+panel_sequence = [NodePath("Tutorial Panel/VBoxContainer/Player Movement slide"), NodePath("Tutorial Panel/VBoxContainer/Resource Circle Slide"), NodePath("Tutorial Panel/VBoxContainer/Tower Site Slide"), NodePath("Tutorial Panel/VBoxContainer/Upgrade Slide")]
 
 [node name="Buttons" type="VBoxContainer" parent="." unique_id=1008645609]
 offset_left = 1382.0
@@ -103,6 +104,7 @@ horizontal_alignment = 1
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 
 [node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Player Movement slide" unique_id=1524996468]
 layout_mode = 2
@@ -125,6 +127,7 @@ texture = SubResource("AtlasTexture_6wnrw")
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 
 [node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=1409618418]
 layout_mode = 2
@@ -168,6 +171,7 @@ texture = SubResource("AtlasTexture_3fwvw")
 
 [node name="Spore Circle3" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=1303897538 instance=ExtResource("6_t17wv")]
 position = Vector2(1086, 335)
+random_spawn = false
 
 [node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle3" unique_id=883207588]
 offset_left = -180.0
@@ -186,6 +190,7 @@ texture = SubResource("AtlasTexture_6oysb")
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 
 [node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Tower Site Slide" unique_id=1974287379]
 layout_mode = 2
@@ -246,16 +251,18 @@ texture = SubResource("AtlasTexture_u0ouv")
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 
 [node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Upgrade Slide" unique_id=1072264421]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Your Patron will periodically offer upgrades for a price"
+text = "Your Patron will periodically offer run-wide upgrades for a price"
 label_settings = SubResource("LabelSettings_uqpvc")
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Upgrade Slide" unique_id=654058327]
+visible = false
 position = Vector2(651, 603)
 texture = SubResource("AtlasTexture_u0ouv")
 
@@ -265,5 +272,6 @@ texture = SubResource("AtlasTexture_jtdn1")
 
 [connection signal="pressed" from="Buttons/Start Game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="Buttons/Help" to="." method="_on_help_pressed"]
+[connection signal="gui_input" from="Tutorial Panel" to="." method="_on_tutorial_panel_gui_input"]
 
 [editable path="Tutorial Panel/VBoxContainer/Tower Site Slide/TowerSite"]
