@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dvipocmbfbece"]
+
+[ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="1_2clo5"]
+[ext_resource type="SpriteFrames" uid="uid://dx6cfey4qayl2" path="res://Resources/Enemy Types/SpriteFrames/fish_frames.tres" id="2_ej8oj"]
+
+[resource]
+script = ExtResource("1_2clo5")
+sprite = ExtResource("2_ej8oj")
+movespeed = 75.0
+max_health = 100.0
+size = 60
+wave_factor = 0.75
+interval_factor = 0.5
+metadata/_custom_type_script = "uid://c7wrjd2iicq8d"

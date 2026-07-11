@@ -131,7 +131,8 @@ cost = Dictionary[int, int]({
 })
 trigger_condition = 1
 effects = Dictionary[int, float]({
-0: 35.0
+0: 15.0,
+3: 5.0
 })
 trigger_time = 0.75
 area_size = 400.0

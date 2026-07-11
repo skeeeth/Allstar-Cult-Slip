@@ -16,7 +16,7 @@ class_name TowerData
 enum trigger_conditions{AREA_TIME, UNIT_TIME, ENTRY, EXIT}
 @export var trigger_condition:trigger_conditions
 
-enum effect_types{DAMAGE, SLOW, SLIP}
+enum effect_types{DAMAGE, SLOW, SLIP, POISON}
 @export var effects:Dictionary[effect_types,float] = {effect_types.DAMAGE:0}
 var effect_mod:Dictionary[effect_types,float]
 
@@ -39,7 +39,6 @@ func _reset_state() -> void:
 	effect_mod.clear()
 	speed_mod = 0
 	range_mod = 0
-
 
 func get_upgrade(stats:Dictionary):
 	#also apply to upgrades

@@ -11,7 +11,9 @@ signal died(who) #up to owner or parent to decide what happens on death
 @export var animated_sprite:AnimatedSprite2D
 
 var current_health:float = max_health
+var poison:int = 0
 
+var poison_timer:Timer
 
 func take_damage(amount:float):
 	current_health -= amount
@@ -45,3 +47,20 @@ func try_play_animation(animation:String):
 		return
 	else:
 		animated_sprite.play(animation)
+		
+
+func add_poison(amount):
+	if amount <= 0: #towers will apply 0 of an effect due to upgrade logic, dont do anything
+		return
+	
+	if poison == 0:
+		poison_timer = Timer.new()
+		poison_timer.wait_time = 1.0
+		poison_timer.timeout.connect(_on_poison_tick)
+		add_child(poison_timer)
+		poison_timer.start()
+	
+	poison += amount
+	
+func _on_poison_tick():
+	take_damage(poison)

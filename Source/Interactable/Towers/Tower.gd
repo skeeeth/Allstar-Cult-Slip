@@ -65,7 +65,7 @@ func register_unit(u:Unit):
 			targets.append(u)
 			u.create_tween().tween_callback(\
 					trigger_single.bind(u)).set_delay(
-							data.trigger_time * randf())
+							data.trigger_time * randf_range(0.4,1.0))
 			#trigger_single(u)
 			targets.erase(u)
 		TowerData.trigger_conditions.AREA_TIME:
@@ -130,6 +130,8 @@ func apply_effects(target:Unit):
 				target.take_damage(read_effects[e])
 			TowerData.effect_types.SLIP:
 				target.slip(read_effects[e])
+			TowerData.effect_types.POISON:
+				target.add_poison(read_effects[e])
 
 func fire_projectile(target:Unit):
 	var new_projectile = Projectile.create(data.projectile,self)

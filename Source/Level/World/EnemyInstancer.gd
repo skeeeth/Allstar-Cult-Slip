@@ -107,16 +107,19 @@ func start_day():
 	day += 1
 	
 	match day:
-		2:
+		1:
+			count_base += 1
 			enemy_pool.append(load("res://Resources/Enemy Types/Eyecrab.tres"))
-		3:
+		2:
 			spawn_points.append(%"Hard Right Spawn")
 			enemy_pool.append(load("res://Resources/Enemy Types/jellady.tres"))
+		3:
+			enemy_pool.append(load("res://Resources/Enemy Types/dense_fish.tres"))
 
 	wave_timer.stop()
 	
 	var fade = create_tween()
-	fade.tween_property(moonlight,"energy",0.0,1)
+	fade.tween_property(moonlight,"energy",0.0,1.5)
 	
 
 func _input(event: InputEvent) -> void:
