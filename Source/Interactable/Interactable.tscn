@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dce1j8028nuvm" path="res://Assets/SHEETS/keyboard-&-mouse_sheet_double.png" id="2_6johy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_77n3y"]
-radius = 64.0
+radius = 48.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kywoc"]
 atlas = ExtResource("2_6johy")
@@ -21,7 +21,8 @@ debug_color = Color(1, 1, 1, 0.22352941)
 
 [node name="Button Prompt" type="Sprite2D" parent="." unique_id=486205807]
 visible = false
-position = Vector2(0, 72)
+position = Vector2(0, 37.000004)
+scale = Vector2(0.33, 0.33)
 texture = SubResource("AtlasTexture_kywoc")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

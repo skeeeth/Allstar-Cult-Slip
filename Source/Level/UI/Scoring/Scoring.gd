@@ -24,7 +24,9 @@ func get_total_score() -> float:
 
 func reset_game():
 	game_reseting.emit()
-	ResourceManager.current.clear()
+	
+	for r in ResourceManager.current:
+		ResourceManager.current[r] = 0
 	#get_tree().reload_current_scene()
 	get_tree().change_scene_to_file("res://Source/Level/Title/title.tscn")
 	pass

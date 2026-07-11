@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://kgu0n14ydpkl"]
+[gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://c4314my7x46ic"]
 
 [ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_oadmr"]
 [ext_resource type="Texture2D" uid="uid://cd66yi5w33sfn" path="res://Assets/Coconut Icon.tres" id="2_3bano"]
@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("1_oadmr")
 sprite = ExtResource("2_3bano")
-speed = 2000.0
+spash_size = 24.0
+speed = 800.0
 size = 24
-activation_type = 1
 track = true
 metadata/_custom_type_script = "uid://bpp0od0nilhfy"

@@ -129,7 +129,8 @@ draw_size = 200.0
 build_sound = ExtResource("1_xxpkh")
 attack_sound = ExtResource("1_ywtk5")
 cost = Dictionary[int, int]({
-0: 20
+0: 20,
+2: 5
 })
 effects = Dictionary[int, float]({
 0: 40.0,

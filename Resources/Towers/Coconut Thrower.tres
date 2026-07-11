@@ -1,7 +1,7 @@
-[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://3t7h0ybuxb5j"]
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://bk4rb8yqe25f2"]
 
 [ext_resource type="AudioStream" uid="uid://pdsolx8s13nb" path="res://Assets/Sounds/bulid/enemyspawn_coconut.wav" id="1_83t6s"]
-[ext_resource type="Resource" uid="uid://kgu0n14ydpkl" path="res://Resources/Projectiles/Coconut.tres" id="1_ofiim"]
+[ext_resource type="Resource" uid="uid://c4314my7x46ic" path="res://Resources/Projectiles/Coconut.tres" id="1_ofiim"]
 [ext_resource type="SpriteFrames" uid="uid://bsng52v1h5aiw" path="res://Assets/SHEETS/CoconutFrames.tres" id="2_7qd2v"]
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_83t6s"]
 [ext_resource type="Resource" uid="uid://uif1uaj2itte" path="res://Resources/Towers/Coconut ThrowerII.tres" id="4_ofiim"]
@@ -16,13 +16,15 @@ draw_size = 24.0
 draw_count = 6
 build_sound = ExtResource("1_83t6s")
 cost = Dictionary[int, int]({
-1: 4
+0: 10,
+1: 4,
+2: 6
 })
 trigger_condition = 1
 effects = Dictionary[int, float]({
-0: 10.0
+0: 25.0
 })
-area_size = 500.0
+area_size = 300.0
 projectile = ExtResource("1_ofiim")
 upgrade = ExtResource("4_ofiim")
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"

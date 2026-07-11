@@ -24,6 +24,7 @@ animation = &"Down Left Idle"
 speed_scale = 2.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1482741900]
+navigation_layers = 3
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1918605825]
 current = true

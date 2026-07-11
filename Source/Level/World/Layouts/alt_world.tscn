@@ -6,21 +6,39 @@
 [ext_resource type="AudioStream" uid="uid://d3201iuoo88u7" path="res://Assets/Sounds/Wave/Splash/announcespawn.wav" id="2_vdjwc"]
 [ext_resource type="Script" uid="uid://c373uigs4r2l5" path="res://Source/Level/World/draw_rocks.gd" id="2_voyjm"]
 [ext_resource type="PackedScene" uid="uid://c2og13fi0nolf" path="res://Source/Interactable/Upgrade Offer/upgrade_offer.tscn" id="3_04pb6"]
-[ext_resource type="Texture2D" uid="uid://dieygl24jcb75" path="res://Assets/BEE WIPs/Maptest1.png" id="6_voyjm"]
+[ext_resource type="Texture2D" uid="uid://dce1j8028nuvm" path="res://Assets/SHEETS/keyboard-&-mouse_sheet_double.png" id="4_ecbtg"]
+[ext_resource type="Texture2D" uid="uid://be4dj37ikk27o" path="res://Assets/Mapver1.png" id="7_vdjwc"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_pkxw5"]
+vertices = PackedVector2Array(-223, 375, -62, 982, -497, 893, -638, 237, -306, -95, -12, 166)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-638, 237, -497, 893, -62, 982, -223, 375, -12, 166, -306, -95)])
+agent_radius = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl77m"]
+atlas = ExtResource("4_ecbtg")
+region = Rect2(256, 384, 128, 128)
 
 [node name="Alt World" unique_id=1815319325 instance=ExtResource("1_6u65b")]
 
 [node name="Base" parent="." index="0" unique_id=60688362]
+position = Vector2(-57, -201)
 loss_enabled = true
 
+[node name="Player" parent="." index="1" unique_id=1190391921]
+position = Vector2(260, 269)
+
 [node name="One" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="0" unique_id=2080853920]
-position = Vector2(-300, 1128)
+position = Vector2(-1104, 1477)
 
 [node name="L1" type="Node2D" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="1" unique_id=1624169314]
-position = Vector2(744, 1199)
+position = Vector2(584, 1479)
 
 [node name="L2" type="Node2D" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="2" unique_id=1751302321]
-position = Vector2(2012, 1122)
+position = Vector2(1329, 1302)
+
+[node name="Hard Right" type="Node2D" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="3" unique_id=2016221333]
+position = Vector2(1649, 186)
 
 [node name="Node" parent="." index="4" unique_id=1194797147 node_paths=PackedStringArray("spawn_points", "moonlight", "horn_sound")]
 spawn_points = [NodePath("../Spawn Points/One"), NodePath("../Spawn Points/L1"), NodePath("../Spawn Points/L2")]
@@ -42,111 +60,147 @@ volume_db = -8.0
 
 [node name="NavigationRegion2D" parent="." index="5" unique_id=398621725]
 z_index = -18
+metadata/_edit_lock_ = true
 
 [node name="Rocks" type="Node2D" parent="NavigationRegion2D" index="0" unique_id=10354817]
 script = ExtResource("2_voyjm")
 
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="0" unique_id=295937854]
-vertices = PackedVector2Array(1751, 1461, 1822, 1476, 1564, 223, 291, 51, 311, 106, 1483, 273)
+[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="0" unique_id=357815393]
+visible = false
+vertices = PackedVector2Array(-1369, 595, -1058, 1244, -972, 1301, -936, 1355, -722, 1363, -620, 1196, -898, 694, -666, 1206, -787, 1271, -952, 1252, -1221, 761, -1193, 564, -1065, 426, -609, -220, -57, -368, 337, -437, -734, -486, -1279, -265)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
-[node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="1" unique_id=945673120]
-position = Vector2(611, -117)
-vertices = PackedVector2Array(584, 1144, -421, 1037, -726, 724, -555, 703, -317, 937, 35.662354, 974.1293, 601, 1040)
+[node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="1" unique_id=584721052]
+visible = false
+vertices = PackedVector2Array(440, 1179, 59, 862, -23, 639, 123, 641, 215, 697, 256, 871, 438, 1017, 802, 1050, 819, 1060, 740, 1168)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
-[node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="2" unique_id=1296117969]
-vertices = PackedVector2Array(-788, 695, 1197, 457, 1191, 394, -604, 614)
+[node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="2" unique_id=132357387]
+visible = false
+vertices = PackedVector2Array(827, 1070, 847, 1058, 421, 808, 489, 679, 659, 606, 1171, 648, 1261, 930, 1392, 960, 1442, 928, 1404, -15, 1361, -69, 1399, 733, 1290, 698, 1221, 562, 994, 543, 639, 546, 441, 628, 372, 807, 429, 860)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
-[node name="NavigationObstacle2D4" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="3" unique_id=97461839]
-vertices = PackedVector2Array(-1133, 923, -1206, 395, -848, 121, -1237, 129, -1427.6823, 505.1778, -1004, 1470, -706, 1236)
+[node name="NavigationObstacle2D4" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="3" unique_id=1385623400]
+visible = false
+vertices = PackedVector2Array(307, -36, 514, 157, 578, 156, 571, 271, 870, 384, 1255, 436, 1246, -103, 1086, -188, 431, -234, 351, -160)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
-[node name="NavigationObstacle2D5" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="4" unique_id=2085197137]
-vertices = PackedVector2Array(-606, 342, -67, 342, -155, 167, -452, 179)
+[node name="NavigationObstacle2D5" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="4" unique_id=616662154]
+visible = false
+vertices = PackedVector2Array(1290, -273, 1315, -222, 1535, -133, 1669, -264)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
+
+[node name="NavigationObstacle2D6" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="5" unique_id=1246790361]
+vertices = PackedVector2Array(-91, -186, -122, -96, -46, -62, 21, -102, -13, -188)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationObstacle2D7" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="6" unique_id=1286392032]
+vertices = PackedVector2Array(-638, 237, -497, 893, -62, 982, -223, 375, -12, 166, -306, -95)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="NavigationRegion2D" index="1" unique_id=1997280297]
+navigation_polygon = SubResource("NavigationPolygon_pkxw5")
+navigation_layers = 2
+
+[node name="Button Prompt2" type="Sprite2D" parent="NavigationRegion2D" index="3" unique_id=1504191039]
+visible = false
+position = Vector2(0, 72)
+texture = SubResource("AtlasTexture_kl77m")
 
 [node name="TowerSite2" parent="." index="6" unique_id=6569348]
-position = Vector2(1228, 379)
+position = Vector2(-151, -4)
 
 [node name="Towers" type="Node2D" parent="." index="7" unique_id=173598381]
 position = Vector2(0, 278)
 
-[node name="TowerSite" parent="Towers" index="0" unique_id=655530917 instance=ExtResource("2_jklct")]
-position = Vector2(-969, 343)
+[node name="Left Side" type="Node2D" parent="Towers" index="0" unique_id=1489153820]
 
-[node name="TowerSite2" parent="Towers" index="1" unique_id=791144497 instance=ExtResource("2_jklct")]
-position = Vector2(-424, 181)
+[node name="TowerSite" parent="Towers/Left Side" index="0" unique_id=655530917 instance=ExtResource("2_jklct")]
+position = Vector2(1123, -576)
 
-[node name="TowerSite3" parent="Towers" index="2" unique_id=1047372345 instance=ExtResource("2_jklct")]
-position = Vector2(1909, 581)
+[node name="TowerSite2" parent="Towers/Left Side" index="1" unique_id=973916571 instance=ExtResource("2_jklct")]
+position = Vector2(747, -612)
 
-[node name="TowerSite4" parent="Towers" index="3" unique_id=1620548565 instance=ExtResource("2_jklct")]
-position = Vector2(1170, -234)
+[node name="TowerSite3" parent="Towers/Left Side" index="2" unique_id=940979210 instance=ExtResource("2_jklct")]
+position = Vector2(1382, -633)
 
-[node name="TowerSite5" parent="Towers" index="4" unique_id=582046735 instance=ExtResource("2_jklct")]
-position = Vector2(827, -280)
+[node name="TowerSite4" parent="Towers/Left Side" index="3" unique_id=251175109 instance=ExtResource("2_jklct")]
+position = Vector2(1233, -283)
 
-[node name="TowerSite6" parent="Towers" index="5" unique_id=1778558726 instance=ExtResource("2_jklct")]
-position = Vector2(-748, -8)
+[node name="Field" type="Node2D" parent="Towers" index="1" unique_id=1852382346]
 
-[node name="TowerSite7" parent="Towers" index="6" unique_id=1230306177 instance=ExtResource("2_jklct")]
-position = Vector2(-452, -289)
+[node name="TowerSite" parent="Towers/Field" index="0" unique_id=1932086583 instance=ExtResource("2_jklct")]
+position = Vector2(-127, 294)
 
-[node name="TowerSite8" parent="Towers" index="7" unique_id=957410497 instance=ExtResource("2_jklct")]
-position = Vector2(1445, 688)
+[node name="TowerSite2" parent="Towers/Field" index="1" unique_id=134347402 instance=ExtResource("2_jklct")]
+position = Vector2(-408, 292)
 
-[node name="TowerSite9" parent="Towers" index="8" unique_id=1237187392 instance=ExtResource("2_jklct")]
-position = Vector2(285, 72)
+[node name="TowerSite3" parent="Towers/Field" index="2" unique_id=157922996 instance=ExtResource("2_jklct")]
+position = Vector2(-837, 862)
 
-[node name="TowerSite10" parent="Towers" index="9" unique_id=613250187 instance=ExtResource("2_jklct")]
-position = Vector2(1466, -194)
+[node name="TowerSite4" parent="Towers/Field" index="3" unique_id=1704836577 instance=ExtResource("2_jklct")]
+position = Vector2(270, 447)
 
-[node name="TowerSite11" parent="Towers" index="10" unique_id=999871729 instance=ExtResource("2_jklct")]
-position = Vector2(1086, 234)
+[node name="TowerSite5" parent="Towers/Field" index="4" unique_id=1963164050 instance=ExtResource("2_jklct")]
 
-[node name="TowerSite12" parent="Towers" index="11" unique_id=1942896687 instance=ExtResource("2_jklct")]
-position = Vector2(-616, 524)
+[node name="TowerSite6" parent="Towers/Field" index="5" unique_id=1342659030 instance=ExtResource("2_jklct")]
+position = Vector2(192, -460)
 
-[node name="TowerSite13" parent="Towers" index="12" unique_id=1084301398 instance=ExtResource("2_jklct")]
-position = Vector2(-257, 630)
+[node name="TowerSite7" parent="Towers/Field" index="6" unique_id=197538464 instance=ExtResource("2_jklct")]
+position = Vector2(135, -230)
 
-[node name="TowerSite14" parent="Towers" index="13" unique_id=938916348 instance=ExtResource("2_jklct")]
-position = Vector2(-565, 795)
+[node name="TowerSite8" parent="Towers/Field" index="7" unique_id=857328439 instance=ExtResource("2_jklct")]
+position = Vector2(-582, 495)
+
+[node name="TowerSite9" parent="Towers/Field" index="8" unique_id=561799588 instance=ExtResource("2_jklct")]
+position = Vector2(-680, -210)
+
+[node name="TowerSite10" parent="Towers/Field" index="9" unique_id=240019615 instance=ExtResource("2_jklct")]
+position = Vector2(-681, 121)
+
+[node name="Beach" type="Node2D" parent="Towers" index="2" unique_id=1558507706]
+
+[node name="TowerSite" parent="Towers/Beach" index="0" unique_id=2042881711 instance=ExtResource("2_jklct")]
+position = Vector2(67, 795)
+
+[node name="TowerSite2" parent="Towers/Beach" index="1" unique_id=57519606 instance=ExtResource("2_jklct")]
+position = Vector2(-535, 954)
 
 [node name="TowerSite" parent="." index="8" unique_id=655530917]
-position = Vector2(-31, 364)
+position = Vector2(403, -325)
 
 [node name="Circles" type="Node2D" parent="." index="9" unique_id=696118017]
 position = Vector2(0, 278)
 
 [node name="ResourceCircle3" parent="Circles" index="0" unique_id=2118307154 instance=ExtResource("2_nh767")]
-position = Vector2(-1487, 611)
+position = Vector2(-1308, 784)
 
-[node name="ResourceCircle4" parent="Circles" index="1" unique_id=1943158825 instance=ExtResource("2_nh767")]
-position = Vector2(1722, -442)
+[node name="ResourceCircle2" parent="Circles" index="1" unique_id=1137785612 instance=ExtResource("2_nh767")]
+position = Vector2(1566, -639)
 
-[node name="ResourceCircle2" parent="Circles" index="2" unique_id=1137785612 instance=ExtResource("2_nh767")]
-position = Vector2(330, -327)
+[node name="ResourceCircle" parent="Circles" index="2" unique_id=1615605392 instance=ExtResource("2_nh767")]
+position = Vector2(-296, 1177)
 
 [node name="ResourceCircle" parent="." index="10" unique_id=2118307154]
-position = Vector2(419, 716)
+position = Vector2(532, 762)
 
 [node name="ResourceCircle2" parent="." index="11" unique_id=406328258]
-position = Vector2(-247, 97)
+position = Vector2(-388, -68)
 
 [node name="Upgrade Offer" parent="." index="12" unique_id=167568939 instance=ExtResource("3_04pb6")]
-position = Vector2(-141, -137)
+position = Vector2(-329, 195)
 
-[node name="Maptest1" type="Sprite2D" parent="." index="13" unique_id=1442480384]
+[node name="Maptest2" type="Sprite2D" parent="." index="13" unique_id=1442480384]
 visible = false
 z_index = -1
 position = Vector2(165, 557.00006)
 scale = Vector2(1.3, 1.3)
-texture = ExtResource("6_voyjm")
+texture = ExtResource("7_vdjwc")
+metadata/_edit_lock_ = true

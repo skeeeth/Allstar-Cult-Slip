@@ -34,7 +34,7 @@ func _ready() -> void:
 	current_health = max_health
 	hp_bar.value = current_health
 
-	navi.target_position = Vector2.ZERO
+	navi.target_position = Vector2(-57,-201)
 	died.connect(on_death)
 	
 

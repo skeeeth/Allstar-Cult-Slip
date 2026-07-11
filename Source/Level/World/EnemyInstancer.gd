@@ -60,6 +60,8 @@ func determine_wave():
 	next_point =  spawn_points.pick_random()
 	next_type = enemy_pool.pick_random()
 	
+	count_base *= 1.1
+	
 	var indicator:WaveIndicator = WaveIndicator._create(warning_time,next_type,next_count)
 	add_child(indicator)
 	indicator.jitter = scatter_range
@@ -99,7 +101,7 @@ func start_day():
 	is_day = true
 	
 	#add difficulty
-	count_base *= 1.2
+	count_base *= 1.5
 	next_count = floor(count_base * next_type.wave_factor)
 
 

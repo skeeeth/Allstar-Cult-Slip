@@ -1,65 +1,64 @@
-[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://tnivrmge666j"]
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://cyt3mshmfaxdw"]
 
-[ext_resource type="AudioStream" uid="uid://6qesn1nwgci0" path="res://Assets/Sounds/Wave/enemyspawn_smallmushroom.wav" id="1_kwkww"]
-[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_ufx4l"]
-[ext_resource type="Texture2D" uid="uid://f8na26vgu6ir" path="res://Assets/SHEETS/MushroomSprites.png" id="3_8oeyj"]
-[ext_resource type="Resource" uid="uid://b436xgeccflnn" path="res://Resources/Projectiles/Spore.tres" id="3_p51s0"]
-[ext_resource type="Resource" uid="uid://cyt3mshmfaxdw" path="res://Resources/Towers/Mushroom They II.tres" id="5_abo6d"]
+[ext_resource type="AudioStream" uid="uid://6qesn1nwgci0" path="res://Assets/Sounds/Wave/enemyspawn_smallmushroom.wav" id="1_72jxq"]
+[ext_resource type="Texture2D" uid="uid://f8na26vgu6ir" path="res://Assets/SHEETS/MushroomSprites.png" id="2_ebj8i"]
+[ext_resource type="Resource" uid="uid://b436xgeccflnn" path="res://Resources/Projectiles/Spore.tres" id="3_buvmj"]
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="4_ql6b4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8oeyj"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(0, 0, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p51s0"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(503, 0, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_abo6d"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(1006, 0, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_royj7"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(1509, 0, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vbwlj"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(2012, 0, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hfjmh"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(2515, 0, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iepi1"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(3018, 0, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c7mw1"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(0, 1124, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bqemy"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(503, 1124, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a8xs0"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(1006, 1124, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nrgnf"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(1509, 1124, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wly8k"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(2012, 1124, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oempx"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(2515, 1124, 503, 1124)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5cp58"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(3018, 1124, 503, 1124)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_06aws"]
@@ -118,24 +117,22 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_06aws"]
-atlas = ExtResource("3_8oeyj")
+atlas = ExtResource("2_ebj8i")
 region = Rect2(0, 1088, 496, 1161)
 
 [resource]
-script = ExtResource("1_ufx4l")
+script = ExtResource("4_ql6b4")
 tower_name = "Mushroom Person"
 sprite = SubResource("AtlasTexture_06aws")
 frames = SubResource("SpriteFrames_06aws")
-draw_size = 90.0
-build_sound = ExtResource("1_kwkww")
+build_sound = ExtResource("1_72jxq")
 cost = Dictionary[int, int]({
 1: 8
 })
 trigger_condition = 1
 effects = Dictionary[int, float]({
-0: 20.0
+0: 35.0
 })
-area_size = 350.0
-projectile = ExtResource("3_p51s0")
-upgrade = ExtResource("5_abo6d")
+area_size = 400.0
+projectile = ExtResource("3_buvmj")
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"

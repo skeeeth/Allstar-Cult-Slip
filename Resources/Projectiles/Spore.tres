@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://b436xgeccflnn"]
+
+[ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_kf70g"]
+[ext_resource type="Texture2D" uid="uid://opmika2dohbl" path="res://Assets/CUSTOM PLACEHOLDER/Circle_128_Mushroom.png" id="2_gshsg"]
+
+[resource]
+script = ExtResource("1_kf70g")
+sprite = ExtResource("2_gshsg")
+speed = 4000.0
+size = 16
+activation_type = 1
+track = true
+metadata/_custom_type_script = "uid://bpp0od0nilhfy"

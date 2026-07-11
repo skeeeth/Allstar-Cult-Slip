@@ -237,6 +237,9 @@ stretch_mode = 2
 [node name="TowerSite" parent="Tutorial Panel/VBoxContainer/Tower Site Slide" unique_id=709428637 instance=ExtResource("3_8wsh6")]
 position = Vector2(672, 662)
 
+[node name="Tower Info" parent="Tutorial Panel/VBoxContainer/Tower Site Slide/TowerSite" index="2" unique_id=1573302505]
+visible = true
+
 [node name="Sprite2D" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Tower Site Slide" unique_id=572358763]
 position = Vector2(676, 730)
 texture = SubResource("AtlasTexture_u0ouv")
