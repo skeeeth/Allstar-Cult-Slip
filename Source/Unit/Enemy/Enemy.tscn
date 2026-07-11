@@ -6,6 +6,31 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qtjwj"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jmol"]
+bg_color = Color(0.12, 0.12, 0.12, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.51, 0.48959997, 0.48959997, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6o72"]
+bg_color = Color(0.6, 0.08399999, 0.2043999, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.50980395, 0.49019608, 0.49019608, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 16
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_lbiay"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mopxf"]
@@ -39,8 +64,11 @@ custom_minimum_size = Vector2(100, 0)
 offset_left = -44.0
 offset_top = 30.0
 offset_right = 56.0
-offset_bottom = 57.0
-value = 100.0
+offset_bottom = 46.0
+theme_override_styles/background = SubResource("StyleBoxFlat_2jmol")
+theme_override_styles/fill = SubResource("StyleBoxFlat_g6o72")
+value = 81.86
+show_percentage = false
 
 [node name="Navi" type="NavigationAgent2D" parent="." unique_id=1892920142]
 

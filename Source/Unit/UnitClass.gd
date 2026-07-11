@@ -15,7 +15,7 @@ var poison:int = 0
 
 var poison_timer:Timer
 
-func take_damage(amount:float):
+func take_damage(amount:float, supress_sound:bool = false):
 	current_health -= amount
 	
 	if hp_bar:
@@ -63,4 +63,4 @@ func add_poison(amount):
 	poison += amount
 	
 func _on_poison_tick():
-	take_damage(poison)
+	take_damage(poison, true)

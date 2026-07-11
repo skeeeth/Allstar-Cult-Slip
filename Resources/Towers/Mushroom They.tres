@@ -133,7 +133,7 @@ cost = Dictionary[int, int]({
 })
 trigger_condition = 1
 effects = Dictionary[int, float]({
-0: 10.0,
+0: 5.0,
 3: 2.0
 })
 trigger_time = 0.75

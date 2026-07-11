@@ -27,6 +27,10 @@ static func create(from_data:EnemyData) -> Enemy:
 	new_unit.sprite.scale.x = sprite_scale# * source_ratio
 	new_unit.sprite.scale.y = sprite_scale 
 	
+	var bar_size:float = from_data.max_health / 4.0
+	new_unit.hp_bar.size.x = bar_size
+	new_unit.hp_bar.position.x = -bar_size/2.0
+	
 	return new_unit
 
 func _ready() -> void:
@@ -81,8 +85,9 @@ func slip(amount:float):
 	slipping.parallel().tween_property(sprite,"rotation",0,startup).set_delay(amount)
 
 
-func take_damage(amount:float):
-	hit_sound.play()
+func take_damage(amount:float, supress_sound:bool = false):
+	if !supress_sound:
+		hit_sound.play()
 	super(amount)
 	
 #func _on_boid_area_area_entered(area: Area2D) -> void:

@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://b5ya4eqqloio1" path="res://Resources/Upgrades/Concussive Shells.tres" id="5_tyndc"]
 [ext_resource type="PackedScene" uid="uid://c57kdddxeiw7f" path="res://Source/Interactable/Upgrade Offer/upgrade_info.tscn" id="6_51exp"]
 [ext_resource type="Resource" uid="uid://chgitmr2t3p0q" path="res://Resources/Upgrades/Depressing Fall.tres" id="6_tyndc"]
+[ext_resource type="Resource" uid="uid://dfwl8l17mpfcf" path="res://Resources/Upgrades/PoisonSlip.tres" id="7_2jmol"]
 [ext_resource type="AudioStream" uid="uid://daa0g3hol5ivl" path="res://Assets/Sounds/upgrade.wav" id="9_bsxxh"]
 
 [node name="Upgrade Offer" type="Node2D" unique_id=167568939 node_paths=PackedStringArray("interactable", "info_block", "progress_bar")]
@@ -17,7 +18,7 @@ interactable = NodePath("Interaction Area")
 info_block = NodePath("Info Block")
 interval = 30.0
 offer = ExtResource("4_r631o")
-starting_pool = Array[ExtResource("3_51exp")]([ExtResource("4_r631o"), ExtResource("4_bsxxh"), ExtResource("5_tyndc"), ExtResource("6_tyndc")])
+starting_pool = Array[ExtResource("3_51exp")]([ExtResource("4_r631o"), ExtResource("4_bsxxh"), ExtResource("5_tyndc"), ExtResource("6_tyndc"), ExtResource("7_2jmol")])
 progress_bar = NodePath("Info Block/VBoxContainer/ProgressBar")
 
 [node name="Interaction Area" parent="." unique_id=268138595 instance=ExtResource("1_pynd8")]
