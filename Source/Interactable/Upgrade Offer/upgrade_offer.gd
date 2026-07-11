@@ -11,6 +11,7 @@ class_name UpgradeOffer
 @export var starting_pool:Array[Upgrade]
 static var upgrade_pool:Array[Upgrade]
 @onready var upgrade_sound: AudioStreamPlayer2D = $"Upgrade Sound"
+@export var progress_bar:ProgressBar
 
 func _ready() -> void:
 	upgrade_pool = starting_pool
@@ -19,6 +20,13 @@ func _ready() -> void:
 	interactable.interacted.connect(on_interact)
 	interactable.entered.connect(on_enter)
 	interactable.exited.connect(on_exit)
+	progress_bar.max_value = interval
+	progress_bar.value = interval
+
+func _process(delta: float) -> void:
+	progress_bar.value -= delta
+	if progress_bar.value <= 0:
+		change_offer()
 
 func on_interact():
 	#check costs
@@ -41,15 +49,20 @@ func on_exit():
 	#info_block.visible = false
 
 func change_offer():
-	var new_blueprint:Upgrade = upgrade_pool.pick_random()
-	offer = new_blueprint
+	progress_bar.value = interval
+	var new_offer:Upgrade = upgrade_pool.pick_random()
+	offer = new_offer
 	info_block.set_info(offer)
 
 
 func apply_upgrade():
 	#remove all instances of offer from pool
 	#cannot use simple array.erase(offer) because an upgrade may have been unlocked multiple times
-	upgrade_pool.filter(func(u): return u == offer)
+	upgrade_pool = upgrade_pool.filter(func(u): return u != offer)
+	
+	if upgrade_pool.size() == 0:
+		upgrade_pool.append(load("res://Resources/Upgrades/score.tres"))
+	
 	upgrade_sound.play()
 	#apply costs
 	for k in offer.cost:

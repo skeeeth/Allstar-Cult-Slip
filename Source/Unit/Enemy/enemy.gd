@@ -68,6 +68,7 @@ func on_death(_self):
 	
 
 func slip(amount:float):
+	super(amount)
 	
 	var startup = 0.05
 	var slipping = self.create_tween()

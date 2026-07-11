@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ditooupt0qhfe" path="res://Source/Level/World/Base/Base.tscn" id="11_1obq6"]
 [ext_resource type="PackedScene" uid="uid://c2og13fi0nolf" path="res://Source/Interactable/Upgrade Offer/upgrade_offer.tscn" id="12_8er02"]
 [ext_resource type="Script" uid="uid://btarx67t2mdtf" path="res://Source/Interactable/Upgrade Offer/upgrade_data.gd" id="13_21ogx"]
-[ext_resource type="Resource" uid="uid://drbsp1wvqv443" path="res://Resources/Upgrades/fertilizer.tres" id="14_a8j1u"]
+[ext_resource type="Resource" uid="uid://drbsp1wvqv443" path="res://Resources/Upgrades/unused/fertilizer.tres" id="14_a8j1u"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_kwrcj"]
 vertices = PackedVector2Array(215, -473, 538.09375, -1623.8672, 2932.8984, 315.20313, 214, -439, -220.13281, 1970.25, -822, 733, -750, 578, -99, -343, 46, -339, 172, -493, 51, -450, -130, -433, -190, -558, -200, -648, -2615.7578, 225.89844, -940, 585, -229, -397, -299, -565, -881, 343, -309, -766, -343, -736, -361, -649, 155, -360)

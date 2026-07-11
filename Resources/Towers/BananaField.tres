@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://c07nn82fs43gh"]
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://mrdgi72hl35w"]
 
 [ext_resource type="AudioStream" uid="uid://ymo481jslny0" path="res://Assets/Sounds/bulid/build_cannon.wav" id="1_3bpxv"]
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_k20hp"]
@@ -28,7 +28,7 @@ cost = Dictionary[int, int]({
 trigger_condition = 2
 effects = Dictionary[int, float]({
 0: 10.0,
-2: 0.5
+2: 2.0
 })
 area_size = 200.0
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"

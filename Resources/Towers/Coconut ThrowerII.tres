@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://uif1uaj2itte"]
 
-[ext_resource type="Resource" uid="uid://bfksys1vb6cfd" path="res://Resources/Projectiles/Coconut.tres" id="1_eos27"]
+[ext_resource type="Resource" uid="uid://bx4urm7pc8cr0" path="res://Resources/Projectiles/Coconut.tres" id="1_eos27"]
 [ext_resource type="AudioStream" uid="uid://pdsolx8s13nb" path="res://Assets/Sounds/bulid/enemyspawn_coconut.wav" id="1_hj4a7"]
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_ktax1"]
 [ext_resource type="SpriteFrames" uid="uid://bsng52v1h5aiw" path="res://Assets/SHEETS/CoconutFrames.tres" id="2_reuo1"]
@@ -22,6 +22,7 @@ trigger_condition = 1
 effects = Dictionary[int, float]({
 0: 20.0
 })
+trigger_time = 1.5
 area_size = 500.0
 projectile = ExtResource("1_eos27")
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"

@@ -4,6 +4,7 @@ class_name Interactable
 @export var button_prompt:Sprite2D
 
 signal interacted
+signal negative_interaction
 signal entered
 signal exited
 
@@ -28,3 +29,6 @@ func _input(event: InputEvent) -> void:
 		if player_inside:
 			interacted.emit()
 			#print("Interacted!")
+	if event.is_action_pressed("esc"):
+		if player_inside:
+			negative_interaction.emit()

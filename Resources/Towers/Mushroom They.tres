@@ -135,6 +135,7 @@ trigger_condition = 1
 effects = Dictionary[int, float]({
 0: 20.0
 })
+trigger_time = 0.75
 area_size = 350.0
 projectile = ExtResource("3_p51s0")
 upgrade = ExtResource("5_abo6d")

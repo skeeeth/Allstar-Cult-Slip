@@ -24,7 +24,7 @@ func take_damage(amount:float):
 		die()
 
 func slip(_amount:float):
-	pass
+	TriggerServer.unit_slipped.emit(self)
 
 func die():
 	died.emit(self)

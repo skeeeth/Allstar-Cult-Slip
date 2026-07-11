@@ -170,9 +170,10 @@ animations = [{
 [resource]
 script = ExtResource("1_6mmtj")
 sprite = SubResource("SpriteFrames_0w2je")
-movespeed = 100.0
-max_health = 200.0
-size = 128
+movespeed = 110.0
+max_health = 250.0
+size = 175
 wave_factor = 0.5
+interval_factor = 2.0
 entry_sound = ExtResource("1_0w2je")
 metadata/_custom_type_script = "uid://c7wrjd2iicq8d"

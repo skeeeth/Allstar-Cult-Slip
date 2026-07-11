@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://ofx71x0hbi23" path="res://Source/Interactable/Circle/ResourceCircle.tscn" id="2_nh767"]
 [ext_resource type="AudioStream" uid="uid://d3201iuoo88u7" path="res://Assets/Sounds/Wave/Splash/announcespawn.wav" id="2_vdjwc"]
 [ext_resource type="Script" uid="uid://c373uigs4r2l5" path="res://Source/Level/World/draw_rocks.gd" id="2_voyjm"]
+[ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="2_x1pp4"]
 [ext_resource type="PackedScene" uid="uid://c2og13fi0nolf" path="res://Source/Interactable/Upgrade Offer/upgrade_offer.tscn" id="3_04pb6"]
+[ext_resource type="Resource" uid="uid://gqmr0ddmbdrc" path="res://Resources/Enemy Types/fishman.tres" id="3_xnbip"]
 [ext_resource type="Texture2D" uid="uid://dce1j8028nuvm" path="res://Assets/SHEETS/keyboard-&-mouse_sheet_double.png" id="4_ecbtg"]
 [ext_resource type="Texture2D" uid="uid://be4dj37ikk27o" path="res://Assets/Mapver1.png" id="7_vdjwc"]
 
@@ -37,13 +39,15 @@ position = Vector2(584, 1479)
 [node name="L2" type="Node2D" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="2" unique_id=1751302321]
 position = Vector2(1329, 1302)
 
-[node name="Hard Right" type="Node2D" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="3" unique_id=2016221333]
+[node name="Hard Right Spawn" type="Node2D" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="3" unique_id=2016221333]
+unique_name_in_owner = true
 position = Vector2(1649, 186)
 
 [node name="Node" parent="." index="4" unique_id=1194797147 node_paths=PackedStringArray("spawn_points", "moonlight", "horn_sound")]
+enemy_pool = Array[ExtResource("2_x1pp4")]([ExtResource("3_xnbip")])
 spawn_points = [NodePath("../Spawn Points/One"), NodePath("../Spawn Points/L1"), NodePath("../Spawn Points/L2")]
 moonlight = NodePath("Moonlight")
-next_count = 3
+next_count = 2
 night_length = 30.0
 day_length = 20.0
 horn_sound = NodePath("Night End")
@@ -66,31 +70,26 @@ metadata/_edit_lock_ = true
 script = ExtResource("2_voyjm")
 
 [node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="0" unique_id=357815393]
-visible = false
 vertices = PackedVector2Array(-1369, 595, -1058, 1244, -972, 1301, -936, 1355, -722, 1363, -620, 1196, -898, 694, -666, 1206, -787, 1271, -952, 1252, -1221, 761, -1193, 564, -1065, 426, -609, -220, -57, -368, 337, -437, -734, -486, -1279, -265)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
 [node name="NavigationObstacle2D2" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="1" unique_id=584721052]
-visible = false
 vertices = PackedVector2Array(440, 1179, 59, 862, -23, 639, 123, 641, 215, 697, 256, 871, 438, 1017, 802, 1050, 819, 1060, 740, 1168)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
 [node name="NavigationObstacle2D3" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="2" unique_id=132357387]
-visible = false
 vertices = PackedVector2Array(827, 1070, 847, 1058, 421, 808, 489, 679, 659, 606, 1171, 648, 1261, 930, 1392, 960, 1442, 928, 1404, -15, 1361, -69, 1399, 733, 1290, 698, 1221, 562, 994, 543, 639, 546, 441, 628, 372, 807, 429, 860)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
 [node name="NavigationObstacle2D4" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="3" unique_id=1385623400]
-visible = false
-vertices = PackedVector2Array(307, -36, 514, 157, 578, 156, 571, 271, 870, 384, 1255, 436, 1246, -103, 1086, -188, 431, -234, 351, -160)
+vertices = PackedVector2Array(307, -36, 514, 157, 578, 156, 571, 271, 870, 384, 1255, 436, 1184, -25, 961, -143, 431, -234, 351, -160)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
 
 [node name="NavigationObstacle2D5" type="NavigationObstacle2D" parent="NavigationRegion2D/Rocks" index="4" unique_id=616662154]
-visible = false
 vertices = PackedVector2Array(1290, -273, 1315, -222, 1535, -133, 1669, -264)
 affect_navigation_mesh = true
 carve_navigation_mesh = true
@@ -181,12 +180,15 @@ position = Vector2(0, 278)
 
 [node name="ResourceCircle3" parent="Circles" index="0" unique_id=2118307154 instance=ExtResource("2_nh767")]
 position = Vector2(-1308, 784)
+type = 0
 
 [node name="ResourceCircle2" parent="Circles" index="1" unique_id=1137785612 instance=ExtResource("2_nh767")]
 position = Vector2(1566, -639)
+type = 0
 
 [node name="ResourceCircle" parent="Circles" index="2" unique_id=1615605392 instance=ExtResource("2_nh767")]
 position = Vector2(-296, 1177)
+type = 1
 
 [node name="ResourceCircle" parent="." index="10" unique_id=2118307154]
 position = Vector2(532, 762)

@@ -155,6 +155,5 @@ func sprite_wander(spr:AnimatedSprite2D):
 			Vector2(randf_range(0,64)*direction,randf_range(-16,16)), 0.5)
 	move_tween.tween_callback(spr.pause)
 	move_tween.tween_interval((randf_range(0.3,5)))
-
 	
 	move_tween.finished.connect(sprite_wander.bind(spr))

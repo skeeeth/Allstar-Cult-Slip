@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://chgitmr2t3p0q"]
+
+[ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_pv6wl"]
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_4omik"]
+[ext_resource type="Script" uid="uid://btarx67t2mdtf" path="res://Source/Interactable/Upgrade Offer/upgrade_data.gd" id="3_367cn"]
+[ext_resource type="Script" uid="uid://bdg2pkhma7x4k" path="res://Resources/Upgrades/Custom Scripts/DepressingFall.gd" id="4_4omik"]
+
+[resource]
+script = ExtResource("3_367cn")
+name = "Depressing Fall"
+description = "Gain a soul whenever an enemy slips"
+cost = Dictionary[int, int]({
+0: 25
+})
+type = 4
+trigger_script = ExtResource("4_4omik")
+metadata/_custom_type_script = "uid://btarx67t2mdtf"

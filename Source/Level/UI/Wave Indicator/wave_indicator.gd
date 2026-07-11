@@ -25,7 +25,7 @@ static func _create(set_delay:float, _type:EnemyData, count:int, _interval:float
 	new_display.quota = count
 	new_display.progress_bar.max_value = set_delay
 	new_display.progress_bar.value = set_delay
-	new_display.interval = _interval
+	new_display.interval = _interval * _type.interval_factor
 	new_display.unit_spawn_sound.stream = _type.entry_sound
 	return new_display
 
@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 		new_tween.finished.connect(queue_free)
 
 func instance_unit():
-	print("Hello World")
+	#print("Hello World")
 	unit_spawn_sound.play()
 	var new_enemy:Enemy = Enemy.create(type);
 	var jitter_vector = Vector2.from_angle(randf() * TAU)

@@ -3,7 +3,7 @@ class_name ResourceCircle
 
 @export var cadence:float = 10
 var progress:float = 0
-@export var type:ResourceManager.ResourceTypes
+@export var type:ResourceManager.ResourceTypes = ResourceManager.ResourceTypes.U
 @export var random_spawn:bool = true
 var store:int
 
@@ -66,7 +66,9 @@ func _process(delta: float) -> void:
 	progress_bar.value = progress
 
 func roll_resource():
-	var t = ResourceManager.ResourceTypes.values().pick_random()
+	var possible_rolls = ResourceManager.ResourceTypes.values()
+	possible_rolls.erase(type)
+	var t = possible_rolls.pick_random()
 	type = t
 	cadence = ResourceManager.ResourceCadence[t]
 	

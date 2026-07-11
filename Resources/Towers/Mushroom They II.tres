@@ -127,12 +127,13 @@ sprite = SubResource("AtlasTexture_06aws")
 frames = SubResource("SpriteFrames_06aws")
 build_sound = ExtResource("1_72jxq")
 cost = Dictionary[int, int]({
-1: 8
+1: 100
 })
 trigger_condition = 1
 effects = Dictionary[int, float]({
 0: 35.0
 })
+trigger_time = 0.75
 area_size = 400.0
 projectile = ExtResource("3_buvmj")
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"

@@ -37,15 +37,14 @@ value = 17.04
 show_percentage = false
 
 [node name="Count Text" type="Label" parent="." unique_id=976405230]
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -26.0
-offset_top = -85.0
-offset_right = 5.0
-offset_bottom = -62.0
+offset_left = -15.5
+offset_top = -93.2
+offset_right = 15.5
+offset_bottom = -70.2
 grow_horizontal = 2
-grow_vertical = 2
+theme = ExtResource("4_vj2be")
 text = "text"
+horizontal_alignment = 1

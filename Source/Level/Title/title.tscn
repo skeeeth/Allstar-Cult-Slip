@@ -129,7 +129,7 @@ size_flags_vertical = 3
 [node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=1409618418]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Each time a resource is collected, the location randomly choses a new resource (can be the same).  Each resource has different generation behavior, so choose your collection timing carefully."
+text = "Each time a resource is collected, the location randomly choses a new resource.  Each resource has different generation behavior, so choose your collection timing carefully."
 label_settings = SubResource("LabelSettings_uoy8k")
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -152,7 +152,6 @@ texture = SubResource("AtlasTexture_pkxw5")
 
 [node name="Spore Circle" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=2118307154 instance=ExtResource("6_t17wv")]
 position = Vector2(651, 339)
-type = 1
 
 [node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle" unique_id=1908560811]
 offset_left = -180.0
@@ -169,7 +168,6 @@ texture = SubResource("AtlasTexture_3fwvw")
 
 [node name="Spore Circle3" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=1303897538 instance=ExtResource("6_t17wv")]
 position = Vector2(1086, 335)
-type = 2
 
 [node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle3" unique_id=883207588]
 offset_left = -180.0

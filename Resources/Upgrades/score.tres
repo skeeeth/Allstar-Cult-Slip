@@ -3,16 +3,17 @@
 [ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_512gp"]
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_vnlha"]
 [ext_resource type="Script" uid="uid://btarx67t2mdtf" path="res://Source/Interactable/Upgrade Offer/upgrade_data.gd" id="3_tigx5"]
+[ext_resource type="Script" uid="uid://dhnm4nbotf1xh" path="res://Resources/Upgrades/Custom Scripts/add_score.gd" id="4_vnlha"]
 
 [resource]
 script = ExtResource("3_tigx5")
 name = "Increase Score"
-description = "Use excess resources for score"
+description = "All upgrades in use! Now you may Use excess resources for score"
 cost = Dictionary[int, int]({
 0: 50,
 1: 50,
 2: 50
 })
-unlocks = Array[ExtResource("3_tigx5")]([null])
 type = 4
+trigger_script = ExtResource("4_vnlha")
 metadata/_custom_type_script = "uid://btarx67t2mdtf"

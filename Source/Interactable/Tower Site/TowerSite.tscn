@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://dl31byom8c4h6" path="res://Source/Interactable/Tower Site/tower_site.gd" id="1_h1xah"]
 [ext_resource type="PackedScene" uid="uid://chb2l2bjixpa2" path="res://Source/Interactable/Interactable.tscn" id="1_v6gqn"]
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_0yyf7"]
-[ext_resource type="Resource" uid="uid://c07nn82fs43gh" path="res://Resources/Towers/BananaField.tres" id="3_m2jwy"]
+[ext_resource type="Resource" uid="uid://bgq16rdp1k4tm" path="res://Resources/Towers/BananaField.tres" id="3_m2jwy"]
 [ext_resource type="Resource" uid="uid://tnivrmge666j" path="res://Resources/Towers/Mushroom They.tres" id="4_0hbq0"]
-[ext_resource type="Resource" uid="uid://bk4rb8yqe25f2" path="res://Resources/Towers/Coconut Thrower.tres" id="4_m2jwy"]
+[ext_resource type="Resource" uid="uid://btkas0jpvp7n8" path="res://Resources/Towers/Coconut Thrower.tres" id="4_m2jwy"]
 [ext_resource type="Resource" uid="uid://bdr36582c1w7m" path="res://Resources/Towers/Tree.tres" id="5_weto1"]
 [ext_resource type="Texture2D" uid="uid://cc878l78iwvie" path="res://Assets/CUSTOM PLACEHOLDER/Circle_White_128.png" id="6_4ou5t"]
 
@@ -17,6 +17,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.60784316, 1, 1, 1, 0)
 script = ExtResource("1_h1xah")
 starting_pool = Array[ExtResource("2_0yyf7")]([ExtResource("3_m2jwy"), ExtResource("4_0hbq0"), ExtResource("5_weto1"), ExtResource("4_m2jwy")])
 range_color = Color(0.1764706, 0.28235295, 1, 0.10980392)
+current_tower_range_color = Color(0.1764706, 0.28235295, 1, 0.10980392)
 
 [node name="Interaction Area" parent="." unique_id=268138595 instance=ExtResource("1_v6gqn")]
 scale = Vector2(2.095, 2.095)
@@ -28,6 +29,7 @@ polygon = PackedVector2Array(-64, -64, -64, 64, 64, 64, 64, -64)
 
 [node name="Tower Info" type="HBoxContainer" parent="." unique_id=1573302505]
 visible = false
+z_index = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

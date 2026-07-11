@@ -17,21 +17,23 @@ static var sites:Array[TowerSite]
 var displays:Array[TowerDisplay]
 
 @export var range_color:Color
+@export var current_tower_range_color:Color
 
 func _draw() -> void:
-	if blueprint and hover_sprite.visible:
-		draw_circle(Vector2.ZERO,blueprint.area_size,range_color)
+	if hover_sprite.visible:
+		if blueprint:
+			draw_circle(Vector2.ZERO,blueprint.area_size,range_color)
+		if current_tower:
+			draw_circle(Vector2.ZERO,current_tower.data.area_size,current_tower_range_color)
 	
 func _ready() -> void:
 	interaction_area.interacted.connect(on_interact)
 	interaction_area.entered.connect(on_enter)
 	interaction_area.exited.connect(on_exit)
+	interaction_area.negative_interaction.connect(try_destroy)
 	tower_pool = starting_pool
 	TowerSite.sites.append(self)
-	var i:int = 0
-	for data in tower_pool:
-		create_display(data,i)
-		i += 1
+	set_displays_from_pool()
 
 func on_interact():
 	if !blueprint: return
@@ -65,9 +67,7 @@ func build():
 	add_child(new_tower)
 	#interaction_area.monitoring = false
 	current_tower = new_tower
-	for d in displays:
-		d.queue_free()
-	displays.clear()
+	clear_displays()
 	
 	if blueprint.upgrade:
 		blueprint = blueprint.upgrade
@@ -119,6 +119,29 @@ func create_display(data,index):
 	info_box.add_child(new_display)
 	new_display.index_number.text = str(index + 1)
 	new_display.dress(data)
+
+func clear_displays():
+	for d in displays:
+		d.queue_free()
+	displays.clear()
+
+func set_displays_from_pool():
+	var i:int = 0
+	for data in tower_pool:
+		create_display(data,i)
+		i += 1
+
+func try_destroy():
+	if !current_tower: #fail if no current tower
+		return
+	
+	#you could apply some kind of refund but fuck em
+	
+	#do destroy
+	current_tower.queue_free()
+	clear_displays()
+	set_displays_from_pool()
+	
 
 static func add_pool(data:TowerData):
 	assert(!tower_pool.has(data))

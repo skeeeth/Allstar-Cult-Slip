@@ -17,7 +17,7 @@ const ResourceNames:Dictionary[ResourceTypes,String] = {
 }
 
 var ResourceCadence:Dictionary[ResourceTypes,float] = {
-	ResourceManager.ResourceTypes.B: 0.5,
+	ResourceManager.ResourceTypes.B: 0.3,
 	ResourceManager.ResourceTypes.O: 1.3,
 	ResourceManager.ResourceTypes.U: 2.0,
 }

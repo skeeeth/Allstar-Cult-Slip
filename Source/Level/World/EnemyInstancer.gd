@@ -23,6 +23,7 @@ var day_night_timer:Timer
 @export var night_waves:int = 3
 var waves_left:int = night_waves
 const warning_time:float = 8
+var day:int = 0
 
 @export var horn_sound:AudioStreamPlayer
 
@@ -60,7 +61,6 @@ func determine_wave():
 	next_point =  spawn_points.pick_random()
 	next_type = enemy_pool.pick_random()
 	
-	count_base *= 1.1
 	
 	var indicator:WaveIndicator = WaveIndicator._create(warning_time,next_type,next_count)
 	add_child(indicator)
@@ -101,9 +101,17 @@ func start_day():
 	is_day = true
 	
 	#add difficulty
-	count_base *= 1.5
+	count_base *= 1.2
 	next_count = floor(count_base * next_type.wave_factor)
-
+	
+	day += 1
+	
+	match day:
+		2:
+			enemy_pool.append(load("res://Resources/Enemy Types/Eyecrab.tres"))
+		3:
+			spawn_points.append(%"Hard Right Spawn")
+			enemy_pool.append(load("res://Resources/Enemy Types/jellady.tres"))
 
 	wave_timer.stop()
 	

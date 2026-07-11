@@ -6,8 +6,8 @@
 [resource]
 script = ExtResource("1_kf70g")
 sprite = ExtResource("2_gshsg")
-speed = 4000.0
-size = 16
+speed = 2000.0
+size = 32
 activation_type = 1
 track = true
 metadata/_custom_type_script = "uid://bpp0od0nilhfy"
