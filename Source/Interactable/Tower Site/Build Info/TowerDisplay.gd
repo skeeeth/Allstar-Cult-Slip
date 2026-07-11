@@ -32,8 +32,17 @@ func dress(data:TowerData, with_cost:bool = true):
 	attack.text = effect_text
 	
 	speed.text = "Speed: %s" % data.trigger_time
-	var type_text = "Target" if data.trigger_condition ==\
-					data.trigger_conditions.UNIT_TIME else "AOE"
+	#var type_text = "Single Target" if data.trigger_condition ==\
+					#data.trigger_conditions.UNIT_TIME else "AOE"
+	var type_text:String = ""
+	if data.trigger_condition == data.trigger_conditions.UNIT_TIME:
+		if data.projectile:
+			if data.projectile.activation_type == ProjectileData.activation.END_EXPLODE:
+				type_text = "Splash"
+		type_text = "Single Target"
+	else:
+		type_text = "AOE"
+		
 	type.text = type_text
 	
 	cost.update_cost_text(data.cost)

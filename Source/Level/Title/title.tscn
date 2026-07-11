@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dce1j8028nuvm" path="res://Assets/SHEETS/keyboard-&-mouse_sheet_double.png" id="5_hdrwl"]
 [ext_resource type="PackedScene" uid="uid://ofx71x0hbi23" path="res://Source/Interactable/Circle/ResourceCircle.tscn" id="6_t17wv"]
 [ext_resource type="Texture2D" uid="uid://be4dj37ikk27o" path="res://Assets/Mapver1.png" id="6_uqpvc"]
+[ext_resource type="PackedScene" uid="uid://c2og13fi0nolf" path="res://Source/Interactable/Upgrade Offer/upgrade_offer.tscn" id="8_tfvhw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_0q8bw"]
 font_size = 64
@@ -21,6 +22,9 @@ region = Rect2(384, 1664, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6wnrw"]
 atlas = ExtResource("4_hdrwl")
 region = Rect2(0, 128, 768, 896)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tfvhw"]
+font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_pkxw5"]
 font_size = 32
@@ -64,9 +68,12 @@ font_size = 48
 atlas = ExtResource("6_uqpvc")
 region = Rect2(589.0001, 395, 449.00024, 301.00012)
 
+[sub_resource type="LabelSettings" id="LabelSettings_u0ouv"]
+font_size = 96
+
 [node name="Node2D" type="Node2D" unique_id=983644745 node_paths=PackedStringArray("panel_sequence")]
 script = ExtResource("1_uoy8k")
-panel_sequence = [NodePath("Tutorial Panel/VBoxContainer/Player Movement slide"), NodePath("Tutorial Panel/VBoxContainer/Resource Circle Slide"), NodePath("Tutorial Panel/VBoxContainer/Tower Site Slide"), NodePath("Tutorial Panel/VBoxContainer/Upgrade Slide")]
+panel_sequence = [NodePath("Tutorial Panel/VBoxContainer/Game Overview"), NodePath("Tutorial Panel/VBoxContainer/Player Movement slide"), NodePath("Tutorial Panel/VBoxContainer/Shrine Slide"), NodePath("Tutorial Panel/VBoxContainer/Resource Behavior Slide"), NodePath("Tutorial Panel/VBoxContainer/Tower Site Slide"), NodePath("Tutorial Panel/VBoxContainer/Upgrade Slide")]
 
 [node name="Buttons" type="VBoxContainer" parent="." unique_id=1008645609]
 offset_left = 1382.0
@@ -84,6 +91,7 @@ layout_mode = 2
 text = "Help"
 
 [node name="Tutorial Panel" type="PanelContainer" parent="." unique_id=1526643637]
+visible = false
 offset_left = 53.0
 offset_top = 176.0
 offset_right = 1363.0
@@ -100,6 +108,32 @@ text = "Tutorial"
 label_settings = SubResource("LabelSettings_0q8bw")
 horizontal_alignment = 1
 
+[node name="Game Overview" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=323132005]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Game Overview" unique_id=760587069]
+layout_mode = 2
+size_flags_vertical = 0
+text = "SSSS is a tower defense game with an emphasis on resource management and collection.  "
+label_settings = SubResource("LabelSettings_uoy8k")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Game Overview" unique_id=713757208]
+visible = false
+position = Vector2(648, 511)
+scale = Vector2(4, 4)
+texture = SubResource("AtlasTexture_hdiur")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Game Overview" unique_id=1248336086]
+visible = false
+position = Vector2(633.00006, 213)
+scale = Vector2(0.2, 0.2)
+texture = SubResource("AtlasTexture_6wnrw")
+
 [node name="Player Movement slide" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=28247604]
 visible = false
 layout_mode = 2
@@ -109,38 +143,47 @@ mouse_filter = 1
 [node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Player Movement slide" unique_id=1524996468]
 layout_mode = 2
 size_flags_vertical = 0
-text = "WASD to move"
+text = "You play as a cultist trying to defend their deserted island from invading sea creatures.  Roam the island for resources and use them to build defenses"
 label_settings = SubResource("LabelSettings_uoy8k")
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Player Movement slide" unique_id=1595564108]
 position = Vector2(648, 511)
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 texture = SubResource("AtlasTexture_hdiur")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Player Movement slide" unique_id=1460908447]
-position = Vector2(633.00006, 213)
+position = Vector2(652, 330)
 scale = Vector2(0.2, 0.2)
 texture = SubResource("AtlasTexture_6wnrw")
 
-[node name="Resource Circle Slide" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=613666744]
+[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Player Movement slide" unique_id=18387959]
+layout_mode = 2
+size_flags_vertical = 8
+text = "WASD to move"
+label_settings = SubResource("LabelSettings_tfvhw")
+horizontal_alignment = 1
+
+[node name="Shrine Slide" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=516883921]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
 
-[node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=1409618418]
+[node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Shrine Slide" unique_id=1967549774]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Each time a resource is collected, the location randomly choses a new resource.  Each resource has different generation behavior, so choose your collection timing carefully."
+text = "Throughout the island there are shrines that produce resources granted by your patron deity.   Walk up to one and press space to collect it."
 label_settings = SubResource("LabelSettings_uoy8k")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Spore Circle2" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=1003327155 instance=ExtResource("6_t17wv")]
+[node name="Spore Circle2" parent="Tutorial Panel/VBoxContainer/Shrine Slide" unique_id=103370958 instance=ExtResource("6_t17wv")]
 position = Vector2(195, 333)
 
-[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle2" unique_id=133844979]
+[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Shrine Slide/Spore Circle2" unique_id=706861251]
+visible = false
 offset_left = -180.0
 offset_top = 74.0
 offset_right = 186.0
@@ -150,13 +193,14 @@ label_settings = SubResource("LabelSettings_pkxw5")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Sprite2D3" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle2" unique_id=1101821467]
+[node name="Sprite2D3" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Shrine Slide/Spore Circle2" unique_id=2005473514]
 texture = SubResource("AtlasTexture_pkxw5")
 
-[node name="Spore Circle" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=2118307154 instance=ExtResource("6_t17wv")]
+[node name="Spore Circle" parent="Tutorial Panel/VBoxContainer/Shrine Slide" unique_id=844100527 instance=ExtResource("6_t17wv")]
 position = Vector2(651, 339)
 
-[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle" unique_id=1908560811]
+[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Shrine Slide/Spore Circle" unique_id=1796420141]
+visible = false
 offset_left = -180.0
 offset_top = 74.0
 offset_right = 186.0
@@ -166,14 +210,15 @@ label_settings = SubResource("LabelSettings_pkxw5")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle" unique_id=841043295]
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Shrine Slide/Spore Circle" unique_id=1371898423]
 texture = SubResource("AtlasTexture_3fwvw")
 
-[node name="Spore Circle3" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide" unique_id=1303897538 instance=ExtResource("6_t17wv")]
+[node name="Spore Circle3" parent="Tutorial Panel/VBoxContainer/Shrine Slide" unique_id=285550105 instance=ExtResource("6_t17wv")]
 position = Vector2(1086, 335)
 random_spawn = false
 
-[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle3" unique_id=883207588]
+[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Shrine Slide/Spore Circle3" unique_id=1029031821]
+visible = false
 offset_left = -180.0
 offset_top = 74.0
 offset_right = 186.0
@@ -183,8 +228,132 @@ label_settings = SubResource("LabelSettings_pkxw5")
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Resource Circle Slide/Spore Circle3" unique_id=2051386409]
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Shrine Slide/Spore Circle3" unique_id=1502184848]
 texture = SubResource("AtlasTexture_6oysb")
+
+[node name="Resource Behavior Slide" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=613666744]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide" unique_id=1409618418]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Each time a resource is collected, the location randomly choses a new resource.  Each resource has different generation behavior, so choose your collection timing carefully."
+label_settings = SubResource("LabelSettings_uoy8k")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Spore Circle2" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide" unique_id=1003327155 instance=ExtResource("6_t17wv")]
+position = Vector2(195, 333)
+
+[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide/Spore Circle2" unique_id=133844979]
+offset_left = -180.0
+offset_top = 74.0
+offset_right = 186.0
+offset_bottom = 215.0
+text = "Bananas generate faster the LESS bananas are already in store"
+label_settings = SubResource("LabelSettings_pkxw5")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D3" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide/Spore Circle2" unique_id=1101821467]
+texture = SubResource("AtlasTexture_pkxw5")
+
+[node name="Spore Circle" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide" unique_id=2118307154 instance=ExtResource("6_t17wv")]
+position = Vector2(651, 339)
+
+[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide/Spore Circle" unique_id=1908560811]
+offset_left = -180.0
+offset_top = 74.0
+offset_right = 186.0
+offset_bottom = 215.0
+text = "Spores generate faster the MORE spores are already in store"
+label_settings = SubResource("LabelSettings_pkxw5")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide/Spore Circle" unique_id=841043295]
+texture = SubResource("AtlasTexture_3fwvw")
+
+[node name="Spore Circle3" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide" unique_id=1303897538 instance=ExtResource("6_t17wv")]
+position = Vector2(1086, 335)
+random_spawn = false
+
+[node name="Label" type="Label" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide/Spore Circle3" unique_id=883207588]
+offset_left = -180.0
+offset_top = 74.0
+offset_right = 186.0
+offset_bottom = 215.0
+text = "Souls always generate at the same speed"
+label_settings = SubResource("LabelSettings_pkxw5")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Resource Behavior Slide/Spore Circle3" unique_id=2051386409]
+texture = SubResource("AtlasTexture_6oysb")
+
+[node name="Tower Site Slide2" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=1855475019]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+
+[node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Tower Site Slide2" unique_id=257001649]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Step onto a tower site for a list of available towers
+Each tower and upgrade has a unique recipe of required resources to build"
+label_settings = SubResource("LabelSettings_uoy8k")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial Panel/VBoxContainer/Tower Site Slide2" unique_id=1861822755]
+custom_minimum_size = Vector2(1105.155, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 0.215)
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial Panel/VBoxContainer/Tower Site Slide2/HBoxContainer" unique_id=548246617]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_hdrwl")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Tutorial Panel/VBoxContainer/Tower Site Slide2/HBoxContainer" unique_id=2075288851]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_t17wv")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Tutorial Panel/VBoxContainer/Tower Site Slide2/HBoxContainer" unique_id=557622014]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_tfvhw")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="Tutorial Panel/VBoxContainer/Tower Site Slide2/HBoxContainer" unique_id=1908816365]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_uqpvc")
+expand_mode = 4
+stretch_mode = 2
+
+[node name="TowerSite" parent="Tutorial Panel/VBoxContainer/Tower Site Slide2" unique_id=655530917 instance=ExtResource("3_8wsh6")]
+position = Vector2(672, 662)
+
+[node name="Tower Info" parent="Tutorial Panel/VBoxContainer/Tower Site Slide2/TowerSite" index="2" unique_id=1573302505]
+visible = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Tower Site Slide2" unique_id=769783991]
+position = Vector2(676, 730)
+texture = SubResource("AtlasTexture_u0ouv")
 
 [node name="Tower Site Slide" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=1979932853]
 visible = false
@@ -248,7 +417,6 @@ position = Vector2(676, 730)
 texture = SubResource("AtlasTexture_u0ouv")
 
 [node name="Upgrade Slide" type="PanelContainer" parent="Tutorial Panel/VBoxContainer" unique_id=900117148]
-visible = false
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 1
@@ -256,7 +424,7 @@ mouse_filter = 1
 [node name="Info" type="Label" parent="Tutorial Panel/VBoxContainer/Upgrade Slide" unique_id=1072264421]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Your Patron will periodically offer run-wide upgrades for a price"
+text = "Your Patron will periodically offer run-wide upgrades for a price.   Take them to accumulate powerful bonuses or wait for the next.  Look for synergy with your current upgrades or tower setup."
 label_settings = SubResource("LabelSettings_uqpvc")
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -267,11 +435,28 @@ position = Vector2(651, 603)
 texture = SubResource("AtlasTexture_u0ouv")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Tutorial Panel/VBoxContainer/Upgrade Slide" unique_id=559655362]
-position = Vector2(653, 380)
+position = Vector2(656.5, 491.5)
 texture = SubResource("AtlasTexture_jtdn1")
+
+[node name="Upgrade Offer" parent="Tutorial Panel/VBoxContainer/Upgrade Slide" unique_id=167568939 instance=ExtResource("8_tfvhw")]
+position = Vector2(669.5, 511.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1663478365]
+position = Vector2(702.00006, 589.00006)
+scale = Vector2(0.54, 0.54)
+texture = ExtResource("6_uqpvc")
+
+[node name="Title" type="Label" parent="." unique_id=1186305520]
+offset_right = 1920.0
+offset_bottom = 23.0
+theme = ExtResource("1_espid")
+text = "SSSS: Slip and Slide, Souls and Spores"
+label_settings = SubResource("LabelSettings_u0ouv")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Buttons/Start Game" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="Buttons/Help" to="." method="_on_help_pressed"]
 [connection signal="gui_input" from="Tutorial Panel" to="." method="_on_tutorial_panel_gui_input"]
 
+[editable path="Tutorial Panel/VBoxContainer/Tower Site Slide2/TowerSite"]
 [editable path="Tutorial Panel/VBoxContainer/Tower Site Slide/TowerSite"]

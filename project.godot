@@ -13,7 +13,6 @@ config_version=5
 config/name="Cult Slip"
 run/main_scene="uid://b8lsoa8kforby"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-boot_splash/bg_color=Color(0.08235294, 0.30588236, 0.28235295, 1)
 config/icon="res://icon.svg"
 
 [audio]
@@ -132,3 +131,4 @@ lmb={
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.08235294, 0.30588236, 0.28235295, 1)

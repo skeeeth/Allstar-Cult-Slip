@@ -2,86 +2,83 @@
 
 [ext_resource type="AudioStream" uid="uid://5g1xq78sf63g" path="res://Assets/Sounds/Wave/enemyspawn_jellyfish.wav" id="1_653ln"]
 [ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="1_qkcph"]
-[ext_resource type="Texture2D" uid="uid://qsjxddlq0i17" path="res://Assets/SHEETS/Spriteanim2.png" id="2_qkcph"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_653ln"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(0, 277, 931, 1317)
+[ext_resource type="Texture2D" uid="uid://bivyu4dm3c4w" path="res://Assets/SHEETS/JellyWitchSprites.png" id="3_653ln"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sfaoh"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(931, 277, 931, 1317)
+atlas = ExtResource("3_653ln")
+region = Rect2(0, 0, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60vxq"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(1862, 277, 931, 1317)
+atlas = ExtResource("3_653ln")
+region = Rect2(931, 0, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02sk1"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(2793, 277, 931, 1317)
+atlas = ExtResource("3_653ln")
+region = Rect2(1862, 0, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_baapq"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(3724, 277, 931, 1317)
+atlas = ExtResource("3_653ln")
+region = Rect2(2793, 0, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fv47w"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(4655, 277, 931, 1317)
+atlas = ExtResource("3_653ln")
+region = Rect2(3724, 0, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tgn7q"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(5586, 277, 931, 1317)
+atlas = ExtResource("3_653ln")
+region = Rect2(4655, 0, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hjknp"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(6517, 277, 931, 1317)
+atlas = ExtResource("3_653ln")
+region = Rect2(5586, 0, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yvwcy"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(7448, 277, 931, 1317)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qkcph"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(0, 1676, 931, 1676)
+atlas = ExtResource("3_653ln")
+region = Rect2(6517, 0, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmh10"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(931, 1676, 931, 1676)
+atlas = ExtResource("3_653ln")
+region = Rect2(7448, 0, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bg4w5"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(1862, 1676, 931, 1676)
+atlas = ExtResource("3_653ln")
+region = Rect2(0, 1231, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0u11"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(2793, 1676, 931, 1676)
+atlas = ExtResource("3_653ln")
+region = Rect2(931, 1231, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e3bbc"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(3724, 1676, 931, 1676)
+atlas = ExtResource("3_653ln")
+region = Rect2(1862, 1231, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x1ee7"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(4655, 1676, 931, 1676)
+atlas = ExtResource("3_653ln")
+region = Rect2(2793, 1231, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_py115"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(5586, 1676, 931, 1676)
+atlas = ExtResource("3_653ln")
+region = Rect2(3724, 1231, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mruow"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(6517, 1676, 931, 1676)
+atlas = ExtResource("3_653ln")
+region = Rect2(4655, 1231, 931, 1231)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3q2ns"]
-atlas = ExtResource("2_qkcph")
-region = Rect2(7448, 1676, 931, 1676)
+atlas = ExtResource("3_653ln")
+region = Rect2(5586, 1231, 931, 1231)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chuny"]
+atlas = ExtResource("3_653ln")
+region = Rect2(6517, 1231, 931, 1231)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqpv5"]
+atlas = ExtResource("3_653ln")
+region = Rect2(7448, 1231, 931, 1231)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lbiay"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_653ln")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sfaoh")
 }, {
@@ -105,6 +102,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yvwcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmh10")
 }],
 "loop": 1,
 "name": &"Down Left",
@@ -112,12 +112,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qkcph")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nmh10")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_bg4w5")
 }, {
 "duration": 1.0,
@@ -137,15 +131,18 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3q2ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chuny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqpv5")
 }],
 "loop": 1,
 "name": &"Down Right",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_653ln")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sfaoh")
 }, {
@@ -169,18 +166,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yvwcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmh10")
 }],
 "loop": 1,
 "name": &"Up Left",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qkcph")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nmh10")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bg4w5")
 }, {
@@ -201,6 +195,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3q2ns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chuny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqpv5")
 }],
 "loop": 1,
 "name": &"Up Right",

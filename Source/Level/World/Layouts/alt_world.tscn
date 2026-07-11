@@ -10,6 +10,7 @@
 [ext_resource type="Resource" uid="uid://gqmr0ddmbdrc" path="res://Resources/Enemy Types/fishman.tres" id="3_xnbip"]
 [ext_resource type="Texture2D" uid="uid://dce1j8028nuvm" path="res://Assets/SHEETS/keyboard-&-mouse_sheet_double.png" id="4_ecbtg"]
 [ext_resource type="Texture2D" uid="uid://be4dj37ikk27o" path="res://Assets/Mapver1.png" id="7_vdjwc"]
+[ext_resource type="AudioStream" uid="uid://b0liqw3ojpylg" path="res://Assets/Sounds/music.wav" id="11_xnbip"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_pkxw5"]
 vertices = PackedVector2Array(-223, 375, -62, 982, -497, 893, -638, 237, -306, -95, -12, 166)
@@ -28,7 +29,7 @@ position = Vector2(-57, -201)
 loss_enabled = true
 
 [node name="Player" parent="." index="1" unique_id=1190391921]
-position = Vector2(260, 269)
+position = Vector2(348, 343)
 
 [node name="One" parent="Spawn Points" parent_id_path=PackedInt32Array(1088585131) index="0" unique_id=2080853920]
 position = Vector2(-1104, 1477)
@@ -206,3 +207,8 @@ position = Vector2(165, 557.00006)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("7_vdjwc")
 metadata/_edit_lock_ = true
+
+[node name="Muuuusic" type="AudioStreamPlayer" parent="." index="15" unique_id=460250521]
+stream = ExtResource("11_xnbip")
+volume_db = -10.0
+autoplay = true

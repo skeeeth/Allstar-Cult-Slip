@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://dl31byom8c4h6" path="res://Source/Interactable/Tower Site/tower_site.gd" id="1_h1xah"]
 [ext_resource type="PackedScene" uid="uid://chb2l2bjixpa2" path="res://Source/Interactable/Interactable.tscn" id="1_v6gqn"]
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_0yyf7"]
-[ext_resource type="Resource" uid="uid://bgq16rdp1k4tm" path="res://Resources/Towers/BananaField.tres" id="3_m2jwy"]
+[ext_resource type="Resource" uid="uid://mrdgi72hl35w" path="res://Resources/Towers/BananaField.tres" id="3_m2jwy"]
 [ext_resource type="Resource" uid="uid://tnivrmge666j" path="res://Resources/Towers/Mushroom They.tres" id="4_0hbq0"]
-[ext_resource type="Resource" uid="uid://btkas0jpvp7n8" path="res://Resources/Towers/Coconut Thrower.tres" id="4_m2jwy"]
+[ext_resource type="Resource" uid="uid://cibbbb7sa168o" path="res://Resources/Towers/Coconut Thrower.tres" id="4_m2jwy"]
 [ext_resource type="Resource" uid="uid://bdr36582c1w7m" path="res://Resources/Towers/Tree.tres" id="5_weto1"]
 [ext_resource type="Texture2D" uid="uid://cc878l78iwvie" path="res://Assets/CUSTOM PLACEHOLDER/Circle_White_128.png" id="6_4ou5t"]
 
@@ -24,7 +24,7 @@ scale = Vector2(2.095, 2.095)
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=264960647]
 scale = Vector2(0.25, 0.25)
-color = Color(0.34407577, 0.34407574, 0.34407574, 1)
+color = Color(0.5, 0.25349998, 0.065, 0.54901963)
 polygon = PackedVector2Array(-64, -64, -64, 64, 64, 64, 64, -64)
 
 [node name="Tower Info" type="HBoxContainer" parent="." unique_id=1573302505]
