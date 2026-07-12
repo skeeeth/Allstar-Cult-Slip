@@ -60,11 +60,10 @@ shape = SubResource("CircleShape2D_qtjwj")
 
 [node name="HP_Bar" type="ProgressBar" parent="." unique_id=2059718330]
 z_index = 7
-custom_minimum_size = Vector2(100, 0)
 offset_left = -44.0
-offset_top = 30.0
+offset_top = 36.0
 offset_right = 56.0
-offset_bottom = 46.0
+offset_bottom = 49.0
 theme_override_styles/background = SubResource("StyleBoxFlat_2jmol")
 theme_override_styles/fill = SubResource("StyleBoxFlat_g6o72")
 value = 81.86

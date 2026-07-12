@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://cqydlu08twyas"]
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://dpkthb1m53api"]
 
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_1psts"]
 [ext_resource type="AudioStream" uid="uid://bwfm5eskmt721" path="res://Assets/Sounds/tree_attack.wav" id="1_7j6il"]
@@ -126,12 +126,14 @@ draw_size = 230.0
 build_sound = ExtResource("2_a3eds")
 attack_sound = ExtResource("1_7j6il")
 cost = Dictionary[int, int]({
-0: 40
+0: 40,
+1: 20,
+2: 10
 })
 effects = Dictionary[int, float]({
-0: 30.0,
-2: 1.0
+0: 35.0,
+2: 1.5
 })
-trigger_time = 4.0
+trigger_time = 4.2
 area_size = 400.0
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"

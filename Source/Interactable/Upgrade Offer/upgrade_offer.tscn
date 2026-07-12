@@ -10,7 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://c57kdddxeiw7f" path="res://Source/Interactable/Upgrade Offer/upgrade_info.tscn" id="6_51exp"]
 [ext_resource type="Resource" uid="uid://chgitmr2t3p0q" path="res://Resources/Upgrades/Depressing Fall.tres" id="6_tyndc"]
 [ext_resource type="Resource" uid="uid://dfwl8l17mpfcf" path="res://Resources/Upgrades/PoisonSlip.tres" id="7_2jmol"]
+[ext_resource type="Resource" uid="uid://b7kwydf3hsiks" path="res://Resources/Upgrades/Reclaim Life.tres" id="8_4bfpi"]
 [ext_resource type="AudioStream" uid="uid://daa0g3hol5ivl" path="res://Assets/Sounds/upgrade.wav" id="9_bsxxh"]
+[ext_resource type="Resource" uid="uid://k0kf43gesf7g" path="res://Resources/Upgrades/Ballistics.tres" id="9_xe2gb"]
+[ext_resource type="Resource" uid="uid://tjpuq4d24ct6" path="res://Resources/Upgrades/increased toxicity.tres" id="10_2wjbs"]
+[ext_resource type="Resource" uid="uid://bh22ujbtg83uu" path="res://Resources/Upgrades/Angered Land.tres" id="11_kv0w4"]
 
 [node name="Upgrade Offer" type="Node2D" unique_id=167568939 node_paths=PackedStringArray("interactable", "info_block", "progress_bar")]
 script = ExtResource("1_0kqjk")
@@ -18,7 +22,7 @@ interactable = NodePath("Interaction Area")
 info_block = NodePath("Info Block")
 interval = 30.0
 offer = ExtResource("4_r631o")
-starting_pool = Array[ExtResource("3_51exp")]([ExtResource("4_r631o"), ExtResource("4_bsxxh"), ExtResource("5_tyndc"), ExtResource("6_tyndc"), ExtResource("7_2jmol")])
+starting_pool = Array[ExtResource("3_51exp")]([ExtResource("4_bsxxh"), ExtResource("5_tyndc"), ExtResource("6_tyndc"), ExtResource("7_2jmol"), ExtResource("8_4bfpi"), ExtResource("9_xe2gb"), ExtResource("10_2wjbs"), ExtResource("11_kv0w4")])
 progress_bar = NodePath("Info Block/VBoxContainer/ProgressBar")
 
 [node name="Interaction Area" parent="." unique_id=268138595 instance=ExtResource("1_pynd8")]

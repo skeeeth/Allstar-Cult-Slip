@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://cyt3mshmfaxdw"]
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://nij2w4366ijp"]
 
 [ext_resource type="AudioStream" uid="uid://6qesn1nwgci0" path="res://Assets/Sounds/Wave/enemyspawn_smallmushroom.wav" id="1_72jxq"]
 [ext_resource type="Texture2D" uid="uid://f8na26vgu6ir" path="res://Assets/SHEETS/MushroomSprites.png" id="2_ebj8i"]
@@ -122,7 +122,7 @@ region = Rect2(0, 1088, 496, 1161)
 
 [resource]
 script = ExtResource("4_ql6b4")
-tower_name = "Mushroom Person"
+tower_name = "Mushroom Person II"
 sprite = SubResource("AtlasTexture_06aws")
 frames = SubResource("SpriteFrames_06aws")
 build_sound = ExtResource("1_72jxq")
@@ -135,6 +135,6 @@ effects = Dictionary[int, float]({
 3: 5.0
 })
 trigger_time = 0.75
-area_size = 400.0
+area_size = 420.0
 projectile = ExtResource("3_buvmj")
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"

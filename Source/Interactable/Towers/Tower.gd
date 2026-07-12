@@ -83,17 +83,17 @@ func _process(delta: float) -> void:
 	match data.trigger_condition:
 		TowerData.trigger_conditions.AREA_TIME:
 			area_time += delta
-			if area_time >= data.trigger_time:
+			if area_time >= (data.trigger_time + data.speed_mod):
 				shockwave.emitting = true ## BAD COUPLED CODE, ONLY FOR TREE
 				if trigger_sound.stream:
 					trigger_sound.play()
 				trigger_all()
-				area_time -= data.trigger_time
+				area_time -= data.trigger_time + data.speed_mod
 		TowerData.trigger_conditions.UNIT_TIME:
 			for u in targets:
 				target_time[u] += delta
-				if target_time[u] >= data.trigger_time:
-					target_time[u] -= data.trigger_time
+				if target_time[u] >= (data.speed_mod + data.trigger_time):
+					target_time[u] -= data.trigger_time + data.speed_mod
 					trigger_single(u)
 					
 

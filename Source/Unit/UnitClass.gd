@@ -3,7 +3,7 @@ class_name Unit
 
 
 signal died(who) #up to owner or parent to decide what happens on death
-
+#signal poison_death(who)
 
 @export var max_health:float = 100
 @export var hp_bar:ProgressBar
@@ -15,7 +15,7 @@ var poison:int = 0
 
 var poison_timer:Timer
 
-func take_damage(amount:float, supress_sound:bool = false):
+func take_damage(amount:float, _supress_sound:bool = false):
 	current_health -= amount
 	
 	if hp_bar:
@@ -25,7 +25,10 @@ func take_damage(amount:float, supress_sound:bool = false):
 	if current_health <= 0:
 		die()
 
-func slip(_amount:float):
+
+func slip(amount:float):
+	if amount == 0:
+		return
 	TriggerServer.unit_slipped.emit(self)
 
 func die():
@@ -55,12 +58,16 @@ func add_poison(amount):
 	
 	if poison == 0:
 		poison_timer = Timer.new()
-		poison_timer.wait_time = 1.0
+		poison_timer.wait_time = 0.3
 		poison_timer.timeout.connect(_on_poison_tick)
 		add_child(poison_timer)
 		poison_timer.start()
 	
 	poison += amount
 	
+	TriggerServer.poison_applied.emit(amount,self)
+	
 func _on_poison_tick():
+	if current_health <= poison:
+		TriggerServer.poison_death.emit(self)
 	take_damage(poison, true)

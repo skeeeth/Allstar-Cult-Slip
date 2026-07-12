@@ -9,12 +9,12 @@ var breakdown:Dictionary[String,float]
 
 
 var live_scores:Array[Dictionary] = [
-	{"Name": "AAA",
-	 "Score": 100},
-	{"Name": "ccc",
-	 "Score": 200},
-	{"Name": "bBb",
-	 "Score": 300},
+	{"Name": "eth!",
+	 "Score": 61284},
+	{"Name": "good job!",
+	 "Score": 20000},
+	{"Name": "neat",
+	 "Score": 1000},
 ]
 
 var scores_displayed:int = 4

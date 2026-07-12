@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://b7kwydf3hsiks"]
+
+[ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_u05wm"]
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_idubk"]
+[ext_resource type="Script" uid="uid://btarx67t2mdtf" path="res://Source/Interactable/Upgrade Offer/upgrade_data.gd" id="3_4vaqq"]
+[ext_resource type="Script" uid="uid://behaqqg17g32r" path="res://Resources/Upgrades/Custom Scripts/Reclaim Life.gd" id="4_idubk"]
+
+[resource]
+script = ExtResource("3_4vaqq")
+name = "Reclaim Life"
+description = "Whenever a unit dies from poison, gain a banana and a spore"
+cost = Dictionary[int, int]({
+0: 5,
+1: 5,
+2: 5
+})
+type = 4
+trigger_script = ExtResource("4_idubk")
+metadata/_custom_type_script = "uid://btarx67t2mdtf"

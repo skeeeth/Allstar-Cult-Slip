@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://bxcgxn216q8ug"]
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://dbf12wev0byyi"]
 
 [ext_resource type="AudioStream" uid="uid://pdsolx8s13nb" path="res://Assets/Sounds/bulid/enemyspawn_coconut.wav" id="1_83t6s"]
-[ext_resource type="Resource" uid="uid://c560eu75gv5h5" path="res://Resources/Projectiles/Coconut.tres" id="1_ofiim"]
+[ext_resource type="Resource" uid="uid://rvj2h0irfatj" path="res://Resources/Projectiles/Coconut.tres" id="1_ofiim"]
 [ext_resource type="SpriteFrames" uid="uid://bsng52v1h5aiw" path="res://Assets/SHEETS/CoconutFrames.tres" id="2_7qd2v"]
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_83t6s"]
-[ext_resource type="Resource" uid="uid://cdt5wi06s5xnp" path="res://Resources/Towers/Coconut ThrowerII.tres" id="4_ofiim"]
+[ext_resource type="Resource" uid="uid://cxhf3ikl0hrkw" path="res://Resources/Towers/Coconut ThrowerII.tres" id="4_ofiim"]
 [ext_resource type="Texture2D" uid="uid://cd66yi5w33sfn" path="res://Assets/Coconut Icon.tres" id="5_7qd2v"]
 
 [resource]

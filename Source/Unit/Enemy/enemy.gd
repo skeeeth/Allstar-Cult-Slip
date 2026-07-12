@@ -27,7 +27,7 @@ static func create(from_data:EnemyData) -> Enemy:
 	new_unit.sprite.scale.x = sprite_scale# * source_ratio
 	new_unit.sprite.scale.y = sprite_scale 
 	
-	var bar_size:float = from_data.max_health / 4.0
+	var bar_size:float = from_data.max_health / 2.0
 	new_unit.hp_bar.size.x = bar_size
 	new_unit.hp_bar.position.x = -bar_size/2.0
 	
@@ -73,6 +73,8 @@ func on_death(_self):
 
 func slip(amount:float):
 	super(amount)
+	if amount == 0:
+		return
 	
 	var startup = 0.05
 	var slipping = self.create_tween()

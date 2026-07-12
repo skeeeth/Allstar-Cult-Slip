@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 			mult = (1.0 / ((0.2 * store) + 1))
 			#print(mult)
 		ResourceManager.ResourceTypes.O:
-			mult = pow(1.10,store/5.5)
+			mult = pow(1.08,store/5.5)
 			#print(mult)
 		ResourceManager.ResourceTypes.U:
 			mult = 1

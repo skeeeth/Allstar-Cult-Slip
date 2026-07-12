@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://bh22ujbtg83uu"]
+
+[ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_6psu6"]
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_ig8ek"]
+[ext_resource type="Resource" uid="uid://c8nlo0wnftgbm" path="res://Resources/Towers/Tree.tres" id="3_ig8ek"]
+[ext_resource type="Script" uid="uid://btarx67t2mdtf" path="res://Source/Interactable/Upgrade Offer/upgrade_data.gd" id="3_xgesi"]
+
+[resource]
+script = ExtResource("3_xgesi")
+name = "Angered Land"
+description = "Trees deal 15 more damage and attack 0.5 seconds faster"
+cost = Dictionary[int, int]({
+0: 30,
+2: 20
+})
+type = 1
+associated_towers = Array[ExtResource("2_ig8ek")]([ExtResource("3_ig8ek")])
+stat_increases = Dictionary[String, float]({
+"Damage": 15.0,
+"Speed": 0.5
+})
+metadata/_custom_type_script = "uid://btarx67t2mdtf"

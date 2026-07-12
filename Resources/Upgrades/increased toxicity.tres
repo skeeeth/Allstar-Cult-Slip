@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Upgrade" format=3 uid="uid://tjpuq4d24ct6"]
+
+[ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_qfwuu"]
+[ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="2_tlvxd"]
+[ext_resource type="Script" uid="uid://btarx67t2mdtf" path="res://Source/Interactable/Upgrade Offer/upgrade_data.gd" id="3_huaa6"]
+[ext_resource type="Script" uid="uid://dtrirxbf8ob5m" path="res://Resources/Upgrades/Custom Scripts/Poison Slip.gd" id="4_tlvxd"]
+
+[resource]
+script = ExtResource("3_huaa6")
+name = "Increase Toxicity"
+description = "Whenever poison is applied, apply one more"
+cost = Dictionary[int, int]({
+1: 99,
+2: 35
+})
+type = 4
+trigger_script = ExtResource("4_tlvxd")
+metadata/_custom_type_script = "uid://btarx67t2mdtf"

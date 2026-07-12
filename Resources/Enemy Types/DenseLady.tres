@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://vrqug1wjxex"]
+
+[ext_resource type="AudioStream" uid="uid://5g1xq78sf63g" path="res://Assets/Sounds/Wave/enemyspawn_jellyfish.wav" id="1_6d76g"]
+[ext_resource type="Script" uid="uid://c7wrjd2iicq8d" path="res://Source/Unit/Enemy/EnemyData.gd" id="1_hh4md"]
+[ext_resource type="SpriteFrames" uid="uid://bbv3gmm5pk0ju" path="res://Resources/Enemy Types/SpriteFrames/jellyfih_frames.tres" id="3_cf58a"]
+
+[resource]
+script = ExtResource("1_hh4md")
+sprite = ExtResource("3_cf58a")
+movespeed = 200.0
+max_health = 200.0
+size = 150
+entry_sound = ExtResource("1_6d76g")
+metadata/_custom_type_script = "uid://c7wrjd2iicq8d"

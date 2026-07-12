@@ -10,8 +10,8 @@ var scatter_range:float = 300
 @export var moonlight:DirectionalLight2D
 var next_point:Node2D
 var next_type:EnemyData
-@export var next_count:int = 4
-var count_base:float = 4
+var next_count:int = 4
+@export var count_base:float = 4
 
 @onready var hud: CanvasLayer = $"../Camera2D/Hud"
 @onready var camera_2d: Camera2D = $"../Camera2D"
@@ -63,6 +63,8 @@ func determine_wave():
 	
 	
 	var indicator:WaveIndicator = WaveIndicator._create(warning_time,next_type,next_count)
+	next_count = floor(count_base * next_type.wave_factor)
+	next_count = max(next_count,1) #if < 1 then = 1
 	add_child(indicator)
 	indicator.jitter = scatter_range
 	indicator.camera = camera_2d
@@ -101,20 +103,24 @@ func start_day():
 	is_day = true
 	
 	#add difficulty
-	count_base *= 1.2
-	next_count = floor(count_base * next_type.wave_factor)
+	count_base *= 1.18
 	
 	day += 1
 	
 	match day:
 		1:
-			count_base += 1
 			enemy_pool.append(load("res://Resources/Enemy Types/Eyecrab.tres"))
 		2:
 			spawn_points.append(%"Hard Right Spawn")
 			enemy_pool.append(load("res://Resources/Enemy Types/jellady.tres"))
 		3:
 			enemy_pool.append(load("res://Resources/Enemy Types/dense_fish.tres"))
+		4:
+			enemy_pool.append(load("res://Resources/Enemy Types/big_lady.tres"))
+		5:
+			enemy_pool.append(load("res://Resources/Enemy Types/DenseLady.tres"))
+		_:
+			count_base *= 1.1
 
 	wave_timer.stop()
 	

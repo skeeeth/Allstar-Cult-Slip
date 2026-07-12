@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://tnivrmge666j"]
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://dgivadpca1onk"]
 
 [ext_resource type="AudioStream" uid="uid://6qesn1nwgci0" path="res://Assets/Sounds/Wave/enemyspawn_smallmushroom.wav" id="1_kwkww"]
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_ufx4l"]
 [ext_resource type="Texture2D" uid="uid://f8na26vgu6ir" path="res://Assets/SHEETS/MushroomSprites.png" id="3_8oeyj"]
 [ext_resource type="Resource" uid="uid://b436xgeccflnn" path="res://Resources/Projectiles/Spore.tres" id="3_p51s0"]
-[ext_resource type="Resource" uid="uid://cyt3mshmfaxdw" path="res://Resources/Towers/Mushroom They II.tres" id="5_abo6d"]
+[ext_resource type="Resource" uid="uid://nij2w4366ijp" path="res://Resources/Towers/Mushroom They II.tres" id="5_abo6d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8oeyj"]
 atlas = ExtResource("3_8oeyj")

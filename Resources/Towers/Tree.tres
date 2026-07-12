@@ -1,11 +1,11 @@
-[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://bdr36582c1w7m"]
+[gd_resource type="Resource" script_class="TowerData" format=3 uid="uid://ihkc4jtc6tdu"]
 
 [ext_resource type="Script" uid="uid://dlv0kunqio4rh" path="res://Source/Interactable/Towers/TowerData.gd" id="1_mwkbs"]
 [ext_resource type="AudioStream" uid="uid://cp60wc0xi154y" path="res://Assets/Sounds/bulid/enemyspawn_tree.wav" id="1_xxpkh"]
 [ext_resource type="AudioStream" uid="uid://bwfm5eskmt721" path="res://Assets/Sounds/tree_attack.wav" id="1_ywtk5"]
 [ext_resource type="Texture2D" uid="uid://hvuqaabv38xt" path="res://Assets/SHEETS/Entsprites.png" id="3_xxpkh"]
 [ext_resource type="Texture2D" uid="uid://cxr8dlup6pu2r" path="res://Resources/Towers/Tower Frames/tree_frames.tres" id="5_rdomc"]
-[ext_resource type="Resource" uid="uid://cqydlu08twyas" path="res://Resources/Towers/TreeII.tres" id="6_de5y5"]
+[ext_resource type="Resource" path="res://Resources/Towers/TreeII.tres" id="6_de5y5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xxpkh"]
 atlas = ExtResource("3_xxpkh")
@@ -131,10 +131,10 @@ cost = Dictionary[int, int]({
 2: 5
 })
 effects = Dictionary[int, float]({
-0: 30.0,
+0: 20.0,
 2: 1.0
 })
-trigger_time = 4.0
-area_size = 300.0
+trigger_time = 4.2
+area_size = 260.0
 upgrade = ExtResource("6_de5y5")
 metadata/_custom_type_script = "uid://dlv0kunqio4rh"

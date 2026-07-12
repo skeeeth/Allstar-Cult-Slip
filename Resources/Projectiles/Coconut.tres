@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://c560eu75gv5h5"]
+[gd_resource type="Resource" script_class="ProjectileData" format=3 uid="uid://rvj2h0irfatj"]
 
 [ext_resource type="Script" uid="uid://bpp0od0nilhfy" path="res://Source/Interactable/Towers/Projectile/ProjectileData.gd" id="1_oadmr"]
 [ext_resource type="Texture2D" uid="uid://cd66yi5w33sfn" path="res://Assets/Coconut Icon.tres" id="2_3bano"]
